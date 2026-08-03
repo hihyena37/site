@@ -1,3 +1,26 @@
+const langIcon = document.querySelector('.header_icon .lang .imgbox');
+const langSelect = document.querySelector('.header_icon .lang select');
+
+function openLangOptions() {
+    if (!langSelect) return;
+
+    langSelect.focus();
+
+    if (typeof langSelect.showPicker === 'function') {
+        langSelect.showPicker();
+    }
+}
+
+if (langIcon && langSelect) {
+    langIcon.addEventListener('click', openLangOptions);
+    langIcon.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter' || event.key === ' ') {
+            event.preventDefault();
+            openLangOptions();
+        }
+    });
+}
+
 function initPagination(section) {
     const itemBoxes = [...section.querySelectorAll('.item_pages > .item_box')];
     const pageNumbers = [...section.querySelectorAll('.page_tab .page_num p')];
