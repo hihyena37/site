@@ -32,6 +32,9 @@ function initPagination(section) {
     const categoryOptions = categorySelect
         ? [...categorySelect.querySelectorAll('option')]
         : [];
+    const originalCards = itemBoxes.flatMap((itemBox) =>
+        [...itemBox.querySelectorAll('.card')]
+    );
     let currentPage = 1;
     let totalPages = itemBoxes.length;
 
@@ -95,17 +98,43 @@ function initPagination(section) {
         showPage(1);
     }
 
-    function applyTteokbokkiFilter() {
-        const filterSettings = {
-            all: { pages: itemBoxes.length, lastPageCards: 12 },
-            tteokbokki: { pages: 3, lastPageCards: 3 },
-            rabokki: { pages: 1, lastPageCards: 10 },
-            halal: { pages: 1, lastPageCards: 8 },
-            frozen: { pages: 1, lastPageCards: 3 }
-        };
-        const selectedFilter = filterSettings[categorySelect.value];
+    function renderCategoryCards(cards) {
+        itemBoxes.forEach((itemBox, pageIndex) => {
+            const startIndex = pageIndex * 12;
+            const pageCards = cards.slice(startIndex, startIndex + 12);
 
-        applyCardCount(selectedFilter.pages, selectedFilter.lastPageCards);
+            itemBox.replaceChildren(...pageCards);
+        });
+
+        totalPages = Math.max(1, Math.ceil(cards.length / 12));
+
+        pageNumbers.forEach((pageNumber) => {
+            const page = Number(pageNumber.dataset.page);
+            pageNumber.classList.toggle('filter-hidden', page > totalPages);
+        });
+
+        showPage(1);
+    }
+
+    function applyTteokbokkiFilter() {
+        const selectedFilter = categorySelect.value;
+        const filteredCards = originalCards.filter((card) => {
+            const productName = card.querySelector('.text p')?.textContent.trim() || '';
+            const isRabokki = productName.includes('라볶이');
+            const isHalal = productName.includes('할랄');
+            const isFrozen = productName.includes('냉동');
+
+            if (selectedFilter === 'rabokki') return isRabokki;
+            if (selectedFilter === 'halal') return isHalal;
+            if (selectedFilter === 'frozen') return isFrozen;
+            if (selectedFilter === 'tteokbokki') {
+                return !isRabokki && !isHalal && !isFrozen;
+            }
+
+            return true;
+        });
+
+        renderCategoryCards(filteredCards);
     }
 
     if (categorySelect) {
@@ -129,7 +158,7 @@ function initPagination(section) {
                     categoryOptions.forEach((option) => {
                         option.hidden = option.value !== 'all';
                     });
-                    applyCardCount(1, categoryCardCounts[category]);
+                    renderCategoryCards(originalCards.slice(0, categoryCardCounts[category]));
                 } else {
                     categoryOptions.forEach((option) => {
                         option.hidden = false;
@@ -141,20 +170,34 @@ function initPagination(section) {
     }
 
     if (oemTabs.length) {
-        const oemFilterSettings = {
-            all: { pages: 3, lastPageCards: 1 },
-            samyang: { pages: 1, lastPageCards: 2 },
-            paldo: { pages: 1, lastPageCards: 2 },
-            etc: { pages: 2, lastPageCards: 1 }
-        };
+        function renderOemCards(cards) {
+            itemBoxes.forEach((itemBox, pageIndex) => {
+                const startIndex = pageIndex * 4;
+                itemBox.replaceChildren(...cards.slice(startIndex, startIndex + 4));
+            });
+
+            totalPages = Math.max(1, Math.ceil(cards.length / 4));
+
+            pageNumbers.forEach((pageNumber) => {
+                const page = Number(pageNumber.dataset.page);
+                pageNumber.classList.toggle('filter-hidden', page > totalPages);
+            });
+
+            showPage(1);
+        }
 
         oemTabs.forEach((oemTab) => {
             oemTab.addEventListener('click', () => {
-                const filter = oemFilterSettings[oemTab.dataset.oem];
+                const selectedBrand = oemTab.dataset.oem;
+                const filteredCards = selectedBrand === 'all'
+                    ? originalCards
+                    : originalCards.filter((card) =>
+                        card.dataset.oemBrand === selectedBrand
+                    );
 
                 oemTabs.forEach((tab) => tab.classList.remove('active'));
                 oemTab.classList.add('active');
-                applyCardCount(filter.pages, filter.lastPageCards);
+                renderOemCards(filteredCards);
             });
         });
     }

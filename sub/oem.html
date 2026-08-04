@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../css/oem.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <script src="https://kit.fontawesome.com/6f10443e5d.js" crossorigin="anonymous"></script>
+    <script src="../script/oem.js" defer></script>
 </head>
 <body>
     <!-- 헤더 -->
@@ -240,15 +241,15 @@
             <h3>OEM 제품 사례</h3>
             <!-- 제품 탭 -->
             <div class="product_tab">
-                <p>전체</p>
-                <p>삼양</p>
-                <p>팔도</p>
-                <p>기타</p>
+                <p class="active" data-brand="all" role="button" tabindex="0">전체</p>
+                <p data-brand="samyang" role="button" tabindex="0">삼양</p>
+                <p data-brand="paldo" role="button" tabindex="0">팔도</p>
+                <p data-brand="etc" role="button" tabindex="0">기타</p>
             </div>
 
             <!-- oem 아이템박스 -->
             <div class="item_box">
-                <a href="#" class="card">
+                <a href="#" class="card" data-brand="paldo">
                     <div class="imgbox">
                         <img src="../image/oem_product1.png" alt="oem1">
                     </div>
@@ -258,7 +259,7 @@
                     </div>
                 </a>
 
-                <a href="#" class="card">
+                <a href="#" class="card" data-brand="paldo">
                     <div class="imgbox">
                         <img src="../image/oem_product2.png" alt="oem2">
                     </div>
@@ -268,7 +269,7 @@
                     </div>
                 </a>
 
-                <a href="#" class="card">
+                <a href="#" class="card" data-brand="samyang">
                     <div class="imgbox">
                         <img src="../image/oem_product3.png" alt="oem3">
                     </div>
@@ -278,7 +279,7 @@
                     </div>
                 </a>
 
-                <a href="#" class="card">
+                <a href="#" class="card" data-brand="samyang">
                     <div class="imgbox">
                         <img src="../image/oem_product4.png" alt="oem4">
                     </div>
@@ -288,7 +289,7 @@
                     </div>
                 </a>
 
-                <a href="#" class="card">
+                <a href="#" class="card" data-brand="etc">
                     <div class="imgbox">
                         <img src="../image/oem_product5.png" alt="oem5">
                     </div>
@@ -298,7 +299,7 @@
                     </div>
                 </a>
 
-                <a href="#" class="card">
+                <a href="#" class="card" data-brand="etc">
                     <div class="imgbox">
                         <img src="../image/oem_product6.png" alt="oem6">
                     </div>
@@ -308,7 +309,7 @@
                     </div>
                 </a>
 
-                <a href="#" class="card">
+                <a href="#" class="card" data-brand="etc">
                     <div class="imgbox">
                         <img src="../image/oem_product7.png" alt="oem7">
                     </div>
@@ -318,7 +319,7 @@
                     </div>
                 </a>
 
-                <a href="#" class="card">
+                <a href="#" class="card" data-brand="etc">
                     <div class="imgbox">
                         <img src="../image/oem_product8.png" alt="oem8">
                     </div>
@@ -328,7 +329,7 @@
                     </div>
                 </a>
 
-                <a href="#" class="card">
+                <a href="#" class="card" data-brand="etc">
                     <div class="imgbox">
                         <img src="../image/oem_product9.png" alt="oem9">
                     </div>

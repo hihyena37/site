@@ -290,6 +290,7 @@ header {
 
 .hero_i a i {
     color: white;
+    -webkit-text-stroke: 1px currentColor;
 }
 
 .hero_i a:hover {
