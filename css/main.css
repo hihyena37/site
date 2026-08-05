@@ -67,6 +67,10 @@ i {
   width: fit-content;
 }
 
+h3{
+  font-size: clamp(16px,1vw,18px);
+}
+
 /* 헤더 */
 header {
   width: 100%;
@@ -179,7 +183,9 @@ header {
   font-weight: 300;
 }
 
-.header_icon .lang>select {
+.header_icon .lang > select {
+  width: 64px;
+  padding: 0;
   text-align: center;
   outline: none;
   border: none;
@@ -268,7 +274,6 @@ header {
 
 /* 페이드 전환 */
 @keyframes herofade {
-
   /* 12초 기준 */
   0% {
     opacity: 0;
@@ -549,7 +554,7 @@ header {
 
 /* 퀄리티 타이틀 */
 .quality_i .title {
-  width: content;
+  width: fit-content;
   color: white;
 
   display: flex;
@@ -617,6 +622,8 @@ header {
 }
 
 .quality_btm .left .cer .text {
+  width: 100%;
+  min-width: 0;
   text-align: center;
   font-size: 20px;
 
@@ -627,6 +634,14 @@ header {
 
 .quality_btm .left .cer .text p {
   font-weight: 600;
+}
+
+.quality_btm .left .cer .text p,
+.quality_btm .left .cer .text span {
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 /* 퀄리티 바텀 우측 */
@@ -755,7 +770,6 @@ header {
 
 .global_btm .map:hover img {
   scale: 1.1;
-  filter: brightness(0.9);
 }
 
 /* 화살표 */
@@ -839,7 +853,7 @@ header {
 
 .global_btm .export .card a {
   display: block;
-  font-size: 20px;
+  font-size: clamp( 14px, 1.4vw ,20px);
   background-color: #c1262e;
   color: white;
   padding: 8px 12px;
@@ -909,7 +923,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: clamp(6px, 1.25vw, 24px);
+  gap: 24px;
 }
 
 .oem_btm .oem_order .card {
@@ -1009,11 +1023,12 @@ header {
   width: 100%;
 
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 24px;
 }
 
 .promo_btm .card {
+  min-width: 0;
   border-radius: 8px;
   border: 1px solid #c1262e;
   padding: 28px;
@@ -1032,11 +1047,21 @@ header {
 }
 
 .promo_btm .card .text {
+  width: 100%;
+  min-width: 0;
   margin-top: 16px;
 
   display: flex;
   flex-direction: column;
   gap: 12px;
+}
+
+.promo_btm .card .text h3,
+.promo_btm .card .text span {
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 .promo_btm .card .text h4 {
@@ -1051,7 +1076,7 @@ header {
   height: 1px;
 
   position: absolute;
-  bottom: -4;
+  bottom: -4px;
   background-color: #161616;
 }
 
@@ -1128,7 +1153,7 @@ footer {
   justify-content: space-between;
 }
 
-.ftext .finfo>div {
+.ftext .finfo > div {
   width: 50%;
 
   display: flex;
@@ -1137,6 +1162,21 @@ footer {
 }
 
 @media screen and (max-width: 1024px) {
+  .hero_slidebg .slide3 {
+  background-position: 70% center;
+  }
+  
+  .header_i,
+  .hero_i,
+  .brand_i,
+  .quality_i,
+  .global_i,
+  .oem_i,
+  .promo_i,
+  .footer_i {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
 
   /* 해더 */
   header {
@@ -1180,6 +1220,10 @@ footer {
   }
 
   /* 브랜드 섹션 */
+  .brand_slide_i {
+    gap: 24px;
+  }
+
   .brand_top .title h2 {
     font-size: 32px;
     margin-bottom: 20px;
@@ -1214,7 +1258,11 @@ footer {
   }
 
   .quality_btm .left {
-    gap: 24px 16px;
+    gap: 24px;
+  }
+
+  .oem_btm .oem_order {
+    gap: 24px;
   }
 
   .quality_btm .left .cer {
@@ -1264,7 +1312,7 @@ footer {
   .global_btm .export {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 1fr;
-    gap: 16px;
+    gap: 24px;
   }
 
   /* oem 섹션 */
@@ -1281,19 +1329,11 @@ footer {
 
   .promo_btm {
     grid-template-columns: repeat(2, 1fr);
-    gap: 24px 16px;
+    gap: 24px;
   }
 
   .promo_btm .card {
     min-width: 286px;
-  }
-
-  .promo_btm .card .text span {
-    display: block;
-    width: 100%;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
   }
 
   /* 푸터 */
@@ -1321,7 +1361,7 @@ footer {
     gap: 24px;
   }
 
-  .ftext .finfo>div {
+  .ftext .finfo > div {
     width: 100%;
   }
 }
@@ -1366,18 +1406,22 @@ footer {
   /* 히어로 */
   .hero {
     height: 50vh;
-    height: 50svh;
+
     min-height: 420px;
     max-height: 520px;
+    margin-bottom: 100px;
   }
 
   .hero_i .title {
     left: 16px;
     bottom: 24px;
+
     width: calc(100% - 32px);
     padding: 20px;
+
     border: 1px solid rgba(255, 255, 255, 0.32);
     border-radius: 12px;
+
     background-color: rgba(255, 255, 255, 0.42);
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
     backdrop-filter: blur(2px);
@@ -1471,7 +1515,7 @@ footer {
 
   .quality_btm .left {
     grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
+    gap: 12px 16px;
   }
 
   .quality_btm .left .cer {
@@ -1514,7 +1558,7 @@ footer {
 
   .global_btm .export {
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 8px;
+    gap: 16px;
   }
 
   .global_btm .export .card {
@@ -1564,37 +1608,14 @@ footer {
     display: flex;
     justify-content: flex-start;
     gap: 16px;
-    padding-bottom: 12px;
-    overflow-x: auto;
-    overflow-y: hidden;
-    scroll-snap-type: x proximity;
-    scroll-behavior: smooth;
-    overscroll-behavior-inline: contain;
-    -webkit-overflow-scrolling: touch;
-    cursor: grab;
-    user-select: none;
-    touch-action: pan-x;
-    scrollbar-width: none;
-  }
-
-  .oem_btm .oem_order::-webkit-scrollbar {
-    display: none;
-  }
-
-  .oem_btm .oem_order.dragging {
-    cursor: grabbing;
-    scroll-snap-type: none;
-    scroll-behavior: auto;
   }
 
   .oem_btm .oem_order .arrow {
-    display: none;
+    display: flex;
   }
 
   .oem_btm .oem_order .card {
-    flex: 0 0 132px;
     gap: 12px;
-    scroll-snap-align: start;
   }
 
   .oem_btm .oem_order .card .imgbox {
@@ -1687,6 +1708,6 @@ footer {
   }
 
   .oem_btm .oem_order {
-    gap: 12px;
+    gap: 16px;
   }
 }

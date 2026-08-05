@@ -192,6 +192,8 @@ header {
 }
 
 .header_icon .lang > select {
+  width: 64px;
+  padding: 0;
   text-align: center;
   outline: none;
   border: none;
@@ -326,6 +328,10 @@ header {
   align-items: center;
 
   text-align: center;
+}
+
+.oem_info_title span {
+  display: block;
 }
 
 /* oem박스 */
@@ -562,11 +568,6 @@ header {
   font-weight: 500;
 }
 
-.oreder_box .card .card_i span {
-  font-size: 18px;
-  text-align: start;
-}
-
 /* 뮤비(영상) 섹션 */
 .mv {
   width: 100%;
@@ -736,6 +737,16 @@ footer {
 }
 
 @media screen and (max-width: 1024px) {
+  .header_i,
+  .hero_i,
+  .oem_info,
+  .product,
+  .oreder,
+  .mv {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+
   /* 해더 */
   header {
     height: 64px;
@@ -772,12 +783,471 @@ footer {
   }
 
   /* 히어로 */
-.hero{
-  top: 64px
+  .hero {
+    top: 64px;
+    margin-bottom: 160px;
+  }
+
+  .hero_i .btn {
+    gap: 24px;
+    margin-top: 32px;
+  }
+
+  /* OEM 소개 */
+  .oem_info,
+  .product,
+  .oreder {
+    margin-bottom: 120px;
+  }
+
+  .mv {
+    margin-bottom: 160px;
+  }
+
+  .oem_info_i,
+  .product_i,
+  .oreder_i {
+    gap: 48px;
+  }
+
+  .oem_box {
+    width: 100%;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px 16px;
+  }
+
+  .oem_box .card {
+    width: 100%;
+    min-width: 0;
+    min-height: 0;
+    padding: clamp(10px, 1.5vw, 16px) clamp(8px, 1.25vw, 14px);
+    gap: clamp(6px, 1vw, 12px);
+  }
+
+  .oem_box .card .imgbox {
+    width: clamp(52px, 9vw, 96px);
+    flex-shrink: 1;
+  }
+
+  .oem_box .card .text {
+    gap: clamp(4px, 0.6vw, 8px);
+  }
+
+  .oem_box .card .text p {
+    font-size: clamp(14px, 1.75vw, 18px);
+  }
+
+  .oem_box .card .text span {
+    width: 100%;
+    font-size: clamp(11px, 1.35vw, 14px);
+    line-height: 1.35;
+  }
+
+  /* OEM 제품 */
+  .product_tab {
+    width: 100%;
+  }
+
+  .product_tab p {
+    flex: 1 1 0;
+    min-width: 0;
+    padding: 10px 20px;
+    font-size: 18px;
+  }
+
+  .item_box {
+    width: 100%;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px 16px;
+  }
+
+  .item_box .card {
+    min-width: 0;
+    padding: 24px 20px;
+  }
+
+  .item_box .card p {
+    font-size: 18px;
+  }
+
+  /* OEM 진행 절차 */
+  .oreder {
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+
+  .oreder_box {
+    width: 100%;
+  }
+
+  .oreder_box .card {
+    flex: 1 1 0;
+    min-width: 0;
+    gap: 20px;
+  }
+
+  .oreder_box .card .card_i {
+    width: clamp(112px, 14vw, 144px);
+  }
+
+  .oreder_box .arrow {
+    flex-basis: 24px;
+    height: clamp(112px, 14vw, 144px);
+  }
+
+  .oreder_box .card .card_i p {
+    font-size: 17px;
+  }
+
+  .oreder_box .card > span {
+    font-size: 14px;
+  }
+
+  /* 영상 상담 */
+  .mv_i {
+    width:  100%;
+
+    flex-direction: column;
+    align-items: stretch;
+    gap: 32px;
+  }
+
+  .mv_box {
+    width: 100%;
+    margin: auto;
+  }
+
+  .mv_i .text {
+    width: 100%;
+    margin: auto;
+    gap: 24px;
+  }
+
+  .mv_i .text p,
+  .mv_i a {
+    font-size: 18px;
+  }
+
+  /* 푸터 */
+  .footer_i {
+    padding: 0 32px;
+    justify-content: flex-start;
+    gap: 24px;
+  }
+
+  .footer_i .flogo {
+    width: 74px;
+  }
+
+  .footer_i .flogo img {
+    width: 62px;
+  }
+
+  .ftext {
+    width: fit-content;
+    font-size: 14px;
+  }
+
+  .ftext .finfo {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .ftext .finfo > div {
+    width: 100%;
+  }
 }
 
+@media screen and (max-width: 575px) {
+  .header_i,
+  .hero_i,
+  .oem_info,
+  .product,
+  .oreder,
+  .mv,
+  .footer_i {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
 
+  h3 {
+    font-size: 24px;
+  }
 
+  .oem_info,
+  .product,
+  .oreder,
+  .mv {
+    margin-bottom: 100px;
+  }
 
+  .oem_info_i,
+  .product_i,
+  .oreder_i {
+    gap: 36px;
+  }
+
+  /* 헤더 */
+  .header_icon {
+    gap: 12px;
+  }
+
+  /* 히어로 */
+  .hero {
+    top: 0;
+    height: 56vh;
+
+    min-height: 480px;
+    max-height: 600px;
+    margin-top: 64px;
+    margin-bottom: 124px;
+    background-position: 60% center;
+  }
+
+  .hero_i .title {
+    left: 16px;
+    bottom: 24px;
+    width: calc(100% - 32px);
+    padding: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.32);
+    border-radius: 12px;
+    background-color: rgba(255, 255, 255, 0.42);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+  }
+
+  .hero_i .title h2 {
+    font-size: 26px;
+  }
+
+  .hero_i .title p {
+    margin-top: 12px;
+    font-size: 14px;
+  }
+
+  .hero_i .title span {
+    margin: 12px 0;
+    font-size: 14px;
+  }
+
+  .hero_i .btn {
+    margin-top: 16px;
+  }
+
+  .hero_i a {
+    padding: 10px 14px;
+    font-size: 14px;
+  }
+
+  /* OEM 소개 */
+  .oem_info_i h3 {
+    max-width: 460px;
+  }
+
+  .oem_box {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .oem_box .card {
+    width: min(100%, 360px);
+    margin: auto;
+    padding: 28px;
+  }
+
+  .oem_box .card .imgbox {
+    width: 112px;
+  }
+
+  .oem_box .card .text p {
+    font-size: 18px;
+  }
+
+  .oem_box .card .text span {
+    width: 82%;
+    font-size: 14px;
+  }
+
+  /* OEM 제품 */
+  .product_tab {
+    width: 100%;
+    gap: 8px;
+  }
+
+  .product_tab p {
+    flex: 1 1 0;
+    min-width: 0;
+    padding: 9px 8px;
+    font-size: 16px;
+    white-space: nowrap;
+  }
+
+  .item_box {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+  }
+
+  .item_box .card {
+    min-width: 0;
+    padding: 18px 12px;
+    gap: 16px;
+  }
+
+  .item_box .card .imgbox {
+    width: 80%;
+    height: auto;
+    margin: auto;
+    aspect-ratio: 1 / 1;
+  }
+
+  .item_box .card p {
+    margin-bottom: 0;
+    font-size: 15px;
+  }
+
+  .item_box .card span {
+    display: none;
+  }
+
+  /* OEM 진행 절차 */
+  .oreder {
+    padding-top: 56px;
+    padding-bottom: 56px;
+    overflow: hidden;
+  }
+
+  .oreder_box {
+    width: max-content;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 0;
+  }
+
+  .oreder_box .card {
+    width: 160px;
+    flex: 0 0 160px;
+    gap: 20px;
+  }
+
+  .oreder_box .card .card_i {
+    width: 140px;
+    gap: 12px;
+  }
+
+  .oreder_box .card > span {
+    display: block;
+    width: 100%;
+    font-size: 14px;
+  }
+
+  .oreder_box .arrow {
+    flex: 0 0 24px;
+    width: 24px;
+    height: 140px;
+    align-self: flex-start;
+    transform: none;
+  }
+
+  .oreder_box .arrow i {
+    font-size: 20px;
+  }
+
+  .oreder_box .card .card_i p {
+    font-size: 16px;
+  }
+
+  /* 영상 상담 */
+  .mv_i {
+    gap: 24px;
+  }
+
+  .mv_i .text {
+    gap: 20px;
+  }
+
+  .mv_i .text p {
+    font-size: 16px;
+  }
+
+  .mv_i a {
+    padding: 10px 14px;
+    font-size: 16px;
+  }
+
+  /* 푸터 */
+  footer {
+    padding: 40px 0;
+  }
+
+  .footer_i {
+    flex-direction: column;
+    gap: 28px;
+  }
+
+  .ftext {
+    width: 100%;
+    gap: 28px;
+  }
+
+  .ftext .fmenu {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .ftext .fmenu li:not(:last-child)::after {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .hero {
+    min-height: 520px;
+  }
+
+  .hero_i .title {
+    bottom: 16px;
+    padding: 16px;
+  }
+
+  .hero_i .title h2 {
+    font-size: 23px;
+  }
+
+  .hero_i .btn {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .oem_box .card {
+    width: min(100%, 300px);
+    padding: 24px 20px;
+  }
+
+  .oem_box .card .imgbox {
+    width: 96px;
+  }
+
+  .product_tab {
+    gap: 6px;
+  }
+
+  .product_tab p {
+    padding: 8px 4px;
+    font-size: 14px;
+  }
+
+  .item_box {
+    grid-template-columns: 1fr;
+  }
+
+  .item_box .card {
+    padding: 20px;
+  }
+
+  .item_box .card .imgbox {
+    width: 72%;
+  }
 
 }
