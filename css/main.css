@@ -37,6 +37,17 @@ body {
   overflow-x: hidden;
 }
 
+body,
+body * {
+  /*
+    url(): 사용할 커서 이미지 경로
+    21 18: 이미지의 왼쪽 위를 기준으로 실제 클릭되는 지점의 x, y 좌표
+    auto: 커서 이미지를 불러오지 못했을 때 기본 커서 사용
+    !important: 다른 요소에 지정된 cursor: pointer보다 우선 적용
+  */
+  cursor: url("../image/yopokki-cursor-v2.png") 21 18, auto !important;
+}
+
 *,
 *::after,
 *::before {
@@ -70,6 +81,28 @@ i {
 
 h3 {
   font-size: clamp(16px, 1vw, 18px);
+}
+
+.topbtn{
+  width: 56px;
+  height: 56px;
+  border: none;
+  box-shadow: 1px 1px 1px 1px white ;
+  border-radius: 100%;
+  background-color: #c1262e;
+  font-weight: 600;
+  color: white;
+
+  position: fixed;
+  bottom: 5vh;
+  right: 5vh;
+  z-index: 99;
+
+  cursor: pointer;
+}
+
+.topbtn i{
+  color: white;
 }
 
 /* 헤더 */

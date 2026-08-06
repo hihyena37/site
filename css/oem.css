@@ -76,6 +76,28 @@ h3 {
   font-weight: 500;
 }
 
+.topbtn {
+  width: 56px;
+  height: 56px;
+  border: none;
+  box-shadow: 1px 1px 1px 1px white;
+  border-radius: 100%;
+  background-color: #c1262e;
+  font-weight: 600;
+  color: white;
+
+  position: fixed;
+  bottom: 5vh;
+  right: 5vh;
+  z-index: 99;
+
+  cursor: pointer;
+}
+
+.topbtn i {
+  color: white;
+}
+
 /* 해더 */
 header {
   width: 100%;
