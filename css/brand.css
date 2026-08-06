@@ -36,6 +36,11 @@ body {
   word-break: keep-all;
 }
 
+body,
+body * {
+  cursor: url("../image/yopokki-cursor-72.png") 12 10, auto !important;
+}
+
 *,
 *::after,
 *::before {
@@ -149,12 +154,12 @@ header {
 }
 
 .header_i .menu li {
-  font-size: clamp(14px, 1vw, 16px);
+  font-size: clamp(15px, 1.1vw, 18px);
 }
 
 .header_i .menu li a {
   padding: 0 16px;
-  font-weight: 500;
+  font-weight: 600;
 
   position: relative;
   transition: 0.4s;
@@ -589,7 +594,7 @@ header {
 
 .category_i .item_box .card p {
   font-size: clamp(16px, 1.39vw, 20px);
-  font-weight: 500;
+  font-weight: 600;
   margin-bottom: 8px;
 }
 
