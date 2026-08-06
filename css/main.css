@@ -342,7 +342,7 @@ header {
 }
 
 .hero_i .title p {
-  font-size: clamp(16px, 1.6vw, 24px);
+  font-size: clamp(18px, 1.8vw, 24px);
   font-weight: 400;
   margin-top: 32px;
 }
@@ -416,7 +416,17 @@ header {
 }
 
 .brand_top .title p {
+  width: 100%;
+}
+
+.brand_top .title p,
+.quality_i .title p,
+.global_i .title p,
+.oem_i .title p,
+.promo_i .title p {
   width: 80%;
+  font-size: clamp(16px, 1.67vw, 24px);
+  word-break: keep-all;
 }
 
 /* 브랜드 종류 */
@@ -429,7 +439,7 @@ header {
 }
 
 .brand_top .type .imgbox {
-  width: clamp(100px, 14vw, 160px);
+  width: clamp(80px, 12vw, 160px);
   aspect-ratio: 1 / 1;
 
   border-radius: 100%;
@@ -841,13 +851,13 @@ header {
 }
 
 .global_btm .export .card .text .btm p {
-  font-size: 44px;
+  font-size: clamp(24px,4vw,44px);
   font-weight: 800;
   color: #c1262e;
 }
 
 .global_btm .export .card .text .btm span {
-  font-size: 20px;
+  font-size: clamp(12px,2vw,20px);
   font-weight: 500;
 }
 
@@ -1438,7 +1448,7 @@ footer {
 
   .hero_i .title p {
     margin-top: 12px;
-    font-size: 14px;
+    font-size: 16px;
   }
 
   .hero_i .btn {
@@ -1473,7 +1483,7 @@ footer {
   .global_i .title p,
   .oem_i .title p,
   .promo_i .title p {
-    width: 60%;
+    width: 100%;
   }
 
   .brand_top .type {
