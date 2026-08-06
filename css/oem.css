@@ -33,6 +33,7 @@ body {
   font-weight: 400;
   color: #161616;
   line-height: 1.5;
+  word-break: keep-all;
 }
 
 *,
@@ -242,6 +243,26 @@ header {
   background-position: center;
 }
 
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  /* 배경 이미지 위, 히어로 글자 아래에 배치 */
+  z-index: 0;
+
+  /* 왼쪽은 밝게 하고 오른쪽으로 갈수록 투명하게 표시 */
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0.75) 0%,
+    rgba(255, 255, 255, 0.35) 50%,
+    transparent 75%
+  );
+
+  /* 가상 요소가 버튼 클릭이나 터치를 막지 않도록 설정 */
+  pointer-events: none;
+}
+
 .hero_i {
   max-width: 1440px;
   height: 100%;
@@ -270,15 +291,9 @@ header {
 }
 
 .hero_i .title p {
-  font-size: clamp(16px, 1.6vw, 24px);
+  font-size: clamp(18px, 1.8vw, 24px);
   font-weight: 400;
   margin-top: 32px;
-}
-
-.hero_i .title span {
-  display: block;
-  font-size: 20px;
-  margin: 32px 0;
 }
 
 /* 히어로 버튼 */
@@ -995,26 +1010,19 @@ footer {
   /* 히어로 */
   .hero {
     top: 0;
-    height: 56vh;
+    height: 50vh;
 
-    min-height: 480px;
-    max-height: 600px;
-    margin-top: 64px;
+    min-height: 420px;
+    max-height: 520px;
+    margin-top: 0;
     margin-bottom: 124px;
-    background-position: 60% center;
+    background-position: 50% center;
   }
 
   .hero_i .title {
     left: 16px;
     bottom: 24px;
     width: calc(100% - 32px);
-    padding: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.32);
-    border-radius: 12px;
-    background-color: rgba(255, 255, 255, 0.42);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
-    backdrop-filter: blur(2px);
-    -webkit-backdrop-filter: blur(2px);
   }
 
   .hero_i .title h2 {
@@ -1023,12 +1031,7 @@ footer {
 
   .hero_i .title p {
     margin-top: 12px;
-    font-size: 14px;
-  }
-
-  .hero_i .title span {
-    margin: 12px 0;
-    font-size: 14px;
+    font-size: 16px;
   }
 
   .hero_i .btn {
@@ -1203,12 +1206,11 @@ footer {
 
 @media screen and (max-width: 360px) {
   .hero {
-    min-height: 520px;
+    min-height: 460px;
   }
 
   .hero_i .title {
     bottom: 16px;
-    padding: 16px;
   }
 
   .hero_i .title h2 {

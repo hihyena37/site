@@ -33,6 +33,7 @@ body {
   font-weight: 400;
   color: #161616;
   line-height: 1.5;
+  word-break: keep-all;
   overflow-x: hidden;
 }
 
@@ -67,8 +68,8 @@ i {
   width: fit-content;
 }
 
-h3{
-  font-size: clamp(16px,1vw,18px);
+h3 {
+  font-size: clamp(16px, 1vw, 18px);
 }
 
 /* 헤더 */
@@ -226,6 +227,30 @@ header {
   overflow: hidden;
 
   position: relative;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  /* 배경 이미지 위, 히어로 글자 아래에 배치 */
+  z-index: 0;
+
+  /* 왼쪽은 밝게 하고 오른쪽으로 갈수록 투명하게 만드는 그라데이션 */
+  background: linear-gradient(
+    /* 그라데이션이 왼쪽에서 오른쪽으로 진행 */
+    to right,
+    /* 시작 지점: 불투명도 75%의 흰색 */
+    rgba(255, 255, 255, 0.75) 0%,
+    /* 가운데 지점: 불투명도 35%의 흰색 */
+    rgba(255, 255, 255, 0.35) 50%,
+    /* 75% 지점부터 완전히 투명하게 표시 */
+    transparent 75%
+  );
+
+  /* 가상 요소가 히어로의 버튼 클릭이나 터치를 막지 않도록 설정 */
+  pointer-events: none;
 }
 
 /* 배경 슬라이드 영역 */
@@ -426,7 +451,6 @@ header {
 .promo_i .title p {
   width: 80%;
   font-size: clamp(16px, 1.67vw, 24px);
-  word-break: keep-all;
 }
 
 /* 브랜드 종류 */
@@ -851,19 +875,19 @@ header {
 }
 
 .global_btm .export .card .text .btm p {
-  font-size: clamp(24px,4vw,44px);
+  font-size: clamp(24px, 4vw, 44px);
   font-weight: 800;
   color: #c1262e;
 }
 
 .global_btm .export .card .text .btm span {
-  font-size: clamp(12px,2vw,20px);
+  font-size: clamp(12px, 2vw, 20px);
   font-weight: 500;
 }
 
 .global_btm .export .card a {
   display: block;
-  font-size: clamp( 14px, 1.4vw ,20px);
+  font-size: clamp(14px, 1.4vw, 20px);
   background-color: #c1262e;
   color: white;
   padding: 8px 12px;
@@ -1173,9 +1197,9 @@ footer {
 
 @media screen and (max-width: 1024px) {
   .hero_slidebg .slide3 {
-  background-position: 70% center;
+    background-position: 70% center;
   }
-  
+
   .header_i,
   .hero_i,
   .brand_i,
@@ -1427,15 +1451,6 @@ footer {
     bottom: 24px;
 
     width: calc(100% - 32px);
-    padding: 20px;
-
-    border: 1px solid rgba(255, 255, 255, 0.32);
-    border-radius: 12px;
-
-    background-color: rgba(255, 255, 255, 0.42);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
-    backdrop-filter: blur(2px);
-    -webkit-backdrop-filter: blur(2px);
   }
 
   .hero_i .title h2 {
@@ -1504,6 +1519,10 @@ footer {
   .brand_slide_i .item {
     width: calc(100vw - 32px);
     padding: 36px 28px;
+  }
+
+  .brand_slide_i .item p {
+    font-size: 18px;
   }
 
   /* 품질 인증 */
@@ -1676,7 +1695,6 @@ footer {
 
   .hero_i .title {
     bottom: 16px;
-    padding: 16px;
   }
 
   .hero_i .title h2 {
