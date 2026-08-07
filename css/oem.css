@@ -751,39 +751,6 @@ header {
   object-fit: cover;
 }
 
-/* .mv_play {
-  width: 72px;
-  height: 72px;
-  border: none;
-  border-radius: 50%;
-
-  background-color: rgba(193, 38, 46, 0.9);
-  color: white;
-  font-size: 38px;
-  cursor: pointer;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  z-index: 10;
-  transform: translate(-50%, -50%);
-} */
-
-/* .mv_play:hover {
-    background-color: #A01F25;
-    transform: translate(-50%, -50%) scale(1.08);
-}
-
-.mv_play i {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-} */
-
 .mv_i .text {
   display: flex;
   flex-direction: column;
@@ -1098,8 +1065,7 @@ footer {
 
   /* OEM 진행 절차 */
   .oreder {
-    padding-top: 64px;
-    padding-bottom: 64px;
+    padding: 40px 0;
   }
 
   .oreder_box {
@@ -1110,6 +1076,7 @@ footer {
     flex: 1 1 0;
     min-width: 0;
     gap: 20px;
+    margin-bottom: 10px;
   }
 
   .oreder_box .card .card_i {
@@ -1122,7 +1089,7 @@ footer {
   }
 
   .oreder_box .card .card_i p {
-    font-size: 17px;
+    font-size: 16px;
   }
 
   .oreder_box .card > span {
@@ -1368,7 +1335,7 @@ footer {
   /* OEM 진행 절차 */
   .oreder {
     padding-top: 56px;
-    padding-bottom: 56px;
+    padding-bottom: 40px;
     overflow: hidden;
   }
 

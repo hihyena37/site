@@ -11,7 +11,6 @@ $(function () {
   $("header").on("mouseleave", function () {
     submenu.stop().slideUp(400);
   });
-  // 서브메뉴 슬라이드
 
   // click보다 먼저 실행되는 mousedown / 첫 클릭에서 바로 옵션 목록을 열고,
   // preventDefault()로 이미지에 포커스가 먼저 이동하는 기본 동작을 막음
@@ -57,7 +56,6 @@ $(function () {
 
   setOemSwiper();
   $(window).on("resize", setOemSwiper);
-  // top버튼
 
   // 종료
 });

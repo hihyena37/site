@@ -9,7 +9,6 @@ $(function () {
   $("header").on("mouseleave", function () {
     submenu.stop().slideUp(400);
   });
-  // 서브메뉴 슬라이드
 
 
   // click보다 먼저 실행되는 mousedown을 사용해 첫 클릭에서 바로 옵션 목록을 열고,
@@ -30,7 +29,6 @@ $(function () {
       $(this).find(".redcook_desc").stop().slideUp(300);
     },
   });
-  // 레드쿡 설명 박스
 
   // top버튼
   $(window).on("scroll", function(){
@@ -40,7 +38,6 @@ $(function () {
       $(".topbtn").removeClass("show");
     }
   });
-  // top버튼
 
   // 종료
 });
