@@ -109,40 +109,40 @@ h3 {
   font-weight: 500;
 }
 
-.topbtn {
-  width: 56px;
-  height: 56px;
-  border: none;
-  box-shadow: 1px 1px 1px 1px white;
-  border-radius: 100%;
-  background-color: #c1262e;
-  font-weight: 600;
-  color: white;
+/* CTA 버튼 샤이니 효과 */
+.hero_i a,
+.mv_i a {
+  position: relative;
+  overflow: hidden;
+}
 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
-  position: fixed;
-  bottom: 5vh;
-  right: 5vh;
-  z-index: 99;
-
-  opacity: 0;
-  visibility: hidden;
+.hero_i a::before,
+.mv_i a::before {
+  content: "";
+  width: 45%;
+  height: 180%;
+  position: absolute;
+  top: -40%;
+  left: -70%;
+  background: linear-gradient(
+    110deg,
+    transparent,
+    rgba(255, 255, 255, 0.65),
+    transparent
+  );
+  transform: skewX(-20deg);
   pointer-events: none;
-  transition: 0.3s;
 }
 
-.topbtn.show {
-  opacity: 1;
-  visibility: visible;
-  pointer-events: auto;
+.hero_i a:hover::before,
+.mv_i a:hover::before {
+  animation: shiny-sweep 0.6s ease forwards;
 }
 
-.topbtn i {
-  color: white;
+@keyframes shiny-sweep {
+  to {
+    transform: translateX(420%) skewX(-20deg);
+  }
 }
 
 /* 해더 */
@@ -648,9 +648,18 @@ header {
 
 /* 진행절차 박스 */
 .oreder_box {
+  overflow: visible;
+}
+
+.oreder_box .swiper-wrapper {
   display: flex;
   justify-content: center;
   align-items: flex-start;
+  height: auto;
+}
+
+.oreder_box .swiper-scrollbar {
+  display: none;
 }
 
 /* 진행절차 카드 */
@@ -872,6 +881,75 @@ footer {
   display: flex;
   flex-direction: column;
   gap: 8px;
+}
+
+/* 탑 버튼 */
+.topbtn {
+  width: 56px;
+  height: 56px;
+  border: none;
+  box-shadow: 1px 1px 1px 1px white;
+  border-radius: 100%;
+  background-color: #c1262e;
+  font-weight: 600;
+  color: white;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  position: fixed;
+  bottom: 5vh;
+  right: 5vh;
+  z-index: 99;
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: 0.3s;
+}
+
+.topbtn.show {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.topbtn i {
+  color: white;
+}
+
+@media screen and (min-width: 1025px) {
+  .oreder_box {
+    overflow: visible !important;
+    padding-bottom: 0 !important;
+  }
+
+  .oreder_box .swiper-wrapper {
+    width: 100% !important;
+    height: auto !important;
+    display: flex !important;
+    align-items: flex-start !important;
+    justify-content: center !important;
+    gap: 24px !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  .oreder_box .card {
+    width: auto !important;
+    flex: 0 1 220px !important;
+  }
+
+  .oreder_box .arrow {
+    width: auto !important;
+    flex: 0 1 clamp(16px, 3vw, 48px) !important;
+  }
+
+  .oreder_box .swiper-scrollbar {
+    display: none !important;
+  }
 }
 
 @media screen and (max-width: 1024px) {
@@ -1104,6 +1182,38 @@ footer {
   .ftext .finfo > div {
     width: 100%;
   }
+
+  .oreder_box {
+    overflow: hidden;
+    padding-bottom: 32px;
+  }
+
+  .oreder_box .swiper-wrapper {
+    justify-content: flex-start;
+    gap: 0;
+  }
+
+  .oreder_box .swiper-scrollbar {
+    display: block;
+    height: 4px;
+    background: #fae9bd;
+    border-radius: 999px;
+  }
+
+  .oreder_box .swiper-scrollbar-drag {
+    background: #c1262e;
+    border-radius: 999px;
+  }
+
+  .oreder_box .card {
+    width: 220px;
+    flex: 0 0 220px;
+  }
+
+  .oreder_box .arrow {
+    width: 28px;
+    flex: 0 0 28px;
+  }
 }
 
 @media screen and (max-width: 575px) {
@@ -1263,7 +1373,10 @@ footer {
   }
 
   .oreder_box {
-    width: max-content;
+    width: 100%;
+  }
+
+  .oreder_box .swiper-wrapper {
     flex-direction: row;
     align-items: flex-start;
     justify-content: flex-start;
@@ -1271,13 +1384,13 @@ footer {
   }
 
   .oreder_box .card {
-    width: 160px;
-    flex: 0 0 160px;
+    width: 140px;
+    flex: 0 0 140px;
     gap: 20px;
   }
 
   .oreder_box .card .card_i {
-    width: 140px;
+    width: 120px;
     gap: 12px;
   }
 

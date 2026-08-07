@@ -115,40 +115,40 @@ h3 {
   font-size: clamp(16px, 1vw, 18px);
 }
 
-.topbtn {
-  width: 56px;
-  height: 56px;
-  border: none;
-  box-shadow: 1px 1px 1px 1px white;
-  border-radius: 100%;
-  background-color: #c1262e;
-  font-weight: 600;
-  color: white;
+/* CTA 버튼 샤이니 효과 */
+.hero_i a,
+.global_btm .export .card a {
+  position: relative;
+  overflow: hidden;
+}
 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
-  position: fixed;
-  bottom: 5vh;
-  right: 5vh;
-  z-index: 99;
-
-  opacity: 0;
-  visibility: hidden;
+.hero_i a::before,
+.global_btm .export .card a::before {
+  content: "";
+  width: 45%;
+  height: 180%;
+  position: absolute;
+  top: -40%;
+  left: -70%;
+  background: linear-gradient(
+    110deg,
+    transparent,
+    rgba(255, 255, 255, 0.65),
+    transparent
+  );
+  transform: skewX(-20deg);
   pointer-events: none;
-  transition: 0.3s;
 }
 
-.topbtn.show {
-  opacity: 1;
-  visibility: visible;
-  pointer-events: auto;
+.hero_i a:hover::before,
+.global_btm .export .card a:hover::before {
+  animation: shiny-sweep 0.6s ease forwards;
 }
 
-.topbtn i {
-  color: white;
+@keyframes shiny-sweep {
+  to {
+    transform: translateX(420%) skewX(-20deg);
+  }
 }
 
 /* 헤더 */
@@ -1086,13 +1086,25 @@ header {
   font-size: 24px;
 }
 
+.oem_btm > h3 {
+  font-size: clamp(24px, 1.8vw, 28px);
+  font-weight: 600;
+}
+
 .oem_btm .oem_order {
   width: 100%;
+  overflow: visible;
+}
 
-  display: flex;
+.oem_btm .oem_order .swiper-wrapper {
   align-items: center;
   justify-content: space-between;
   gap: 24px;
+  height: auto;
+}
+
+.oem_btm .oem_order .swiper-scrollbar {
+  display: none;
 }
 
 .oem_btm .oem_order .card {
@@ -1118,7 +1130,7 @@ header {
 }
 
 .oem_btm .oem_order .card p {
-  font-size: clamp(16px, 1.6vw, 24px);
+  font-size: clamp(18px, 1.6vw, 24px);
 }
 
 .oem_btm .oem_order .card .imgbox {
@@ -1333,7 +1345,75 @@ footer {
   gap: 8px;
 }
 
+/* 탑 버튼 */
+.topbtn {
+  width: 56px;
+  height: 56px;
+  border: none;
+  box-shadow: 1px 1px 1px 1px white;
+  border-radius: 100%;
+  background-color: #c1262e;
+  font-weight: 600;
+  color: white;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  position: fixed;
+  bottom: 5vh;
+  right: 5vh;
+  z-index: 99;
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: 0.3s;
+}
+
+.topbtn.show {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.topbtn i {
+  color: white;
+}
+
 @media screen and (max-width: 1024px) {
+  /* oem스크롤 */
+  .oem_btm .oem_order {
+    overflow: hidden;
+    padding-bottom: 40px;
+  }
+
+  .oem_btm .oem_order .swiper-wrapper {
+    justify-content: flex-start;
+    gap: 0;
+  }
+
+  .oem_btm .oem_order .swiper-scrollbar {
+    display: block;
+    height: 4px;
+    background: #fae9bd;
+    border-radius: 999px;
+  }
+
+  .oem_btm .oem_order .swiper-scrollbar-drag {
+    background: #c1262e;
+    border-radius: 999px;
+  }
+
+  .oem_btm .oem_order .card {
+    flex: 0 0 160px;
+  }
+
+  .oem_btm .oem_order .arrow {
+    flex: 0 0 28px;
+  }
+
   .topbtn {
     width: 48px;
     height: 48px;
@@ -1574,7 +1654,30 @@ footer {
   }
 }
 
+@media screen and (min-width: 576px) and (max-width: 1024px) {
+  .quality_btm .right .imgbg p {
+    font-size: clamp(18px, 2.2vw, 22px);
+    line-height: 1.45;
+  }
+
+  .quality_btm .right .imgbox img {
+    object-position: center 80%;
+  }
+}
+
 @media screen and (max-width: 575px) {
+  .oem_btm .oem_order .card {
+    flex-basis: 120px;
+  }
+
+  .oem_btm > h3 {
+    font-size: 20px;
+  }
+
+  .oem_btm .oem_order .card p {
+    font-size: 16px;
+  }
+
   .topbtn {
     width: 42px;
     height: 42px;
@@ -1818,10 +1921,10 @@ footer {
     font-size: 20px;
   }
 
-  .oem_btm .oem_order {
+  .oem_btm .oem_order .swiper-wrapper {
     display: flex;
     justify-content: flex-start;
-    gap: 16px;
+    gap: 0;
   }
 
   .oem_btm .oem_order .arrow {
@@ -1920,7 +2023,7 @@ footer {
     font-size: 11px;
   }
 
-  .oem_btm .oem_order {
-    gap: 16px;
+  .oem_btm .oem_order .swiper-wrapper {
+    gap: 0;
   }
 }

@@ -109,40 +109,40 @@ h3 {
   font-weight: 500;
 }
 
-.topbtn {
-  width: 56px;
-  height: 56px;
-  border: none;
-  box-shadow: 1px 1px 1px 1px white;
-  border-radius: 100%;
-  background-color: #c1262e;
-  font-weight: 600;
-  color: white;
+/* CTA 버튼 샤이니 효과 */
+.hero_i a,
+.oem_tab .right {
+  position: relative;
+  overflow: hidden;
+}
 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
-  position: fixed;
-  bottom: 5vh;
-  right: 5vh;
-  z-index: 99;
-
-  opacity: 0;
-  visibility: hidden;
+.hero_i a::before,
+.oem_tab .right::before {
+  content: "";
+  width: 45%;
+  height: 180%;
+  position: absolute;
+  top: -40%;
+  left: -70%;
+  background: linear-gradient(
+    110deg,
+    transparent,
+    rgba(255, 255, 255, 0.65),
+    transparent
+  );
+  transform: skewX(-20deg);
   pointer-events: none;
-  transition: 0.3s;
 }
 
-.topbtn.show {
-  opacity: 1;
-  visibility: visible;
-  pointer-events: auto;
+.hero_i a:hover::before,
+.oem_tab .right:hover::before {
+  animation: shiny-sweep 0.6s ease forwards;
 }
 
-.topbtn i {
-  color: white;
+@keyframes shiny-sweep {
+  to {
+    transform: translateX(420%) skewX(-20deg);
+  }
 }
 
 /* 헤더 */
@@ -574,7 +574,7 @@ header {
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
 
   position: absolute;
-  top: 80%;
+  top: 90%;
   left: 50%;
   transform: translateX(-50%);
   z-index: 10;
@@ -1076,6 +1076,43 @@ footer {
   gap: 8px;
 }
 
+/* 탑 버튼 */
+.topbtn {
+  width: 56px;
+  height: 56px;
+  border: none;
+  box-shadow: 1px 1px 1px 1px white;
+  border-radius: 100%;
+  background-color: #c1262e;
+  font-weight: 600;
+  color: white;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  position: fixed;
+  bottom: 5vh;
+  right: 5vh;
+  z-index: 99;
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: 0.3s;
+}
+
+.topbtn.show {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.topbtn i {
+  color: white;
+}
+
 @media screen and (max-width: 1024px) {
   .topbtn {
     width: 48px;
@@ -1268,6 +1305,39 @@ footer {
 
   .ftext .finfo > div {
     width: 100%;
+  }
+}
+
+@media screen and (min-width: 576px) and (max-width: 1024px) {
+  .brand_box .card {
+    gap: clamp(16px, 3vw, 32px);
+  }
+
+  .brand_box .card .typeimg {
+    width: clamp(100px, 15vw, 160px);
+    min-width: 100px;
+    flex: 0 1 clamp(100px, 15vw, 160px);
+  }
+
+  .brand_box .card > p {
+    min-width: 0;
+    flex: 1 1 0;
+    font-size: clamp(14px, 1.6vw, 16px);
+  }
+
+  .brand_box .card .imgbox {
+    width: clamp(200px, 26vw, 280px);
+    min-width: 160px;
+    height: auto;
+    flex: 0 1 clamp(200px, 26vw, 280px);
+    overflow: hidden;
+    aspect-ratio: 4 / 3;
+  }
+
+  .brand_box .card .imgbox img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 }
 
@@ -1569,35 +1639,3 @@ footer {
   }
 }
 
-@media screen and (min-width: 576px) and (max-width: 1024px) {
-  .brand_box .card {
-    gap: clamp(16px, 3vw, 32px);
-  }
-
-  .brand_box .card .typeimg {
-    width: clamp(100px, 15vw, 160px);
-    min-width: 100px;
-    flex: 0 1 clamp(100px, 15vw, 160px);
-  }
-
-  .brand_box .card > p {
-    min-width: 0;
-    flex: 1 1 0;
-    font-size: clamp(14px, 1.6vw, 16px);
-  }
-
-  .brand_box .card .imgbox {
-    width: clamp(200px, 26vw, 280px);
-    min-width: 160px;
-    height: auto;
-    flex: 0 1 clamp(200px, 26vw, 280px);
-    overflow: hidden;
-    aspect-ratio: 4 / 3;
-  }
-
-  .brand_box .card .imgbox img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-}

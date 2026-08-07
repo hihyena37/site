@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OEM | (주)영풍</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css">
     <link rel="stylesheet" href="../css/oem.css">
     <link rel="icon" type="image/png" sizes="32x32" href="../favicon/favicon-32x32.png">
     <link
@@ -15,6 +16,7 @@
       crossorigin="anonymous"
     ></script>
     <script src="../script/jquery-4.0.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
     <script src="../script/oem.js"></script>
   </head>
   <body>
@@ -346,9 +348,10 @@
       <div class="oreder_i">
         <h3>OEM 진행 절차</h3>
         <!-- 진행절차 박스 -->
-        <div class="oreder_box">
+        <div class="oreder_box swiper">
+          <div class="swiper-wrapper">
           <!-- 진행절차 카드 -->
-          <div class="card">
+          <div class="card swiper-slide">
             <div class="card_i">
               <div class="imgbox">
                 <img src="../image/oem_order1.png" alt="접수">
@@ -358,11 +361,11 @@
             <span> 생산을 희망하는 제품 유형과 기본 정보를 접수합니다. </span>
           </div>
 
-          <div class="arrow">
+          <div class="arrow swiper-slide">
             <i class="bi bi-chevron-right"></i>
           </div>
 
-          <div class="card">
+          <div class="card swiper-slide">
             <div class="card_i">
               <div class="imgbox">
                 <img src="../image/oem_order2.png" alt="상담">
@@ -374,11 +377,11 @@
             </span>
           </div>
 
-          <div class="arrow">
+          <div class="arrow swiper-slide">
             <i class="bi bi-chevron-right"></i>
           </div>
 
-          <div class="card">
+          <div class="card swiper-slide">
             <div class="card_i">
               <div class="imgbox">
                 <img src="../image/oem_order3.png" alt="샘플">
@@ -390,11 +393,11 @@
             </span>
           </div>
 
-          <div class="arrow">
+          <div class="arrow swiper-slide">
             <i class="bi bi-chevron-right"></i>
           </div>
 
-          <div class="card">
+          <div class="card swiper-slide">
             <div class="card_i">
               <div class="imgbox">
                 <img src="../image/oem_order4.png" alt="협의">
@@ -404,11 +407,11 @@
             <span> 최종 사양, 생산 일정, 납품 조건을 협의합니다. </span>
           </div>
 
-          <div class="arrow">
+          <div class="arrow swiper-slide">
             <i class="bi bi-chevron-right"></i>
           </div>
 
-          <div class="card">
+          <div class="card swiper-slide">
             <div class="card_i">
               <div class="imgbox">
                 <img src="../image/oem_order5.png" alt="납품">
@@ -417,6 +420,8 @@
             </div>
             <span> 확정된 일정에 따라 제품을 생산하고 납품을 진행합니다. </span>
           </div>
+          </div>
+          <div class="swiper-scrollbar"></div>
         </div>
       </div>
     </section>

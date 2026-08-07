@@ -27,6 +27,36 @@ $(function () {
       $(".topbtn").removeClass("show");
     }
   });
+
+  // OEM 진행 절차 Swiper
+  let orderSwiper;
+
+  function setOrderSwiper() {
+    if ($(window).width() <= 1024 && !orderSwiper) {
+      orderSwiper = new Swiper(".oreder_box", {
+        slidesPerView: "auto",
+        spaceBetween: 16,
+        grabCursor: true,
+        scrollbar: {
+          el: ".oreder_box .swiper-scrollbar",
+          draggable: true,
+        },
+        breakpoints: {
+          576: {
+            spaceBetween: 16,
+          },
+        },
+      });
+    } else if ($(window).width() > 1024 && orderSwiper) {
+      orderSwiper.slideTo(0, 0);
+      orderSwiper.destroy(true, true);
+      $(".oreder_box .swiper-wrapper, .oreder_box .swiper-slide").removeAttr("style");
+      orderSwiper = undefined;
+    }
+  }
+
+  setOrderSwiper();
+  $(window).on("resize", setOrderSwiper);
   // top버튼
 
 

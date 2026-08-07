@@ -29,6 +29,34 @@ $(function () {
       $(".topbtn").removeClass("show");
     }
   });
+
+  // OEM 진행 절차 Swiper
+  let oemSwiper;
+
+  function setOemSwiper() {
+    if ($(window).width() <= 1024 && !oemSwiper) {
+      oemSwiper = new Swiper(".oem_order", {
+        slidesPerView: "auto",
+        spaceBetween: 16,
+        grabCursor: true,
+        scrollbar: {
+          el: ".oem_order .swiper-scrollbar",
+          draggable: true,
+        },
+        breakpoints: {
+          576: {
+            spaceBetween: 24,
+          },
+        },
+      });
+    } else if ($(window).width() > 1024 && oemSwiper) {
+      oemSwiper.destroy(true, true);
+      oemSwiper = undefined;
+    }
+  }
+
+  setOemSwiper();
+  $(window).on("resize", setOemSwiper);
   // top버튼
 
   // 종료
