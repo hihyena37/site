@@ -875,6 +875,12 @@ footer {
 }
 
 @media screen and (max-width: 1024px) {
+  .topbtn {
+    width: 48px;
+    height: 48px;
+    font-size: 14px;
+  }
+
   .header_i,
   .hero_i,
   .oem_info,
@@ -1101,6 +1107,14 @@ footer {
 }
 
 @media screen and (max-width: 575px) {
+  .topbtn {
+    width: 42px;
+    height: 42px;
+    font-size: 12px;
+    right: 3vh;
+    bottom: 3vh;
+  }
+
   .header_i,
   .hero_i,
   .oem_info,

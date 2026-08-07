@@ -1077,6 +1077,12 @@ footer {
 }
 
 @media screen and (max-width: 1024px) {
+  .topbtn {
+    width: 48px;
+    height: 48px;
+    font-size: 14px;
+  }
+
   .header_i,
   .hero_i,
   .brand_info,
@@ -1266,6 +1272,14 @@ footer {
 }
 
 @media screen and (max-width: 575px) {
+  .topbtn {
+    width: 42px;
+    height: 42px;
+    font-size: 12px;
+    right: 3vh;
+    bottom: 3vh;
+  }
+
   /* 공통 여백 */
   .header_i,
   .hero_i,
@@ -1364,7 +1378,11 @@ footer {
   }
 
   .redcook_box .left {
-    gap: 20px;
+    gap: 16px;
+  }
+
+  .redcook_trigger{
+    font-size: 14px;
   }
 
   /* 카테고리 / OEM 탭 */

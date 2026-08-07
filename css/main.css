@@ -1334,6 +1334,12 @@ footer {
 }
 
 @media screen and (max-width: 1024px) {
+  .topbtn {
+    width: 48px;
+    height: 48px;
+    font-size: 14px;
+  }
+
   .hero_slidebg .slide3 {
     background-position: 70% center;
   }
@@ -1491,6 +1497,32 @@ footer {
     gap: 24px;
   }
 
+.global_btm .export .card {
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 12px 0;
+  padding: 24px 0;
+}
+
+  .global_btm .export .card .text .top,
+  .global_btm .export .card:nth-child(1) .text .top {
+    width: 70%;
+    min-height: 2.6em;
+    line-height: 1.3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .global_btm .export .card .tel {
+    font-size: 14px;
+  }
+
+  .global_btm .export .card a{
+  padding: 6px 16px;
+
+  }
+
   /* oem 섹션 */
   .oem_i .title h2 {
     font-size: 32px;
@@ -1543,6 +1575,14 @@ footer {
 }
 
 @media screen and (max-width: 575px) {
+  .topbtn {
+    width: 42px;
+    height: 42px;
+    font-size: 12px;
+    right: 3vh;
+    bottom: 3vh;
+  }
+
   /* 공통 여백 */
   .header_i,
   .hero_i,
@@ -1760,14 +1800,17 @@ footer {
     font-size: 28px;
   }
 
-  .global_btm .export .card .text .btm span,
-  .global_btm .export .card .tel {
+  .global_btm .export .card .text .btm span {
     font-size: 13px;
   }
 
-  .global_btm .export .card a {
-    padding: 6px 8px;
+  .global_btm .export .card .tel {
     font-size: 12px;
+  }
+
+  .global_btm .export .card a {
+    padding: 4px 8px;
+    font-size: 11px;
   }
 
   /* OEM */
@@ -1873,8 +1916,8 @@ footer {
   }
 
   .global_btm .export .card a {
-    padding: 7px 9px;
-    font-size: 16px;
+    padding: 4px 7px;
+    font-size: 11px;
   }
 
   .oem_btm .oem_order {
