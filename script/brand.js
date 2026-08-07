@@ -32,5 +32,15 @@ $(function () {
   });
   // 레드쿡 설명 박스
 
+  // top버튼
+  $(window).on("scroll", function(){
+    if($(this).scrollTop() > 200){
+      $(".topbtn").addClass("show");
+    }else{
+      $(".topbtn").removeClass("show");
+    }
+  });
+  // top버튼
+
   // 종료
 });

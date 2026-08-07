@@ -4,6 +4,10 @@
   font-weight: 300;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 @font-face {
   font-family: "pre";
   src: url(../font/Pretendard-Regular.otf);
@@ -111,12 +115,26 @@ h3 {
   font-weight: 600;
   color: white;
 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
   position: fixed;
   bottom: 5vh;
   right: 5vh;
   z-index: 99;
 
-  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: 0.3s;
+}
+
+.topbtn.show {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
 }
 
 .topbtn i {
