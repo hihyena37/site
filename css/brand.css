@@ -6,6 +6,8 @@
 
 html {
   scroll-behavior: smooth;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 @font-face {
@@ -38,6 +40,8 @@ body {
   color: #161616;
   line-height: 1.5;
   word-break: keep-all;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 body,
