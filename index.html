@@ -5,11 +5,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>(주)영풍</title>
+  <link rel="stylesheet" href="./aos-master/dist/aos.css">
   <link rel="stylesheet" href="./css/main.css">
   <link rel="icon" type="image/png" sizes="32x32" href="../site/favicon/favicon-32x32.png">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
   <script src="https://kit.fontawesome.com/6f10443e5d.js" crossorigin="anonymous"></script>
   <script src="./script/jquery-4.0.0.min.js"></script>
+  <script src="./aos-master/dist/aos.js"></script>
   <script src="./script/main.js"></script>
   <!--
     defer(연기하다) :“스크립트 파일은 미리 받아두되, HTML을 모두 읽은 후 실행”
@@ -200,7 +202,7 @@
       <!-- 브랜드 탑 -->
       <div class="brand_top">
         <!-- 브랜드 타이틀 -->
-        <a href="./sub/brand.html" class="title">
+        <a data-aos="fade-up" href="./sub/brand.html" class="title">
           <h2>브랜드·제품 소개 <i class="fa-solid fa-circle-right"></i></h2>
           <p>
             어머니의 정성스런 손 맛을 전해드리기 위한 고객과의 약속, 함께
@@ -209,7 +211,7 @@
         </a>
 
         <!-- 브랜드 종류 -->
-        <div class="type">
+        <div data-aos="fade-up" class="type">
           <a href="#" class="imgbox">
             <img src="./image/brand1.png" alt="brnad1">
           </a>
@@ -223,7 +225,7 @@
       </div>
 
       <!-- 브랜드 슬라이드 -->
-      <div class="brand_slide">
+      <div data-aos="fade-up" class="brand_slide">
         <div class="brand_slide_i">
           <!-- 슬라이드 아이템 -->
           <a href="#" class="item">
@@ -376,7 +378,7 @@
   <section class="quality">
     <div class="quality_i">
       <!-- 퀄리티 타이틀 -->
-      <a href="#" class="title">
+      <a data-aos="fade-up" href="#" class="title">
         <h2>품질·인증 <i class="fa-solid fa-circle-right q_ibtn"></i></h2>
         <p>
           철저한 품질관리와 국제 인증을 바탕으로 <br>
@@ -387,7 +389,7 @@
       <!-- 퀄리티 바텀 -->
       <div class="quality_btm">
         <!-- 퀄리티 바텀왼쪽 -->
-        <div class="left">
+        <div data-aos="fade-right" class="left">
           <!-- 퀄리티 인증 -->
           <div class="cer">
             <div class="imgbox">
@@ -471,7 +473,7 @@
         </div>
 
         <!-- 퀄리티 바텀오른쪽 -->
-        <div class="right">
+        <div data-aos="fade-left" class="right">
           <div class="imgbox">
             <img src="./image/quality_right.jpg" alt="qright">
           </div>
@@ -494,7 +496,7 @@
   <section class="global">
     <div class="global_i">
       <!-- 글로벌 타이틀 -->
-      <a href="#" class="title">
+      <a data-aos="fade-up" href="#" class="title">
         <h2>글로벌 비즈니스 <i class="fa-solid fa-circle-right"></i></h2>
         <p>
           전 세계 100여 개국에 K-FOOD의 맛을 전합니다. 지속적으로 성장하고
@@ -505,17 +507,17 @@
       <!-- 글로벌 바텀 -->
       <div class="global_btm">
         <!-- 지도 -->
-        <a href="#" class="map">
+        <a data-aos="zoom-in" href="#" class="map">
           <img src="./image/global_map.png" alt="map">
         </a>
 
         <!-- 화살표 -->
-        <div class="arrow">
+        <div data-aos="fade-right" class="arrow">
           <img src="./image/arrow_bold.png" alt="arrow_bold">
         </div>
 
         <!-- 수출박스 -->
-        <div class="export">
+        <div data-aos="fade-left" class="export">
           <!-- 수출 카드 -->
           <div class="card">
             <img src="./image/lang.png" alt="global">
@@ -561,13 +563,13 @@
   <section class="oem">
     <div class="oem_i">
       <!-- oem 타이틀 -->
-      <a href="./sub/oem.html" class="title">
+      <a data-aos="fade-up" href="./sub/oem.html" class="title">
         <h2>OEM <i class="fa-solid fa-circle-right"></i></h2>
         <p>고객사의 브랜드 가치를 높이는 최적의 OEM 솔루션을 제공합니다.</p>
       </a>
 
       <!-- oem 바텀 -->
-      <div class="oem_btm">
+      <div data-aos="fade-up" class="oem_btm">
         <h3>진행 절차</h3>
         <!-- oem 진행순서 -->
         <div class="oem_order">
@@ -632,13 +634,13 @@
   <section class="promo">
     <div class="promo_i">
       <!-- 프로모션 타이틀 -->
-      <a href="#" class="title">
+      <a data-aos="fade-up" href="#" class="title">
         <h2>홍보센터 <i class="fa-solid fa-circle-right"></i></h2>
         <p>(주)영풍의 다양한 소식과 이야기를 전합니다.</p>
       </a>
 
       <!-- 프로모션 바텀 -->
-      <div class="promo_btm">
+      <div data-aos="fade-up" class="promo_btm">
         <!-- 프로모션 카드 -->
         <a href="#" class="card">
           <div class="imgbox">

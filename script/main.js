@@ -1,4 +1,6 @@
 $(function () {
+  AOS.init(); // 선언
+  
   // 서브메뉴 슬라이드
   let submenu = $(".submenu_bg, .header_i .submenu");
 
@@ -20,11 +22,11 @@ $(function () {
   });
 
   // top버튼
-  $(window).on("scroll", function(){
-    if($(this).scrollTop() > 200){
-        $(".topbtn").addClass("show");
-    } else{
-        $(".topbtn").removeClass("show");
+  $(window).on("scroll", function () {
+    if ($(this).scrollTop() > 200) {
+      $(".topbtn").addClass("show");
+    } else {
+      $(".topbtn").removeClass("show");
     }
   });
   // top버튼
