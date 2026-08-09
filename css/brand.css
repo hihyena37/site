@@ -671,6 +671,7 @@ header {
 /* 카테고리 아이템 박스 */
 .category_i .item_pages {
   position: relative;
+  scroll-margin-top: 120px;
 }
 
 .category_i .item_box {
@@ -877,6 +878,7 @@ header {
 
 /* OEM 아이템 박스 */
 .oem_i .item_pages {
+  scroll-margin-top: 120px;
   position: relative;
 }
 
