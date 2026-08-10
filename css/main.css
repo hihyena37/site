@@ -39,6 +39,7 @@ body {
 }
 
 html {
+  scroll-behavior: smooth;
   max-width: 100%;
   overflow-x: hidden;
 }
@@ -54,10 +55,6 @@ body * {
   cursor:
     url("../image/yopokki-cursor-72.png") 12 10,
     auto !important;
-}
-
-html {
-  scroll-behavior: smooth;
 }
 
 /* 클릭 가능한 요소에서는 한입 베어 문 떡볶이 커서 사용 */
