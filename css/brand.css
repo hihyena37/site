@@ -124,12 +124,10 @@ h3 {
   position: absolute;
   top: -40%;
   left: -70%;
-  background: linear-gradient(
-    110deg,
-    transparent,
-    rgba(255, 255, 255, 0.65),
-    transparent
-  );
+  background: linear-gradient(110deg,
+      transparent,
+      rgba(255, 255, 255, 0.65),
+      transparent);
   transform: skewX(-20deg);
   pointer-events: none;
 }
@@ -155,12 +153,25 @@ header {
   left: 0;
   z-index: 999;
 
-  background-color: rgba(255, 255, 255, 0.7);
+  background-color: #fff;
   backdrop-filter: blur(6px);
   /* backdrop: 배경 */
   /* backdrop-filter / 뒤에 있는 요소 불투명하게 보이기 */
-  -webkit-backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(8px);
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+
+  transition: .4s;
+}
+
+/* 헤더숨김 */
+.header_hide {
+  transform: translateY(-100%);
+  box-shadow: none;
+}
+
+/* 헤더보기 */
+.header_show {
+  background-color: #ffffff02;
 }
 
 .header_i {
@@ -198,11 +209,11 @@ header {
   font-size: clamp(14px, 1.15vw, 18px);
 }
 
-.header_i .menu > li:not(:nth-child(2)) > a {
+.header_i .menu>li:not(:nth-child(2))>a {
   opacity: 0.6;
 }
 
-.header_i .menu > li {
+.header_i .menu>li {
   width: clamp(105px, 10vw, 140px);
   flex-shrink: 1;
   text-align: center;
@@ -234,12 +245,12 @@ header {
   bottom: 0;
 }
 
-.header_i .menu > li:hover > a {
+.header_i .menu>li:hover>a {
   color: #c1262e;
   opacity: 1;
 }
 
-.header_i .menu > li:hover > a::after {
+.header_i .menu>li:hover>a::after {
   width: 100%;
 }
 
@@ -314,7 +325,7 @@ header {
   font-weight: 300;
 }
 
-.header_icon .lang > select {
+.header_icon .lang>select {
   width: 64px;
   padding: 0;
   text-align: center;
@@ -374,12 +385,10 @@ header {
   z-index: 0;
 
   /* 왼쪽은 밝게 하고 오른쪽으로 갈수록 투명하게 표시 */
-  background: linear-gradient(
-    to right,
-    rgba(255, 255, 255, 0.75) 0%,
-    rgba(255, 255, 255, 0.35) 50%,
-    transparent 75%
-  );
+  background: linear-gradient(to right,
+      rgba(255, 255, 255, 0.75) 0%,
+      rgba(255, 255, 255, 0.35) 50%,
+      transparent 75%);
 
   /* 가상 요소가 버튼 클릭이나 터치를 막지 않도록 설정 */
   pointer-events: none;
@@ -1070,7 +1079,7 @@ footer {
   justify-content: space-between;
 }
 
-.ftext .finfo > div {
+.ftext .finfo>div {
   width: 50%;
 
   display: flex;
@@ -1130,6 +1139,7 @@ footer {
     padding-left: 32px;
     padding-right: 32px;
   }
+
   /* 해더 */
   header {
     height: 64px;
@@ -1209,7 +1219,7 @@ footer {
     gap: 24px;
   }
 
-  .brand_box .card p{
+  .brand_box .card p {
     text-align: start;
   }
 
@@ -1305,7 +1315,7 @@ footer {
     gap: 24px;
   }
 
-  .ftext .finfo > div {
+  .ftext .finfo>div {
     width: 100%;
   }
 }
@@ -1321,7 +1331,7 @@ footer {
     flex: 0 1 clamp(100px, 15vw, 160px);
   }
 
-  .brand_box .card > p {
+  .brand_box .card>p {
     min-width: 0;
     flex: 1 1 0;
     font-size: clamp(14px, 1.6vw, 16px);
@@ -1435,7 +1445,7 @@ footer {
     gap: 20px;
   }
 
-  .brand_box .card > p {
+  .brand_box .card>p {
     text-align: center;
   }
 
@@ -1453,7 +1463,7 @@ footer {
     gap: 16px;
   }
 
-  .redcook_trigger{
+  .redcook_trigger {
     font-size: 14px;
   }
 
@@ -1640,4 +1650,3 @@ footer {
     padding: 6px 10px;
   }
 }
-

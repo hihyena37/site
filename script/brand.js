@@ -1,4 +1,24 @@
 $(function () {
+  // 헤더스크롤
+  let lastScrollTop = 0;
+  let header = $("header");
+  let headerHeight = header.outerHeight();
+  $(window).on('scroll', function () {
+    let scrollTop = $(window).scrollTop();
+
+    if (scrollTop <= headerHeight) {
+      header.removeClass("header_hide");
+      header.removeClass("header_show");
+    } else if (scrollTop > lastScrollTop) {
+      header.addClass("header_hide");
+      header.removeClass("header_show");
+    } else {
+      header.addClass("header_show");
+      header.removeClass("header_hide");
+    }
+    lastScrollTop = scrollTop;
+  });
+  
   // 서브메뉴 슬라이드
   let submenu = $(".submenu_bg, .header_i .submenu");
 
