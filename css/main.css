@@ -44,8 +44,11 @@ html {
   overflow-x: hidden;
 }
 
+html,
 body,
-body * {
+body *,
+body *::before,
+body *::after {
   /*
     url(): 사용할 커서 이미지 경로
     21 18: 이미지의 왼쪽 위를 기준으로 실제 클릭되는 지점의 x, y 좌표
@@ -73,7 +76,11 @@ label *,
 .header_icon .lang,
 .header_icon .lang *,
 .redcook_trigger,
-.redcook_trigger * {
+.redcook_trigger *,
+.header_ham,
+.header_ham *,
+.header_ham *::before,
+.header_ham *::after {
   cursor: url("../image/tteokbokki-bite-cursor-72.png") 12 10, pointer !important;
 }
 

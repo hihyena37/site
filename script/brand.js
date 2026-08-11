@@ -49,7 +49,7 @@ $(function () {
       .eq($(this).index())
       .addClass("active");
 
-    // 변경된 아이템 카드 목록의 맨 위로 부드럽게 이동한다
+    // 변경된 아이템 카드 목록의 맨 위로 부드럽게 이동
     $(this)
       .closest("section")
       .find(".item_pages")
@@ -85,6 +85,36 @@ $(function () {
 
   // 카테고리 옵션 선택
   // 처음 로딩된 전체 카드를 원래 순서대로 저장한다
+  // OEM 카드는 데스크톱에서 페이지당 4개, 1024px 이하에서 3개씩 배치
+  var oemCards = $(".oem_i .item_box .card");
+  var oemCardsPerPage = 0;
+
+  function arrangeOemCards() {
+    var isTablet = window.innerWidth >= 576 && window.innerWidth <= 1024;
+    var cardsPerPage = isTablet ? 3 : 4;
+
+    if (cardsPerPage === oemCardsPerPage) return;
+
+    oemCardsPerPage = cardsPerPage;
+    $(".oem_i .item_box").empty().removeClass("active");
+
+    oemCards.each(function (index) {
+      $(".oem_i .item_box")
+        .eq(Math.floor(index / cardsPerPage))
+        .append(this);
+    });
+
+    $(".oem_i .item_box").eq(0).addClass("active");
+    $(".oem_i .page_num p")
+      .show()
+      .removeClass("active")
+      .eq(0)
+      .addClass("active");
+  }
+
+  arrangeOemCards();
+  $(window).on("resize", arrangeOemCards);
+
   var categoryCards = $(".category_i .item_box .card");
 
   $(".category_tab .right").change(function () {

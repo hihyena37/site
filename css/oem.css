@@ -44,8 +44,11 @@ html {
   overflow-x: hidden;
 }
 
+html,
 body,
-body * {
+body *,
+body *::before,
+body *::after {
   cursor: url("../image/yopokki-cursor-72.png") 12 10, auto !important;
 }
 
@@ -65,7 +68,11 @@ label *,
 .header_icon .lang,
 .header_icon .lang *,
 .redcook_trigger,
-.redcook_trigger * {
+.redcook_trigger *,
+.header_ham,
+.header_ham *,
+.header_ham *::before,
+.header_ham *::after {
   cursor: url("../image/tteokbokki-bite-cursor-72.png") 12 10, pointer !important;
 }
 

@@ -44,8 +44,11 @@ body {
   overflow-x: hidden;
 }
 
+html,
 body,
-body * {
+body *,
+body *::before,
+body *::after {
   cursor: url("../image/yopokki-cursor-72.png") 12 10, auto !important;
 }
 
@@ -65,7 +68,11 @@ label *,
 .header_icon .lang,
 .header_icon .lang *,
 .redcook_trigger,
-.redcook_trigger * {
+.redcook_trigger *,
+.header_ham,
+.header_ham *,
+.header_ham *::before,
+.header_ham *::after {
   cursor: url("../image/tteokbokki-bite-cursor-72.png") 12 10, pointer !important;
 }
 
@@ -1273,10 +1280,6 @@ footer {
   .oem_i .item_box {
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 24px 16px;
-  }
-
-  .oem_i .item_box .card:nth-child(n + 4) {
-    display: none;
   }
 
   .category_i .item_box .card,
