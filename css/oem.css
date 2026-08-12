@@ -650,7 +650,6 @@ header {
 
   padding: 80px 16px;
   margin-bottom: 160px;
-  background-color: #fae9bd;
 }
 
 .oreder_i {
@@ -693,6 +692,7 @@ header {
   width: clamp(140px, 11.46vw, 220px);
   aspect-ratio: 1 / 1;
 
+  border: 1px solid #c1262e;
   background-color: white;
   border-radius: 100%;
 
@@ -1099,7 +1099,9 @@ footer {
   }
 
   .oreder_box .card .card_i {
-    width: clamp(112px, 14vw, 144px);
+    width: clamp(120px, 15vw, 152px);
+    padding: clamp(10px, 1.5vw, 16px);
+    gap: 8px;
   }
 
   .oreder_box .arrow {
@@ -1182,7 +1184,7 @@ footer {
   .oreder_box .swiper-scrollbar {
     display: block;
     height: 4px;
-    background: #fae9bd;
+    background: #f6f4f1;
     border-radius: 999px;
   }
 

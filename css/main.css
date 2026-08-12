@@ -676,8 +676,28 @@ header {
   justify-content: center;
   align-items: center;
 
-  background-color: #f6f4f1;
+  background-color: transparent;
   border-radius: 16px;
+  transition:
+    background-color 0.3s,
+    transform 0.3s;
+}
+
+.brand_slide_i .item:hover {
+  background-color: #f6f4f1;
+  transform: translateY(-4px);
+}
+
+/* PC에서는 브랜드 카드 슬라이드만 브라우저 전체 너비 사용 */
+@media screen and (min-width: 1025px) {
+  .brand_slide {
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+  }
+
+  .brand_slide_i .item {
+    width: calc((100vw - 72px) / 4);
+  }
 }
 
 @keyframes b_slide {
@@ -720,12 +740,6 @@ header {
 
   white-space: nowrap;
   /* 여백 줄바꿈 안되게 처리 */
-}
-
-.brand_slide_i .item:hover p {
-  background-color: #fae9bd;
-  color: #562502;
-  font-weight: 500;
 }
 
 /*  퀄리티섹션 */
@@ -1073,8 +1087,6 @@ header {
 
   width: 100%;
   height: auto;
-
-  background-color: #fae9bd;
 }
 
 .oem_i {
@@ -1164,6 +1176,7 @@ header {
   width: clamp(120px, 14vw, 200px);
   aspect-ratio: 1 / 1;
   height: auto;
+  border: 1px solid #c1262e;
   border-radius: 100%;
   background-color: white;
 
@@ -1277,23 +1290,6 @@ header {
   max-width: 100%;
   padding-bottom: 4px;
   position: relative;
-}
-
-.promo_btm .card .text h3::after {
-  content: "";
-  display: block;
-  width: 0;
-  height: 1px;
-
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  background-color: #161616;
-  transition: width 0.4s;
-}
-
-.promo_btm .card:hover .text h3::after {
-  width: 100%;
 }
 
 .promo_btm .card .text .tag {
@@ -1425,7 +1421,7 @@ footer {
   .oem_btm .oem_order .swiper-scrollbar {
     display: block;
     height: 4px;
-    background: #fae9bd;
+    background: #f6f4f1;
     border-radius: 999px;
   }
 
