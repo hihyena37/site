@@ -510,7 +510,7 @@ header {
 
 .hero_i .title h2 {
   font-size: clamp(32px, 5.469vw, 56px);
-  font-weight: 500;
+  font-weight: 600;
   line-height: 1.2;
 }
 
@@ -591,6 +591,15 @@ header {
 .brand_top .title h2 {
   font-size: 40px;
   margin-bottom: 20px;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+}
+
+.brand_top .title h2 i {
+  flex-shrink: 0;
 }
 
 .brand_top .title p {
@@ -1506,7 +1515,7 @@ footer {
   }
 
   .brand_top .title h2 {
-    font-size: 32px;
+    font-size: clamp(26px, 3.2vw, 32px);
     margin-bottom: 20px;
   }
 
@@ -1528,7 +1537,7 @@ footer {
 
   /* 퀄리티 섹션 */
   .quality_i .title h2 {
-    font-size: 32px;
+    font-size: clamp(26px, 3.2vw, 32px);
     margin-bottom: 20px;
   }
 
@@ -1570,7 +1579,7 @@ footer {
 
   /* 글로벌 섹션 */
   .global_i .title h2 {
-    font-size: 32px;
+    font-size: clamp(26px, 3.2vw, 32px);
     margin-bottom: 20px;
   }
 
@@ -1624,13 +1633,13 @@ footer {
 
   /* oem 섹션 */
   .oem_i .title h2 {
-    font-size: 32px;
+    font-size: clamp(26px, 3.2vw, 32px);
     margin-bottom: 20px;
   }
 
   /* 프로모션 섹션 */
   .promo_i .title h2 {
-    font-size: 32px;
+    font-size: clamp(26px, 3.2vw, 32px);
     margin-bottom: 20px;
   }
 

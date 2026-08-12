@@ -424,7 +424,7 @@ header {
 
 .hero_i .title h2 {
   font-size: clamp(32px, 5.469vw, 56px);
-  font-weight: 500;
+  font-weight: 700;
   line-height: 1.2;
 }
 
