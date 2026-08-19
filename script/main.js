@@ -34,6 +34,17 @@ $(function () {
     currentSubmenu.stop().slideToggle(300);
   });
 
+  // PC 너비가 되면 열린 햄버거 메뉴 닫기
+  $(window).on("resize", function () {
+    if ($(window).width() >= 1025) {
+      $(".ham_menu_bg").removeClass("on");
+      $("body").removeClass("menu_open");
+      $(".header_ham").attr("aria-expanded", "false");
+      $(".ham_menu_title").removeClass("on");
+      $(".ham_submenu").stop(true, true).hide();
+    }
+  });
+
   AOS.init(); // aos선언
 
   // 헤더 스크롤

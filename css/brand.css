@@ -460,7 +460,7 @@ body.menu_open {
 }
 
 .ham_top_icon {
-  gap: 20px;
+  gap: 12px;
 }
 
 .ham_search,
@@ -517,7 +517,7 @@ body.menu_open {
 }
 
 .ham_submenu {
-  padding: 4px 32px 20px;
+  padding: 4px 32px;
   background: #fff;
   display: none;
 }
@@ -526,7 +526,7 @@ body.menu_open {
   display: block;
   padding: 10px 12px;
   color: #525252;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 500;
 }
 
@@ -1508,7 +1508,7 @@ footer {
   }
 
   .ham_submenu {
-    padding: 4px 20px 16px;
+    padding: 4px 20px;
   }
 
   /* 히어로 */

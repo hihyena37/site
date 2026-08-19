@@ -397,7 +397,7 @@ body.menu_open { overflow:hidden; }
 .ham_lang { gap:6px; font-size:14px; }
 .ham_lang img, .ham_search img { width:24px; height:24px; object-fit:contain; }
 .ham_lang i { font-size:11px; }
-.ham_top_icon { gap:20px; }
+.ham_top_icon { gap:12px; }
 .ham_search, .ham_close, .ham_menu_title { padding:0; border:0; background:transparent; color:inherit; cursor:pointer; }
 .ham_search, .ham_close { width:28px; height:28px; }
 .ham_close { color:#c1262e; font-size:25px; }
@@ -406,8 +406,8 @@ body.menu_open { overflow:hidden; }
 .ham_menu_title i { color:#aaa; font-size:22px; transition:.3s; }
 .ham_menu_title.on { color:#c1262e; }
 .ham_menu_title.on i { color:#c1262e; transform:rotate(180deg); }
-.ham_submenu { padding:4px 32px 20px; background:#fff; display:none; }
-.ham_submenu a { display:block; padding:10px 12px; color:#525252; font-size:15px; font-weight:500; }
+.ham_submenu { padding:4px 32px; background:#fff; display:none; }
+.ham_submenu a { display:block; padding:10px 12px; color:#525252; font-size:16px; font-weight:500; }
 .ham_submenu a:hover { color:#c1262e; }
 
 /* 히어로 섹션 */
@@ -1297,7 +1297,7 @@ footer {
   .ham_menu { width:85%; min-width:280px; max-width:360px; }
   .ham_menu_top { height:56px; padding:0 20px; }
   .ham_menu_title { height:68px; padding:0 20px; font-size:16px; }
-  .ham_submenu { padding:4px 20px 16px; }
+  .ham_submenu { padding:4px 20px; }
 
   /* 히어로 */
   .hero {
