@@ -322,31 +322,42 @@ header {
   cursor: pointer;
 }
 
+.header_icon .lang {
+  width: 30px;
+  height: 30px;
+  position: relative;
+  overflow: hidden;
+}
+
 .header_icon .imgbox {
   width: 30px;
   height: 30px;
   margin: auto;
 }
 
-.header_icon span {
-  font-size: 14px;
-  font-weight: 300;
-}
-
 .header_icon .lang > select {
-  width: 64px;
+  width: 100px;
+  height: 100%;
   padding: 0;
-  text-align: center;
-  outline: none;
   border: none;
-  background-color: transparent;
+  opacity: 0;
   cursor: pointer;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
 }
 
 /* 헤더 햄버거바 */
 .header_ham {
   width: 28px;
   height: 24px;
+  padding: 0;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  appearance: none;
+  flex-shrink: 0;
   cursor: pointer;
 
   display: none;
@@ -365,7 +376,32 @@ header {
   width: 100%;
   height: 3px;
   background-color: #525252;
+  border-radius: 999px;
 }
+
+/* 헤더 햄버거바 메뉴 */
+.ham_menu_bg { width:100%; height:100vh; position:fixed; top:0; left:0; z-index:1000; background:rgba(0,0,0,.4); opacity:0; visibility:hidden; transition:.4s; }
+.ham_menu { width:55%; max-width:480px; min-width:360px; height:100%; overflow-y:auto; position:absolute; top:0; right:0; background:#f6f4f1; transform:translateX(100%); transition:transform .4s; }
+.ham_menu_bg.on { opacity:1; visibility:visible; }
+.ham_menu_bg.on .ham_menu { transform:translateX(0); }
+body.menu_open { overflow:hidden; }
+.ham_menu_top { height:64px; padding:0 32px; display:flex; justify-content:space-between; align-items:center; background:#fff; border-bottom:1px solid #ccc; }
+.ham_lang, .ham_top_icon { display:flex; align-items:center; }
+.ham_lang { gap:6px; font-size:14px; }
+.ham_lang img, .ham_search img { width:24px; height:24px; object-fit:contain; }
+.ham_lang i { font-size:11px; }
+.ham_top_icon { gap:20px; }
+.ham_search, .ham_close, .ham_menu_title { padding:0; border:0; background:transparent; color:inherit; cursor:pointer; }
+.ham_search, .ham_close { width:28px; height:28px; }
+.ham_close { color:#c1262e; font-size:25px; }
+.ham_mainmenu>li { border-bottom:1px solid #ccc; }
+.ham_menu_title { width:100%; height:80px; padding:0 32px; display:flex; justify-content:space-between; align-items:center; color:#562502; font-size:18px; font-weight:600; text-align:left; }
+.ham_menu_title i { color:#aaa; font-size:22px; transition:.3s; }
+.ham_menu_title.on { color:#c1262e; }
+.ham_menu_title.on i { color:#c1262e; transform:rotate(180deg); }
+.ham_submenu { padding:4px 32px 20px; background:#fff; display:none; }
+.ham_submenu a { display:block; padding:10px 12px; color:#525252; font-size:15px; font-weight:500; }
+.ham_submenu a:hover { color:#c1262e; }
 
 /* 히어로 섹션 */
 .hero {
@@ -981,10 +1017,6 @@ footer {
     display: none;
   }
 
-  .header_icon .search span{
-    display: none;
-  }
-
   .header_icon .imgbox {
     width: 30px;
     height: 30px;
@@ -1267,6 +1299,11 @@ footer {
     width: 24px;
     height: 20px;
   }
+
+  .ham_menu { width:85%; min-width:280px; max-width:360px; }
+  .ham_menu_top { height:56px; padding:0 20px; }
+  .ham_menu_title { height:68px; padding:0 20px; font-size:16px; }
+  .ham_submenu { padding:4px 20px 16px; }
 
   /* 히어로 */
   .hero {

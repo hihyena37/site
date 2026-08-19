@@ -184,7 +184,7 @@ header {
 }
 /* 헤더보기 */
 .header_show {
-  background-color: #ffffff02;
+  background-color: #ffffff90;
 }
 
 .header_i {
@@ -330,34 +330,57 @@ header {
   cursor: pointer;
 }
 
+.header_icon .lang {
+  width: 30px;
+  height: 30px;
+
+  position: relative;
+  overflow: hidden;
+}
+
 .header_icon .imgbox {
   width: 30px;
   height: 30px;
   margin: auto;
 }
 
-.header_icon span {
-  font-size: 14px;
-  font-weight: 300;
+.header_icon .lang > select {
+  width: 100px;
+  height: 100%;
+  padding: 0;
+  border: none;
+  opacity: 0;
+  cursor: pointer;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
 }
 
-.header_icon .lang > select {
-  width: 64px;
-  padding: 0;
+.header_icon .lang > select option{
   text-align: center;
-  outline: none;
-  border: none;
-  background-color: transparent;
-  cursor: pointer;
 }
 
 /* 헤더 햄버거바 */
 .header_ham {
   width: 28px;
   height: 24px;
+  padding: 0;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  appearance: none;
+  flex-shrink: 0;
   cursor: pointer;
 
   display: none;
+}
+
+.header_ham:focus-visible {
+  outline: 2px solid #c1262e;
+  outline-offset: 4px;
+  border-radius: 2px;
 }
 
 .header_ham .ham_i {
@@ -373,6 +396,164 @@ header {
   width: 100%;
   height: 3px;
   background-color: #525252;
+  border-radius: 999px;
+}
+
+/* 햄버거바 메뉴 */
+.ham_menu_bg {
+  width: 100%;
+  height: 100vh;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+
+  background-color: rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.4s;
+}
+
+.ham_menu {
+  width: 55%;
+  max-width: 480px;
+  min-width: 360px;
+  height: 100%;
+  overflow-y: auto;
+
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  background-color: #f6f4f1;
+  transform: translateX(100%);
+  transition: transform 0.4s;
+}
+
+/* jQuery로 .on이 붙으면 배경과 메뉴 보이기 */
+.ham_menu_bg.on {
+  opacity: 1;
+  visibility: visible;
+}
+
+.ham_menu_bg.on .ham_menu {
+  transform: translateX(0);
+}
+
+body.menu_open {
+  overflow: hidden;
+}
+
+.ham_menu_top {
+  height: 64px;
+  padding: 0 32px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background-color: white;
+  border-bottom: 1px solid #ccc;
+}
+
+.ham_lang,
+.ham_top_icon {
+  display: flex;
+  align-items: center;
+}
+
+.ham_lang {
+  gap: 6px;
+  font-size: 14px;
+}
+
+.ham_lang img,
+.ham_search img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+.ham_lang i {
+  font-size: 11px;
+}
+
+.ham_top_icon {
+  gap: 20px;
+}
+
+.ham_search,
+.ham_close,
+.ham_menu_title {
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  color: inherit;
+  cursor: pointer;
+}
+
+.ham_search,
+.ham_close {
+  width: 28px;
+  height: 28px;
+}
+
+.ham_close {
+  color: #c1262e;
+  font-size: 25px;
+}
+
+.ham_mainmenu > li {
+  border-bottom: 1px solid #ccc;
+}
+
+.ham_menu_title {
+  width: 100%;
+  height: 80px;
+  padding: 0 32px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  color: #562502;
+  font-size: 18px;
+  font-weight: 600;
+  text-align: left;
+}
+
+.ham_menu_title i {
+  color: #aaa;
+  font-size: 22px;
+  transition: 0.3s;
+}
+
+.ham_menu_title.on {
+  color: #c1262e;
+}
+
+.ham_menu_title.on i {
+  color: #c1262e;
+  transform: rotate(180deg);
+}
+
+.ham_submenu {
+  padding: 4px 32px 20px;
+  background-color: white;
+  display: none;
+}
+
+.ham_submenu a {
+  display: block;
+  padding: 10px 12px;
+  color: #525252;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.ham_submenu a:hover {
+  color: #c1262e;
 }
 
 /* 히어로 */
@@ -448,7 +629,7 @@ header {
   /* 8초 뒤에 보이기 */
 }
 
-/* 제목은 배경보다 위에 배치 *
+/* 제목은 배경보다 위에 배치 */
 
 /* 페이드 전환 */
 @keyframes herofade {
@@ -509,14 +690,9 @@ header {
 }
 
 .hero_i .title h2 {
-  font-size: clamp(32px, 5.469vw, 56px);
+  font-size: clamp(32px, 6vw, 80px);
   font-weight: 600;
   line-height: 1.2;
-}
-
-.hero_i .title h2 span {
-  font-size: clamp(44px, 7.813vw, 80px);
-  font-weight: 700;
 }
 
 .hero_i .title p {
@@ -683,9 +859,8 @@ header {
     transform 0.3s;
 }
 
-.brand_slide_i .item:hover {
-  background-color: #f6f4f1;
-  transform: translateY(-4px);
+.brand_slide_i .item:hover img {
+  scale: 1.1;
 }
 
 /* PC에서는 브랜드 카드 슬라이드만 브라우저 전체 너비 사용 */
@@ -697,6 +872,18 @@ header {
 
   .brand_slide_i .item {
     width: calc((100vw - 72px) / 4);
+  }
+}
+
+/* PC가 시작되는 좁은 구간에서는 카드 내부 여백을 줄임 */
+@media screen and (min-width: 1025px) and (max-width: 1200px) {
+  .brand_slide_i .item {
+    padding: 48px 24px;
+  }
+
+  .brand_slide_i .item p {
+    padding: 8px 14px;
+    font-size: 15px;
   }
 }
 
@@ -718,12 +905,15 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
+
 }
 
 .brand_slide_i .item .imgbox img {
   width: 100%;
   height: 100%;
   object-fit: contain;
+
+  transition: .4s;
 }
 
 .brand_slide_i .item p {
@@ -857,7 +1047,7 @@ header {
 /* 퀄리티 바텀 우측 */
 .quality_btm .right {
   width: 100%;
-  max-height: 588px;
+  min-height: 588px;
 
   position: relative;
   overflow: hidden;
@@ -879,20 +1069,24 @@ header {
 
 .quality_btm .right .imgbg {
   width: 100%;
-  max-height: 200px;
+  height: 120px;
 
   position: absolute;
   left: 0;
   bottom: 0;
   z-index: 1;
 
-  background-color: #00000060;
+  background-color: #0000009f;
 }
 
 .quality_btm .right .imgbg p {
+  height: 100%;
   color: white;
-  font-size: clamp(16px, 1.6vw, 24px);
-  padding: 20px 32px;
+  padding: 0 16px;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* 퀄리티 떡볶이물결1 */
@@ -1485,10 +1679,6 @@ footer {
     display: none;
   }
 
-  .header_icon .search span {
-    display: none;
-  }
-
   .header_icon .imgbox {
     width: 30px;
     height: 30px;
@@ -1740,7 +1930,7 @@ footer {
   }
 
   /* 헤더 */
-  header{
+  header {
     height: 56px;
   }
 
@@ -1764,6 +1954,27 @@ footer {
   .header_ham {
     width: 24px;
     height: 20px;
+  }
+
+  .ham_menu {
+    width: 85%;
+    min-width: 280px;
+    max-width: 360px;
+  }
+
+  .ham_menu_top {
+    height: 56px;
+    padding: 0 20px;
+  }
+
+  .ham_menu_title {
+    height: 68px;
+    padding: 0 20px;
+    font-size: 16px;
+  }
+
+  .ham_submenu {
+    padding: 4px 20px 16px;
   }
 
   /* 히어로 */

@@ -1,4 +1,14 @@
 $(function () {
+  // 햄버거 메뉴 열기·닫기
+  $(".header_ham").click(function () { $(".ham_menu_bg").addClass("on"); $("body").addClass("menu_open"); });
+  $(".ham_close").click(function () { $(".ham_menu_bg").removeClass("on"); $("body").removeClass("menu_open"); });
+  $(".ham_menu_bg").click(function (e) { if (e.target === this) { $(this).removeClass("on"); $("body").removeClass("menu_open"); } });
+  $(".ham_menu_title").click(function () {
+    $(this).toggleClass("on").next(".ham_submenu").stop().slideToggle(300);
+    $(this).parent().siblings().find(".ham_menu_title").removeClass("on");
+    $(this).parent().siblings().find(".ham_submenu").stop().slideUp(300);
+  });
+
   // 헤더스크롤
   let lastScrollTop = 0;
   let header = $("header");
@@ -28,14 +38,6 @@ $(function () {
 
   $("header").on("mouseleave", function () {
     submenu.stop().slideUp(400);
-  });
-
-  // 헤더메뉴 아이콘 랭 이미지 클릭시 옵션목록열기
-  // click보다 먼저 실행되는 mousedown을 사용해 첫 클릭에서 바로 옵션 목록을 열고,
-  // preventDefault()로 이미지에 포커스가 먼저 이동하는 기본 동작을 막음
-  $(".header_icon .lang .imgbox").on("mousedown", function (e) {
-    e.preventDefault();
-    $(this).siblings("select")[0].showPicker();
   });
 
   // 카테고리 페이지넘버 탭 클릭시 페이지 변화

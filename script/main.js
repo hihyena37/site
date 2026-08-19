@@ -1,4 +1,39 @@
 $(function () {
+  // 태블릿·모바일 햄버거 메뉴 열기
+  $(".header_ham").on("click", function () {
+    $(".ham_menu_bg").addClass("on");
+    $("body").addClass("menu_open");
+    $(this).attr("aria-expanded", "true");
+  });
+
+  // 닫기 버튼을 누르면 햄버거 메뉴 닫기
+  $(".ham_close").on("click", function () {
+    $(".ham_menu_bg").removeClass("on");
+    $("body").removeClass("menu_open");
+    $(".header_ham").attr("aria-expanded", "false");
+  });
+
+  // 메뉴 바깥의 어두운 배경을 눌러도 닫기
+  $(".ham_menu_bg").on("click", function (e) {
+    if (e.target === this) {
+      $(this).removeClass("on");
+      $("body").removeClass("menu_open");
+      $(".header_ham").attr("aria-expanded", "false");
+    }
+  });
+
+  // 메인 메뉴를 누르면 해당 서브메뉴만 열기
+  $(".ham_menu_title").on("click", function () {
+    let currentTitle = $(this);
+    let currentSubmenu = currentTitle.next(".ham_submenu");
+
+    $(".ham_menu_title").not(currentTitle).removeClass("on");
+    $(".ham_submenu").not(currentSubmenu).stop().slideUp(300);
+
+    currentTitle.toggleClass("on");
+    currentSubmenu.stop().slideToggle(300);
+  });
+
   AOS.init(); // aos선언
 
   // 헤더 스크롤
@@ -8,13 +43,13 @@ $(function () {
   $(window).on("scroll", function () {
     let scrollTop = $(window).scrollTop();
 
-    if(scrollTop <= headerHeight){
+    if (scrollTop <= headerHeight) {
       header.removeClass("header_hide");
       header.removeClass("header_show");
-    }else if(scrollTop > lastScrollTop){
+    } else if (scrollTop > lastScrollTop) {
       header.addClass("header_hide");
       header.removeClass("header_show");
-    }else{
+    } else {
       header.addClass("header_show");
       header.removeClass("header_hide");
     }
@@ -22,9 +57,6 @@ $(function () {
     lastScrollTop = scrollTop;
   });
 
-
-
-  
   // 서브메뉴 슬라이드
   let submenu = $(".submenu_bg, .header_i .submenu");
 
@@ -34,14 +66,6 @@ $(function () {
 
   $("header").on("mouseleave", function () {
     submenu.stop().slideUp(400);
-  });
-
-  // click보다 먼저 실행되는 mousedown / 첫 클릭에서 바로 옵션 목록을 열고,
-  // preventDefault()로 이미지에 포커스가 먼저 이동하는 기본 동작을 막음
-  $(".header_icon .lang .imgbox").on("mousedown", function (e) {
-    e.preventDefault();
-    $(this).siblings("select").get(0).showPicker();
-    // .showPicker() : select가 가진 기본 옵션 선택창 열기
   });
 
   // top버튼

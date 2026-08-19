@@ -115,28 +115,20 @@
             <div class="imgbox">
               <img src="../image/i_search.png" alt="search">
             </div>
-            <span>search</span>
           </div>
 
           <a href="#" class="admin">
             <div class="imgbox">
               <img src="../image/i_admin.png" alt="admin">
             </div>
-            <span>admin</span>
           </a>
 
           <div class="lang">
-            <div class="imgbox" role="button" tabindex="0" aria-label="언어 선택 열기">
-              <!--
-               role 역할
-               tabindex="0" 포커스받을 수 없는 <div>를 tab키로 선택할 수 있게
-               aria-label 화면 낭독기에서 해동 요소의 용도 읽어줌
-              -->
-              <img src="../image/lang.png" alt="lang">
+            <div class="imgbox">
+              <img src="../image/lang.png" alt="언어 선택">
             </div>
 
             <select>
-              <option hidden>lang</option>
               <option>한국어</option>
               <option>EN</option>
               <option>日本</option>
@@ -145,17 +137,34 @@
           </div>
 
           <!-- 햄버거바 -->
-          <div class="header_ham">
-            <div class="ham_i">
-              <div class="line"></div>
-              <div class="line"></div>
-              <div class="line"></div>
-            </div>
-          </div>
+          <button type="button" class="header_ham" aria-label="전체 메뉴 열기" aria-expanded="false">
+            <span class="ham_i"><span class="line"></span><span class="line"></span><span class="line"></span></span>
+          </button>
         </div>
       </div>
       <div class="submenu_bg"></div>
     </header>
+
+    <!-- 햄버거바 메뉴 -->
+    <div class="ham_menu_bg">
+      <div class="ham_menu">
+        <div class="ham_menu_top">
+          <div class="ham_lang"><img src="../image/lang.png" alt=""><span>lang</span><i class="bi bi-chevron-down"></i></div>
+          <div class="ham_top_icon"><button type="button" class="ham_search" aria-label="검색"><img src="../image/i_search.png" alt=""></button><button type="button" class="ham_close" aria-label="전체 메뉴 닫기"><i class="bi bi-x-lg"></i></button></div>
+        </div>
+        <nav class="ham_nav" aria-label="태블릿 전체 메뉴">
+          <ul class="ham_mainmenu">
+            <li><button type="button" class="ham_menu_title"><span>회사소개</span><i class="bi bi-chevron-down"></i></button><ul class="ham_submenu"><li><a href="#">CEO 인사말</a></li><li><a href="#">기업개요</a></li><li><a href="#">연혁</a></li><li><a href="#">조직도</a></li><li><a href="#">제휴사</a></li><li><a href="#">오시는 길</a></li></ul></li>
+            <li><button type="button" class="ham_menu_title"><span>브랜드·제품</span><i class="bi bi-chevron-down"></i></button><ul class="ham_submenu"><li><a href="./brand.html">브랜드 소개</a></li><li><a href="#">떡볶이</a></li><li><a href="#">스낵류</a></li><li><a href="#">김치류</a></li><li><a href="#">떡류</a></li><li><a href="#">전류</a></li><li><a href="#">e-카탈로그</a></li></ul></li>
+            <li><button type="button" class="ham_menu_title"><span>품질·인증</span><i class="bi bi-chevron-down"></i></button><ul class="ham_submenu"><li><a href="#">인증 현황</a></li><li><a href="#">ESG 경영</a></li></ul></li>
+            <li><button type="button" class="ham_menu_title"><span>글로벌 비즈니스</span><i class="bi bi-chevron-down"></i></button><ul class="ham_submenu"><li><a href="#">수출 현황</a></li><li><a href="#">수출 국가</a></li><li><a href="#">해외 파트너</a></li></ul></li>
+            <li><button type="button" class="ham_menu_title"><span>OEM</span><i class="bi bi-chevron-down"></i></button><ul class="ham_submenu"><li><a href="./oem.html">OEM 소개</a></li><li><a href="#">생산 가능 제품</a></li><li><a href="#">진행 절차</a></li><li><a href="#">OEM 문의</a></li></ul></li>
+            <li><button type="button" class="ham_menu_title"><span>홍보센터</span><i class="bi bi-chevron-down"></i></button><ul class="ham_submenu"><li><a href="#">보도자료</a></li><li><a href="#">전시회 참여</a></li><li><a href="#">행복가득 영풍</a></li><li><a href="#">글로벌 활동</a></li><li><a href="#">CSR</a></li></ul></li>
+            <li><button type="button" class="ham_menu_title"><span>고객센터</span><i class="bi bi-chevron-down"></i></button><ul class="ham_submenu"><li><a href="#">공지사항</a></li><li><a href="#">자주 묻는 질문</a></li><li><a href="#">온라인 문의</a></li></ul></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
     <!-- /헤더 -->
 
     <!-- 히어로 섹션 -->
