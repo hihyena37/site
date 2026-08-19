@@ -409,7 +409,7 @@ header {
   position: absolute;
   top: 0;
   right: 0;
-  background: #f6f4f1;
+  background: #efefef;
   transform: translateX(100%);
   transition: transform .4s;
 }
@@ -870,7 +870,7 @@ body.menu_open {
 }
 
 .category_i .page_tab button:hover {
-  background-color: #f6f4f1;
+  background-color: #efefef;
 }
 
 .category_i .page_tab .page_num {
@@ -1087,7 +1087,7 @@ body.menu_open {
 }
 
 .oem_i .page_tab button:hover {
-  background-color: #f6f4f1;
+  background-color: #efefef;
 }
 
 .oem_i .page_tab .page_num {

@@ -1635,7 +1635,7 @@ footer {
   .oem_btm .oem_order .swiper-scrollbar {
     display: block;
     height: 4px;
-    background: #f6f4f1;
+    background: #efefef;
     border-radius: 999px;
   }
 

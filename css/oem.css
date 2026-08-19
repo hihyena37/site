@@ -388,7 +388,7 @@ header {
 
 /* 헤더 햄버거바 메뉴 */
 .ham_menu_bg { width:100%; height:100vh; position:fixed; top:0; left:0; z-index:1000; background:rgba(0,0,0,.4); opacity:0; visibility:hidden; transition:.4s; }
-.ham_menu { width:55%; max-width:480px; min-width:360px; height:100%; overflow-y:auto; position:absolute; top:0; right:0; background:#f6f4f1; transform:translateX(100%); transition:transform .4s; }
+.ham_menu { width:55%; max-width:480px; min-width:360px; height:100%; overflow-y:auto; position:absolute; top:0; right:0; background:#efefef; transform:translateX(100%); transition:transform .4s; }
 .ham_menu_bg.on { opacity:1; visibility:visible; }
 .ham_menu_bg.on .ham_menu { transform:translateX(0); }
 body.menu_open { overflow:hidden; }
@@ -1210,7 +1210,7 @@ footer {
   .oreder_box .swiper-scrollbar {
     display: block;
     height: 4px;
-    background: #f6f4f1;
+    background: #efefef;
     border-radius: 999px;
   }
 
