@@ -113,18 +113,16 @@ i {
 
 h3 {
   font-size: 28px;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 /* CTA 버튼 샤이니 효과 */
-.hero_i a,
-.mv_i a {
+.hero_i a {
   position: relative;
   overflow: hidden;
 }
 
-.hero_i a::before,
-.mv_i a::before {
+.hero_i a::before {
   content: "";
   width: 45%;
   height: 180%;
@@ -141,8 +139,7 @@ h3 {
   pointer-events: none;
 }
 
-.hero_i a:hover::before,
-.mv_i a:hover::before {
+.hero_i a:hover::before {
   animation: shiny-sweep 0.6s ease forwards;
 }
 
@@ -179,7 +176,7 @@ header {
 }
 /* 헤더보기 */
 .header_show {
-  background-color: #ffffff02;
+  background-color: #ffffff90;
 }
 
 .header_i {
@@ -348,6 +345,10 @@ header {
   translate: -50% -50%;
 }
 
+.header_icon .lang > select option {
+  text-align: center;
+}
+
 /* 헤더 햄버거바 */
 .header_ham {
   width: 28px;
@@ -361,6 +362,12 @@ header {
   cursor: pointer;
 
   display: none;
+}
+
+.header_ham:focus-visible {
+  outline: 2px solid #c1262e;
+  outline-offset: 4px;
+  border-radius: 2px;
 }
 
 .header_ham .ham_i {
@@ -405,14 +412,13 @@ body.menu_open { overflow:hidden; }
 
 /* 히어로 섹션 */
 .hero {
-  margin-bottom: 200px;
-
   width: 100%;
   height: clamp(240px, 40vw, 60vh);
-  overflow: hidden;
+  margin-top: 80px;
+  margin-bottom: 200px;
 
   position: relative;
-  top: 80px;
+  overflow: hidden;
 
   background-image: url(../image/sub2hero.jpg);
   background-repeat: no-repeat;
@@ -532,27 +538,31 @@ body.menu_open { overflow:hidden; }
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
+  align-items: start;
 }
 
 /* oem박스 안 카드 */
 .oem_box .card {
-  background-color: #f6f4f1;
-  border-radius: 100%;
-  padding: 16px 20px;
-
   width: clamp(200px, 24vw, 464px);
+  height: clamp(200px, 24vw, 464px);
   aspect-ratio: 1 / 1;
+  padding: 16px 20px;
 
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 20px;
+
+  background-color: #efefef;
+  border-radius: 100%;
 }
 
 .oem_box .card .imgbox {
+  width: clamp(88px, 10vw, 160px);
   max-width: 160px;
   aspect-ratio: 1 / 1;
+  flex-shrink: 1;
 
   display: flex;
   justify-content: center;
@@ -617,9 +627,9 @@ body.menu_open { overflow:hidden; }
   padding: 12px 70px;
 
   font-size: 20px;
-  border: 1px solid #525252;
+  border: 1px solid #ababab;
   border-radius: 8px;
-  color: #525252;
+  color: #ababab;
 }
 
 .product_tab p.active {
@@ -642,7 +652,7 @@ body.menu_open { overflow:hidden; }
 }
 
 .item_box .card {
-  background-color: #f6f4f1;
+  background-color: #efefef;
   padding: 28px 20px;
   border-radius: 16px;
 
@@ -785,18 +795,20 @@ body.menu_open { overflow:hidden; }
   margin: auto;
 
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 24px;
+  gap: 40px;
 }
 
 .mv_box {
-  width: 100%;
+  width: 80%;
   aspect-ratio: 16 / 9;
   overflow: hidden;
   border-radius: 16px;
   background-color: #000;
 
   position: relative;
+  order: 2;
 }
 
 .mv_video {
@@ -809,40 +821,20 @@ body.menu_open { overflow:hidden; }
 .mv_i .text {
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: 24px;
+
+  text-align: center;
 }
 
 .mv_i .text p {
   font-size: 20px;
 }
 
-.mv_i a {
-  width: fit-content;
-  font-size: 20px;
-  padding: 12px 20px;
-  background-color: #c1262e;
-  color: white;
-  border-radius: 8px;
-  box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.32);
-  font-weight: 500;
-
-  transition: 0.4s;
-}
-
-.mv_i a:hover {
-  background-color: #a01f25;
-}
-
-.mv_i a i {
-  color: white;
-  -webkit-text-stroke: 1px currentColor;
-}
-
 /* 푸터 */
 footer {
   width: 100%;
   height: auto;
-  background-color: #f6f4f1;
+  background-color: #efefef;
   color: #525252;
   padding: 60px 0;
 }
@@ -854,6 +846,7 @@ footer {
 
   display: flex;
   justify-content: space-between;
+  gap: 24px;
 }
 
 .footer_i .flogo {
@@ -895,6 +888,7 @@ footer {
 .ftext .finfo {
   display: flex;
   justify-content: space-between;
+  gap: 24px;
 }
 
 .ftext .finfo > div {
@@ -1028,8 +1022,8 @@ footer {
 
   /* 히어로 */
   .hero {
-    top: 64px;
-    margin-bottom: 160px;
+    margin-top: 64px;
+    margin-bottom: 120px;
   }
 
   .hero_i .btn {
@@ -1062,6 +1056,7 @@ footer {
 
   .oem_box .card {
     width: 100%;
+    height: auto;
     min-width: 0;
     min-height: 0;
     padding: clamp(10px, 1.5vw, 16px) clamp(8px, 1.25vw, 14px);
@@ -1169,8 +1164,7 @@ footer {
     gap: 24px;
   }
 
-  .mv_i .text p,
-  .mv_i a {
+  .mv_i .text p {
     font-size: 18px;
   }
 
@@ -1307,13 +1301,12 @@ footer {
 
   /* 히어로 */
   .hero {
-    top: 0;
     height: 50vh;
 
     min-height: 420px;
     max-height: 520px;
     margin-top: 0;
-    margin-bottom: 124px;
+    margin-bottom: 100px;
     background-position: 50% center;
   }
 
@@ -1473,11 +1466,6 @@ footer {
   }
 
   .mv_i .text p {
-    font-size: 16px;
-  }
-
-  .mv_i a {
-    padding: 10px 14px;
     font-size: 16px;
   }
 

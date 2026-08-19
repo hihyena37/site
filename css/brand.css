@@ -67,8 +67,6 @@ label *,
 .header_icon .admin *,
 .header_icon .lang,
 .header_icon .lang *,
-.redcook_trigger,
-.redcook_trigger *,
 .header_ham,
 .header_ham *,
 .header_ham *::before,
@@ -113,7 +111,7 @@ i {
 
 h3 {
   font-size: 28px;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 /* CTA 버튼 샤이니 효과 */
@@ -178,7 +176,7 @@ header {
 
 /* 헤더보기 */
 .header_show {
-  background-color: #ffffff02;
+  background-color: #ffffff90;
 }
 
 .header_i {
@@ -347,6 +345,10 @@ header {
   translate: -50% -50%;
 }
 
+.header_icon .lang>select option {
+  text-align: center;
+}
+
 /* 헤더 햄버거바 */
 .header_ham {
   width: 28px;
@@ -360,6 +362,12 @@ header {
   cursor: pointer;
 
   display: none;
+}
+
+.header_ham:focus-visible {
+  outline: 2px solid #c1262e;
+  outline-offset: 4px;
+  border-radius: 2px;
 }
 
 .header_ham .ham_i {
@@ -379,39 +387,162 @@ header {
 }
 
 /* 헤더 햄버거바 메뉴 */
-.ham_menu_bg { width:100%; height:100vh; position:fixed; top:0; left:0; z-index:1000; background:rgba(0,0,0,.4); opacity:0; visibility:hidden; transition:.4s; }
-.ham_menu { width:55%; max-width:480px; min-width:360px; height:100%; overflow-y:auto; position:absolute; top:0; right:0; background:#f6f4f1; transform:translateX(100%); transition:transform .4s; }
-.ham_menu_bg.on { opacity:1; visibility:visible; }
-.ham_menu_bg.on .ham_menu { transform:translateX(0); }
-body.menu_open { overflow:hidden; }
-.ham_menu_top { height:64px; padding:0 32px; display:flex; justify-content:space-between; align-items:center; background:#fff; border-bottom:1px solid #ccc; }
-.ham_lang, .ham_top_icon { display:flex; align-items:center; }
-.ham_lang { gap:6px; font-size:14px; }
-.ham_lang img, .ham_search img { width:24px; height:24px; object-fit:contain; }
-.ham_lang i { font-size:11px; }
-.ham_top_icon { gap:20px; }
-.ham_search, .ham_close, .ham_menu_title { padding:0; border:0; background:transparent; color:inherit; cursor:pointer; }
-.ham_search, .ham_close { width:28px; height:28px; }
-.ham_close { color:#c1262e; font-size:25px; }
-.ham_mainmenu>li { border-bottom:1px solid #ccc; }
-.ham_menu_title { width:100%; height:80px; padding:0 32px; display:flex; justify-content:space-between; align-items:center; color:#562502; font-size:18px; font-weight:600; text-align:left; }
-.ham_menu_title i { color:#aaa; font-size:22px; transition:.3s; }
-.ham_menu_title.on { color:#c1262e; }
-.ham_menu_title.on i { color:#c1262e; transform:rotate(180deg); }
-.ham_submenu { padding:4px 32px 20px; background:#fff; display:none; }
-.ham_submenu a { display:block; padding:10px 12px; color:#525252; font-size:15px; font-weight:500; }
-.ham_submenu a:hover { color:#c1262e; }
+.ham_menu_bg {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  background: rgba(0, 0, 0, .4);
+  opacity: 0;
+  visibility: hidden;
+  transition: .4s;
+}
+
+.ham_menu {
+  width: 55%;
+  max-width: 480px;
+  min-width: 360px;
+  height: 100%;
+  overflow-y: auto;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: #f6f4f1;
+  transform: translateX(100%);
+  transition: transform .4s;
+}
+
+.ham_menu_bg.on {
+  opacity: 1;
+  visibility: visible;
+}
+
+.ham_menu_bg.on .ham_menu {
+  transform: translateX(0);
+}
+
+body.menu_open {
+  overflow: hidden;
+}
+
+.ham_menu_top {
+  height: 64px;
+  padding: 0 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  border-bottom: 1px solid #ccc;
+}
+
+.ham_lang,
+.ham_top_icon {
+  display: flex;
+  align-items: center;
+}
+
+.ham_lang {
+  gap: 6px;
+  font-size: 14px;
+}
+
+.ham_lang img,
+.ham_search img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+.ham_lang i {
+  font-size: 11px;
+}
+
+.ham_top_icon {
+  gap: 20px;
+}
+
+.ham_search,
+.ham_close,
+.ham_menu_title {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+}
+
+.ham_search,
+.ham_close {
+  width: 28px;
+  height: 28px;
+}
+
+.ham_close {
+  color: #c1262e;
+  font-size: 25px;
+}
+
+.ham_mainmenu>li {
+  border-bottom: 1px solid #ccc;
+}
+
+.ham_menu_title {
+  width: 100%;
+  height: 80px;
+  padding: 0 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #562502;
+  font-size: 18px;
+  font-weight: 600;
+  text-align: left;
+}
+
+.ham_menu_title i {
+  color: #aaa;
+  font-size: 22px;
+  transition: .3s;
+}
+
+.ham_menu_title.on {
+  color: #c1262e;
+}
+
+.ham_menu_title.on i {
+  color: #c1262e;
+  transform: rotate(180deg);
+}
+
+.ham_submenu {
+  padding: 4px 32px 20px;
+  background: #fff;
+  display: none;
+}
+
+.ham_submenu a {
+  display: block;
+  padding: 10px 12px;
+  color: #525252;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.ham_submenu a:hover {
+  color: #c1262e;
+}
 
 /* 히어로 섹션 */
 .hero {
-  margin-bottom: 200px;
-
   width: 100%;
   height: clamp(240px, 40vw, 60vh);
-  overflow: hidden;
+  margin-top: 80px;
+  margin-bottom: 200px;
 
   position: relative;
-  top: 80px;
+  overflow: hidden;
 
   background-image: url(../image/sub1hero.jpg);
   background-repeat: no-repeat;
@@ -528,7 +659,7 @@ body.menu_open { overflow:hidden; }
 
 /* 브랜드박스 안 카드 */
 .brand_box .card {
-  background-color: #f6f4f1;
+  background-color: #efefef;
   padding: 28px;
   border-radius: 16px;
 
@@ -564,89 +695,6 @@ body.menu_open { overflow:hidden; }
   width: 100%;
   height: 100%;
   object-fit: cover;
-}
-
-/* 브랜드 레드쿡 박스 */
-.redcook_box {
-  display: flex;
-  align-items: center;
-  gap: 80px;
-
-  position: relative;
-
-  background-color: #f6f4f1;
-  border-radius: 16px;
-  padding: 28px 60px;
-}
-
-.redcook_box .left {
-  display: flex;
-  align-items: center;
-  gap: 32px;
-}
-
-.redcook_box .left .new {
-  font-weight: 700;
-  color: #c1262e;
-  text-decoration: underline;
-}
-
-.redcook_box .left .imgbox {
-  max-width: 120px;
-}
-
-.redcook_box .left .imgbox img {
-  width: 80%;
-  height: 80%;
-}
-
-/* 레드쿡 몰 */
-.redcook_trigger {
-  cursor: pointer;
-}
-
-.redcook_trigger i {
-  display: inline-block;
-  color: inherit;
-  margin-left: 4px;
-
-  transition: 0.3s;
-}
-
-/* 클래스 active 추가 */
-.redcook_more.active .redcook_trigger i {
-  transform: rotate(180deg);
-}
-
-.redcook_desc {
-  width: min(480px, calc(100vw - 64px));
-  padding: 24px;
-  border-radius: 12px;
-  background-color: #fff;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
-
-  position: absolute;
-  top: 90%;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 10;
-
-  display: none;
-}
-
-.redcook_desc p {
-  line-height: 1.7;
-  color: #525252;
-}
-
-.redcook_desc strong {
-  font-weight: 700;
-  color: #c1262e;
-}
-
-.redcook_desc .desc_title {
-  display: block;
-  margin: 20px 0 8px;
 }
 
 /* 제품 카테고리 섹션 */
@@ -688,9 +736,9 @@ body.menu_open { overflow:hidden; }
   padding: 12px clamp(16px, 4.86vw, 70px);
 
   font-size: 20px;
-  border: 1px solid #525252;
+  border: 1px solid #ababab;
   border-radius: 8px;
-  color: #525252;
+  color: #ababab;
 }
 
 .category_i .category_tab .left p.active {
@@ -756,7 +804,7 @@ body.menu_open { overflow:hidden; }
 
 /* 카테고리 아이템 카드 */
 .category_i .item_box .card {
-  background-color: #f6f4f1;
+  background-color: #efefef;
   padding: 28px 20px;
   border-radius: 16px;
 
@@ -835,9 +883,9 @@ body.menu_open { overflow:hidden; }
   padding: 8px 28px;
 
   font-size: 16px;
-  border: 1px solid #525252;
+  border: 1px solid #ababab;
   border-radius: 8px;
-  color: #525252;
+  color: #ababab;
 }
 
 .category_i .page_tab .page_num p.active {
@@ -897,9 +945,9 @@ body.menu_open { overflow:hidden; }
   padding: 12px clamp(16px, 4.86vw, 70px);
 
   font-size: 20px;
-  border: 1px solid #525252;
+  border: 1px solid #ababab;
   border-radius: 8px;
-  color: #525252;
+  color: #ababab;
 }
 
 .oem_tab .left p.active {
@@ -956,7 +1004,7 @@ body.menu_open { overflow:hidden; }
 
 /* OEM 아이템 카드 */
 .oem_i .item_box .card {
-  background-color: #f6f4f1;
+  background-color: #efefef;
   padding: 20px 20px;
   border-radius: 16px;
 
@@ -1052,9 +1100,9 @@ body.menu_open { overflow:hidden; }
   padding: 8px 28px;
 
   font-size: 16px;
-  border: 1px solid #525252;
+  border: 1px solid #ababab;
   border-radius: 8px;
-  color: #525252;
+  color: #ababab;
 }
 
 .oem_i .page_tab .page_num p.active {
@@ -1067,7 +1115,7 @@ body.menu_open { overflow:hidden; }
 footer {
   width: 100%;
   height: auto;
-  background-color: #f6f4f1;
+  background-color: #efefef;
   color: #525252;
   padding: 60px 0;
 }
@@ -1079,6 +1127,7 @@ footer {
 
   display: flex;
   justify-content: space-between;
+  gap: 24px;
 }
 
 .footer_i .flogo {
@@ -1120,6 +1169,7 @@ footer {
 .ftext .finfo {
   display: flex;
   justify-content: space-between;
+  gap: 24px;
 }
 
 .ftext .finfo>div {
@@ -1220,8 +1270,8 @@ footer {
 
   /* 히어로 */
   .hero {
-    top: 64px;
-    margin-bottom: 160px;
+    margin-top: 64px;
+    margin-bottom: 120px;
   }
 
   .hero_i .btn {
@@ -1260,17 +1310,6 @@ footer {
 
   .brand_box .card p {
     text-align: start;
-  }
-
-  .redcook_box {
-    width: min(100%, 704px);
-    justify-content: center;
-    gap: 16px;
-    padding: 24px 32px;
-  }
-
-  .redcook_box .left {
-    gap: 16px;
   }
 
   /* 제품 카테고리 */
@@ -1451,14 +1490,29 @@ footer {
     height: 20px;
   }
 
-  .ham_menu { width:85%; min-width:280px; max-width:360px; }
-  .ham_menu_top { height:56px; padding:0 20px; }
-  .ham_menu_title { height:68px; padding:0 20px; font-size:16px; }
-  .ham_submenu { padding:4px 20px 16px; }
+  .ham_menu {
+    width: 85%;
+    min-width: 280px;
+    max-width: 360px;
+  }
+
+  .ham_menu_top {
+    height: 56px;
+    padding: 0 20px;
+  }
+
+  .ham_menu_title {
+    height: 68px;
+    padding: 0 20px;
+    font-size: 16px;
+  }
+
+  .ham_submenu {
+    padding: 4px 20px 16px;
+  }
 
   /* 히어로 */
   .hero {
-    top: 0;
     height: 50vh;
 
     min-height: 420px;
@@ -1513,20 +1567,6 @@ footer {
 
   .brand_box .card .typeimg {
     width: 120px;
-  }
-
-  .redcook_box {
-    flex-direction: row;
-    gap: 16px;
-    padding: 20px;
-  }
-
-  .redcook_box .left {
-    gap: 16px;
-  }
-
-  .redcook_trigger {
-    font-size: 14px;
   }
 
   /* 카테고리 / OEM 탭 */
@@ -1680,15 +1720,6 @@ footer {
 
   .brand_box .card {
     padding: 16px;
-  }
-
-  .redcook_box .left {
-    flex-direction: column;
-    gap: 12px;
-  }
-
-  .redcook_box .left .imgbox {
-    width: 100px;
   }
 
   .category_i .item_box,
