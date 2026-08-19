@@ -105,5 +105,49 @@ $(function () {
   setOemSwiper();
   $(window).on("resize", setOemSwiper);
 
+  // 글로벌 숫자 카운트
+  let countStarted = false;
+  let countUp;
+  let exportCountUp;
+
+  $(window).on("scroll", function () {
+    let scrollTop = $(window).scrollTop();
+    let globalTop = $(".global").offset().top;
+    let globalBottom = globalTop + $(".global").outerHeight();
+    let windowHeight = $(window).height();
+    let scrollBottom = scrollTop + windowHeight;
+    let globalVisible = scrollBottom > globalTop && scrollTop < globalBottom;
+
+    if (globalVisible && !countStarted) {
+      countStarted = true;
+
+      let count = 1;
+      countUp = setInterval(function () {
+        $(".country_count").text(count);
+        count++;
+
+        if (count > 100) {
+          clearInterval(countUp);
+        }
+      }, 20);
+
+      let exportCount = 1;
+      exportCountUp = setInterval(function () {
+        $(".export_count").text(exportCount);
+        exportCount++;
+
+        if (exportCount > 27) {
+          clearInterval(exportCountUp);
+        }
+      }, 74);
+    } else if (!globalVisible) {
+      countStarted = false;
+      clearInterval(countUp);
+      clearInterval(exportCountUp);
+      $(".country_count").text(100);
+      $(".export_count").text(27);
+    }
+  });
+
   // 종료
 });
