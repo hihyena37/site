@@ -81,7 +81,9 @@ label *,
 .header_ham *,
 .header_ham *::before,
 .header_ham *::after {
-  cursor: url("../image/tteokbokki-bite-cursor-72.png") 12 10, pointer !important;
+  cursor:
+    url("../image/tteokbokki-bite-cursor-72.png") 12 10,
+    pointer !important;
 }
 
 *,
@@ -134,10 +136,12 @@ h3 {
   position: absolute;
   top: -40%;
   left: -70%;
-  background: linear-gradient(110deg,
-      transparent,
-      rgba(255, 255, 255, 0.65),
-      transparent);
+  background: linear-gradient(
+    110deg,
+    transparent,
+    rgba(255, 255, 255, 0.65),
+    transparent
+  );
   transform: skewX(-20deg);
   pointer-events: none;
 }
@@ -170,7 +174,7 @@ header {
   -webkit-backdrop-filter: blur(8px);
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
 
-  transition: .4s;
+  transition: 0.4s;
 }
 
 /* 헤더숨김 */
@@ -219,7 +223,7 @@ header {
   /* background-color: aqua; */
 }
 
-.header_i .menu>li {
+.header_i .menu > li {
   width: clamp(105px, 10vw, 140px);
   flex-shrink: 1;
   text-align: center;
@@ -252,11 +256,11 @@ header {
   bottom: 0;
 }
 
-.header_i .menu>li:hover>a {
+.header_i .menu > li:hover > a {
   color: #c1262e;
 }
 
-.header_i .menu>li:hover>a::after {
+.header_i .menu > li:hover > a::after {
   width: 100%;
 }
 
@@ -337,7 +341,7 @@ header {
   font-weight: 300;
 }
 
-.header_icon .lang>select {
+.header_icon .lang > select {
   width: 64px;
   padding: 0;
   text-align: center;
@@ -392,14 +396,11 @@ header {
 
   /* 왼쪽은 밝게 하고 오른쪽으로 갈수록 투명하게 만드는 그라데이션 */
   background: linear-gradient(
-      /* 그라데이션이 왼쪽에서 오른쪽으로 진행 */
-      to right,
-      /* 시작 지점: 불투명도 75%의 흰색 */
-      rgba(255, 255, 255, 0.75) 0%,
-      /* 가운데 지점: 불투명도 35%의 흰색 */
-      rgba(255, 255, 255, 0.35) 50%,
-      /* 75% 지점부터 완전히 투명하게 표시 */
-      transparent 75%);
+    /* 그라데이션이 왼쪽에서 오른쪽으로 진행 */ to right,
+    /* 시작 지점: 불투명도 75%의 흰색 */ rgba(255, 255, 255, 0.75) 0%,
+    /* 가운데 지점: 불투명도 35%의 흰색 */ rgba(255, 255, 255, 0.35) 50%,
+    /* 75% 지점부터 완전히 투명하게 표시 */ transparent 75%
+  );
 
   /* 가상 요소가 히어로의 버튼 클릭이나 터치를 막지 않도록 설정 */
   pointer-events: none;
@@ -451,7 +452,6 @@ header {
 
 /* 페이드 전환 */
 @keyframes herofade {
-
   /* 12초 기준 */
   0% {
     opacity: 0;
@@ -1125,7 +1125,7 @@ header {
   font-size: 24px;
 }
 
-.oem_btm>h3 {
+.oem_btm > h3 {
   font-size: clamp(24px, 1.8vw, 28px);
   font-weight: 600;
 }
@@ -1360,7 +1360,7 @@ footer {
   justify-content: space-between;
 }
 
-.ftext .finfo>div {
+.ftext .finfo > div {
   width: 50%;
 
   display: flex;
@@ -1406,7 +1406,6 @@ footer {
 }
 
 @media screen and (max-width: 1024px) {
-
   /* oem스크롤 */
   .oem_btm .oem_order {
     overflow: hidden;
@@ -1624,7 +1623,6 @@ footer {
 
   .global_btm .export .card a {
     padding: 6px 16px;
-
   }
 
   /* oem 섹션 */
@@ -1673,7 +1671,7 @@ footer {
     gap: 24px;
   }
 
-  .ftext .finfo>div {
+  .ftext .finfo > div {
     width: 100%;
   }
 }
@@ -1694,7 +1692,7 @@ footer {
     flex-basis: 120px;
   }
 
-  .oem_btm>h3 {
+  .oem_btm > h3 {
     font-size: 20px;
   }
 
@@ -1742,8 +1740,30 @@ footer {
   }
 
   /* 헤더 */
+  header{
+    height: 56px;
+  }
+
+  .header_i .logo {
+    width: 65px;
+  }
+
+  .header_i .logo img {
+    width: 53px;
+  }
+
   .header_icon {
     gap: 12px;
+  }
+
+  .header_icon .imgbox {
+    width: 24px;
+    height: 24px;
+  }
+
+  .header_ham {
+    width: 24px;
+    height: 20px;
   }
 
   /* 히어로 */

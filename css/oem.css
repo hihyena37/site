@@ -1242,8 +1242,30 @@ footer {
   }
 
   /* 헤더 */
+  header {
+    height: 56px;
+  }
+
+  .header_i .logo {
+    width: 65px;
+  }
+
+  .header_i .logo img {
+    width: 53px;
+  }
+
   .header_icon {
     gap: 12px;
+  }
+
+  .header_icon .imgbox {
+    width: 24px;
+    height: 24px;
+  }
+
+  .header_ham {
+    width: 24px;
+    height: 20px;
   }
 
   /* 히어로 */
