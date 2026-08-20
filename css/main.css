@@ -1284,6 +1284,91 @@ body.menu_open {
   background-color: #a01f25;
 }
 
+/* 글로벌 수출 카드 PC 디자인 */
+.global_btm .export .card {
+    padding: clamp(14px, 1.7vw, 24px) clamp(12px, 1.8vw, 28px);
+    gap: clamp(14px, 1.4vw, 20px);
+    justify-content: flex-start;
+
+    border: 1px solid #f0e6df;
+    border-radius: 14px;
+    box-shadow: 0 6px 20px rgba(86, 37, 2, 0.09);
+}
+
+.global_btm .export .card .imgbox {
+    width: clamp(44px, 4vw, 72px);
+    aspect-ratio: 1 / 1;
+    padding: clamp(8px, 0.8vw, 12px);
+    flex-shrink: 0;
+    background-color: #fdf1f1;
+    border-radius: 50%;
+}
+
+.global_btm .export .card .imgbox img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.global_btm .export .card .text {
+    width: auto;
+    min-width: 0;
+    flex: 1;
+    align-items: flex-start;
+    gap: clamp(8px, 0.9vw, 12px);
+}
+
+.global_btm .export .card .text .top,
+.global_btm .export .card:nth-child(1) .text .top {
+    width: auto;
+    padding-left: 10px;
+
+    position: relative;
+
+    font-size: clamp(14px, 1.25vw, 18px);
+    line-height: 1.35;
+    text-align: left;
+    white-space: nowrap;
+}
+
+.global_btm .export .card .text .top::before {
+    content: "";
+    width: 3px;
+    height: 100%;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    background-color: #c1262e;
+    border-radius: 999px;
+}
+
+.global_btm .export .card .text .btm {
+    gap: 4px;
+    align-items: baseline;
+}
+
+.global_btm .export .card .text .btm p {
+    font-size: clamp(28px, 3vw, 42px);
+    line-height: 1;
+}
+
+.global_btm .export .card .text .btm span {
+    font-size: clamp(12px, 1.2vw, 17px);
+}
+
+.global_btm .export .card a {
+    width: 100%;
+    padding: clamp(7px, 0.7vw, 10px) 8px;
+
+    justify-content: center;
+    align-items: center;
+    font-size: clamp(11px, 1.05vw, 15px);
+    text-align: center;
+    border-radius: 10px;
+}
+
 /* OEM */
 .oem {
   margin-bottom: 160px;
@@ -1802,27 +1887,37 @@ footer {
   }
 
   .global_btm .export .card {
-    flex-direction: column;
-    justify-content: flex-start;
-    gap: 12px 0;
-    padding: 24px 0;
+    min-width: 0;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(16px, 2vw, 22px);
+    padding: 18px 12px;
+  }
+
+  .global_btm .export .card .imgbox {
+    width: clamp(42px, 5vw, 52px);
+    padding: 8px;
+  }
+
+  .global_btm .export .card .text {
+    width: auto;
+    min-width: 0;
+    flex: 0 1 auto;
+    align-items: flex-start;
   }
 
   .global_btm .export .card .text .top,
   .global_btm .export .card:nth-child(1) .text .top {
-    width: 70%;
-    min-height: 2.6em;
+    width: auto;
+    min-height: 0;
     line-height: 1.3;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .global_btm .export .card .tel {
-    font-size: 14px;
+    display: block;
+    text-align: left;
   }
 
   .global_btm .export .card a {
+    width: auto;
     padding: 6px 16px;
   }
 
@@ -2138,52 +2233,6 @@ footer {
     min-height: 240px;
   }
 
-  .global_btm .export {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 16px;
-  }
-
-  .global_btm .export .card {
-    min-width: 0;
-    min-height: 160px;
-    padding: 14px 8px;
-    flex-direction: column;
-    justify-content: center;
-    gap: 8px;
-    text-align: center;
-  }
-
-  .global_btm .export .card img {
-    width: 44px;
-  }
-
-  .global_btm .export .card .text {
-    gap: 6px;
-  }
-
-  .global_btm .export .card .text .top,
-  .global_btm .export .card:nth-child(1) .text .top {
-    width: auto;
-    font-size: 14px;
-  }
-
-  .global_btm .export .card .text .btm p {
-    font-size: 28px;
-  }
-
-  .global_btm .export .card .text .btm span {
-    font-size: 13px;
-  }
-
-  .global_btm .export .card .tel {
-    font-size: 12px;
-  }
-
-  .global_btm .export .card a {
-    padding: 4px 8px;
-    font-size: 11px;
-  }
-
   /* OEM */
   .oem_btm {
     font-size: 20px;
@@ -2276,21 +2325,67 @@ footer {
     text-overflow: ellipsis;
   }
 
-  .global_btm .export .card {
-    padding: 12px 4px;
+  .oem_btm .oem_order .swiper-wrapper {
+    gap: 0;
+  }
+}
+
+/* 800px 이하 수출 카드 세로 배치 */
+@media screen and (max-width: 800px) {
+  .global_btm .export {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    gap: 16px;
   }
 
-  .global_btm .export .card .text .top {
+  .global_btm .export .card {
+    min-height: 120px;
+    padding: 16px clamp(12px, 3vw, 24px);
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: clamp(10px, 2.5vw, 20px);
+    text-align: left;
+  }
+
+  .global_btm .export .card .imgbox {
+    width: clamp(42px, 7vw, 52px);
+    padding: 7px;
+  }
+
+  .global_btm .export .card .text {
     width: auto;
-    font-size: 16px;
+    min-width: 0;
+    flex: 1;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: clamp(8px, 2vw, 16px);
+  }
+
+  .global_btm .export .card .text .top,
+  .global_btm .export .card:nth-child(1) .text .top {
+    width: auto;
+    min-height: 0;
+    padding-left: 8px;
+    display: block;
+    font-size: clamp(15px, 2.2vw, 16px);
+    text-align: left;
+    white-space: nowrap;
+  }
+
+  .global_btm .export .card .text .btm .country_count,
+  .global_btm .export .card .text .btm .export_count {
+    font-size: clamp(36px, 6vw, 44px);
+  }
+
+  .global_btm .export .card .text .btm span {
+    font-size: clamp(15px, 2vw, 16px);
   }
 
   .global_btm .export .card a {
-    padding: 4px 7px;
-    font-size: 11px;
-  }
-
-  .oem_btm .oem_order .swiper-wrapper {
-    gap: 0;
+    width: auto;
+    padding: 7px clamp(10px, 2.5vw, 18px);
+    flex-shrink: 0;
+    font-size: clamp(12px, 2vw, 13px);
   }
 }
