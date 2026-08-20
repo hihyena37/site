@@ -61,6 +61,11 @@ select,
 input,
 label,
 label *,
+[role="button"],
+.category_i .category_tab .left p,
+.category_i .page_tab .page_num p,
+.oem_tab .left p,
+.oem_i .page_tab .page_num p,
 .header_icon .search,
 .header_icon .search *,
 .header_icon .admin,
@@ -776,7 +781,8 @@ body.menu_open {
 
 .category_i .item_box {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  /* 글이 길어도 한 카드가 그리드 칸을 밀어 넓히지 못하게 한다 */
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   grid-auto-rows: 1fr;
   gap: 32px 24px;
 
@@ -807,6 +813,9 @@ body.menu_open {
   background-color: #efefef;
   padding: 28px 20px;
   border-radius: 16px;
+  min-width: 0;
+  /* 상품 이미지와 글 길이가 달라도 모든 페이지의 카드 높이를 같게 한다 */
+  height: clamp(360px, 30vw, 430px);
 
   display: flex;
   flex-direction: column;
@@ -816,13 +825,18 @@ body.menu_open {
 
 .category_i .item_box .card .imgbox {
   width: 80%;
-  height: 80%;
+  /* 세로로 긴 이미지도 카드 높이를 밀어내지 못하도록 높이를 고정한다 */
+  height: clamp(220px, 18vw, 280px);
+  flex-shrink: 0;
 }
 
 .category_i .item_box .card .imgbox img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  /* 상품 이미지가 잘리지 않도록 정사각형 영역 안에 맞춘다 */
+  object-fit: contain;
+  /* 원본 비율이 달라도 상품의 아래쪽 위치를 같은 선에 맞춘다 */
+  object-position: center bottom;
 
   transition: 0.4s;
 }
@@ -1359,6 +1373,15 @@ footer {
     gap: 24px;
   }
 
+  /* 태블릿 화면이 좁아지면 카테고리 카드와 이미지 높이도 함께 줄어든다 */
+  .category_i .item_box .card {
+    height: clamp(270px, 38vw, 390px);
+  }
+
+  .category_i .item_box .card .imgbox {
+    height: clamp(140px, 22vw, 220px);
+  }
+
   .category_i .page_tab .page_num p,
   .oem_i .page_tab .page_num p {
     padding: 8px 20px;
@@ -1603,7 +1626,10 @@ footer {
   }
 
   .category_i .category_tab .right {
-    width: 124px;
+    /* 긴 옵션 글자와 select 화살표가 함께 들어가도 잘리지 않게 한다 */
+    width: 180px;
+    max-width: 100%;
+    box-sizing: border-box;
     align-self: flex-end;
   }
 
@@ -1628,6 +1654,11 @@ footer {
     min-width: 0;
     padding: 18px 12px;
     gap: 16px;
+  }
+
+  /* 모바일에서는 한 줄 카드 너비에 맞춰 높이가 자연스럽게 정해진다 */
+  .category_i .item_box .card {
+    height: auto;
   }
 
   .category_i .item_box .card .imgbox,
@@ -1725,6 +1756,11 @@ footer {
   .category_i .item_box,
   .oem_i .item_box {
     grid-template-columns: 1fr;
+  }
+
+  /* 모바일 OEM 상품은 한 줄에 2개씩 배치한다 */
+  .oem_i .item_box {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .category_i .item_box .card,

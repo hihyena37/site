@@ -1,1023 +1,583 @@
 <!doctype html>
 <html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>브랜드·제품 | (주)영풍</title>
+    <link rel="stylesheet" href="../css/brand.css" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../favicon/favicon-32x32.png"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
+    <script
+      src="https://kit.fontawesome.com/6f10443e5d.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="../script/jquery-4.0.0.min.js"></script>
+    <script src="../script/brand.js"></script>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>브랜드·제품 | (주)영풍</title>
-  <link rel="stylesheet" href="../css/brand.css">
-  <link rel="icon" type="image/png" sizes="32x32" href="../favicon/favicon-32x32.png">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-  <script src="https://kit.fontawesome.com/6f10443e5d.js" crossorigin="anonymous"></script>
-  <script src="../script/jquery-4.0.0.min.js"></script>
-  <script src="../script/brand.js"></script>
-</head>
-
-<body>
-  <!-- 헤더 -->
-  <header>
-    <div class="header_i">
-      <!-- 로고 -->
-      <div class="logo">
-        <h1>
-          <a href="../index.html">
-            <img src="../image/logo.png" alt="logo">
-          </a>
-        </h1>
-      </div>
-
-      <!-- 메뉴 -->
-      <nav>
-        <ul class="menu">
-          <li>
-            <a href="#">회사소개</a>
-            <ul class="submenu">
-              <li><a href="#">CEO 인사말</a></li>
-              <li><a href="#">기업개요</a></li>
-              <li><a href="#">연혁</a></li>
-              <li><a href="#">조직도</a></li>
-              <li><a href="#">제휴사</a></li>
-              <li><a href="#">오시는 길</a></li>
-            </ul>
-          </li>
-
-          <li>
-            <a href="./brand.html">브랜드·제품</a>
-            <ul class="submenu">
-              <li><a href="#">브랜드 소개</a></li>
-              <li><a href="#">떡볶이</a></li>
-              <li><a href="#">스낵류</a></li>
-              <li><a href="#">김치류</a></li>
-              <li><a href="#">떡류</a></li>
-              <li><a href="#">전류</a></li>
-              <li><a href="#">e-카탈로그</a></li>
-            </ul>
-          </li>
-
-          <li>
-            <a href="#">품질·인증</a>
-            <ul class="submenu">
-              <li><a href="#">인증 현황</a></li>
-              <li><a href="#">ESG 경영</a></li>
-            </ul>
-          </li>
-
-          <li>
-            <a href="#">글로벌 비즈니스</a>
-            <ul class="submenu">
-              <li><a href="#">수출 현황</a></li>
-              <li><a href="#">수출 국가</a></li>
-              <li><a href="#">해외 파트너</a></li>
-            </ul>
-          </li>
-
-          <li>
-            <a href="./oem.html">OEM</a>
-            <ul class="submenu">
-              <li><a href="#">OEM 소개</a></li>
-              <li><a href="#">생산 가능 제품</a></li>
-              <li><a href="#">진행 절차</a></li>
-              <li><a href="#">OEM 문의</a></li>
-            </ul>
-          </li>
-
-          <li>
-            <a href="#">홍보센터</a>
-            <ul class="submenu">
-              <li><a href="#">보도자료</a></li>
-              <li><a href="#">전시회 참여</a></li>
-              <li><a href="#">행복가득 영풍</a></li>
-              <li><a href="#">글로벌 활동</a></li>
-              <li><a href="#">CSR</a></li>
-            </ul>
-          </li>
-
-          <li>
-            <a href="#">고객센터</a>
-            <ul class="submenu">
-              <li><a href="#">공지사항</a></li>
-              <li><a href="#">자주 묻는 질문</a></li>
-              <li><a href="#">온라인 문의</a></li>
-            </ul>
-          </li>
-        </ul>
-      </nav>
-
-      <!-- 아이콘 -->
-      <div class="header_icon">
-        <div class="search">
-          <div class="imgbox">
-            <img src="../image/i_search.png" alt="search">
-          </div>
+  <body>
+    <!-- 헤더 -->
+    <header>
+      <div class="header_i">
+        <!-- 로고 -->
+        <div class="logo">
+          <h1>
+            <a href="../index.html">
+              <img src="../image/logo.png" alt="logo" />
+            </a>
+          </h1>
         </div>
 
-        <a href="#" class="admin">
-          <div class="imgbox">
-            <img src="../image/i_admin.png" alt="admin">
-          </div>
-        </a>
+        <!-- 메뉴 -->
+        <nav>
+          <ul class="menu">
+            <li>
+              <a href="#">회사소개</a>
+              <ul class="submenu">
+                <li><a href="#">CEO 인사말</a></li>
+                <li><a href="#">기업개요</a></li>
+                <li><a href="#">연혁</a></li>
+                <li><a href="#">조직도</a></li>
+                <li><a href="#">제휴사</a></li>
+                <li><a href="#">오시는 길</a></li>
+              </ul>
+            </li>
 
-        <div class="lang">
-          <div class="imgbox">
-            <img src="../image/lang.png" alt="언어 선택">
+            <li>
+              <a href="./brand.html">브랜드·제품</a>
+              <ul class="submenu">
+                <li><a href="#">브랜드 소개</a></li>
+                <li><a href="#">떡볶이</a></li>
+                <li><a href="#">스낵류</a></li>
+                <li><a href="#">김치류</a></li>
+                <li><a href="#">떡류</a></li>
+                <li><a href="#">전류</a></li>
+                <li><a href="#">e-카탈로그</a></li>
+              </ul>
+            </li>
+
+            <li>
+              <a href="#">품질·인증</a>
+              <ul class="submenu">
+                <li><a href="#">인증 현황</a></li>
+                <li><a href="#">ESG 경영</a></li>
+              </ul>
+            </li>
+
+            <li>
+              <a href="#">글로벌 비즈니스</a>
+              <ul class="submenu">
+                <li><a href="#">수출 현황</a></li>
+                <li><a href="#">수출 국가</a></li>
+                <li><a href="#">해외 파트너</a></li>
+              </ul>
+            </li>
+
+            <li>
+              <a href="./oem.html">OEM</a>
+              <ul class="submenu">
+                <li><a href="#">OEM 소개</a></li>
+                <li><a href="#">생산 가능 제품</a></li>
+                <li><a href="#">진행 절차</a></li>
+                <li><a href="#">OEM 문의</a></li>
+              </ul>
+            </li>
+
+            <li>
+              <a href="#">홍보센터</a>
+              <ul class="submenu">
+                <li><a href="#">보도자료</a></li>
+                <li><a href="#">전시회 참여</a></li>
+                <li><a href="#">행복가득 영풍</a></li>
+                <li><a href="#">글로벌 활동</a></li>
+                <li><a href="#">CSR</a></li>
+              </ul>
+            </li>
+
+            <li>
+              <a href="#">고객센터</a>
+              <ul class="submenu">
+                <li><a href="#">공지사항</a></li>
+                <li><a href="#">자주 묻는 질문</a></li>
+                <li><a href="#">온라인 문의</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+
+        <!-- 아이콘 -->
+        <div class="header_icon">
+          <div class="search">
+            <div class="imgbox">
+              <img src="../image/i_search.png" alt="search" />
+            </div>
           </div>
-          <select>
-            <option>한국어</option>
-            <option>EN</option>
-            <option>日本</option>
-            <option>中国</option>
+
+          <a href="#" class="admin">
+            <div class="imgbox">
+              <img src="../image/i_admin.png" alt="admin" />
+            </div>
+          </a>
+
+          <div class="lang">
+            <div class="imgbox">
+              <img src="../image/lang.png" alt="언어 선택" />
+            </div>
+            <select>
+              <option>한국어</option>
+              <option>EN</option>
+              <option>日本</option>
+              <option>中国</option>
+            </select>
+          </div>
+
+          <!-- 햄버거바 -->
+          <button
+            type="button"
+            class="header_ham"
+            aria-label="전체 메뉴 열기"
+            aria-expanded="false"
+          >
+            <span class="ham_i"
+              ><span class="line"></span><span class="line"></span
+              ><span class="line"></span
+            ></span>
+          </button>
+        </div>
+      </div>
+      <div class="submenu_bg"></div>
+    </header>
+
+    <!-- 햄버거바 메뉴 -->
+    <div class="ham_menu_bg">
+      <div class="ham_menu">
+        <div class="ham_menu_top">
+          <div class="ham_lang">
+            <img src="../image/lang.png" alt="" /><span>lang</span
+            ><i class="bi bi-chevron-down"></i>
+          </div>
+          <div class="ham_top_icon">
+            <button type="button" class="ham_search" aria-label="검색">
+              <img src="../image/i_search.png" alt="" /></button
+            ><button
+              type="button"
+              class="ham_close"
+              aria-label="전체 메뉴 닫기"
+            >
+              <i class="bi bi-x-lg"></i>
+            </button>
+          </div>
+        </div>
+        <nav class="ham_nav" aria-label="태블릿 전체 메뉴">
+          <ul class="ham_mainmenu">
+            <li>
+              <button type="button" class="ham_menu_title">
+                <span>회사소개</span><i class="bi bi-chevron-down"></i>
+              </button>
+              <ul class="ham_submenu">
+                <li><a href="#">CEO 인사말</a></li>
+                <li><a href="#">기업개요</a></li>
+                <li><a href="#">연혁</a></li>
+                <li><a href="#">조직도</a></li>
+                <li><a href="#">제휴사</a></li>
+                <li><a href="#">오시는 길</a></li>
+              </ul>
+            </li>
+            <li>
+              <button type="button" class="ham_menu_title">
+                <span>브랜드·제품</span><i class="bi bi-chevron-down"></i>
+              </button>
+              <ul class="ham_submenu">
+                <li><a href="./brand.html">브랜드 소개</a></li>
+                <li><a href="#">떡볶이</a></li>
+                <li><a href="#">스낵류</a></li>
+                <li><a href="#">김치류</a></li>
+                <li><a href="#">떡류</a></li>
+                <li><a href="#">전류</a></li>
+                <li><a href="#">e-카탈로그</a></li>
+              </ul>
+            </li>
+            <li>
+              <button type="button" class="ham_menu_title">
+                <span>품질·인증</span><i class="bi bi-chevron-down"></i>
+              </button>
+              <ul class="ham_submenu">
+                <li><a href="#">인증 현황</a></li>
+                <li><a href="#">ESG 경영</a></li>
+              </ul>
+            </li>
+            <li>
+              <button type="button" class="ham_menu_title">
+                <span>글로벌 비즈니스</span><i class="bi bi-chevron-down"></i>
+              </button>
+              <ul class="ham_submenu">
+                <li><a href="#">수출 현황</a></li>
+                <li><a href="#">수출 국가</a></li>
+                <li><a href="#">해외 파트너</a></li>
+              </ul>
+            </li>
+            <li>
+              <button type="button" class="ham_menu_title">
+                <span>OEM</span><i class="bi bi-chevron-down"></i>
+              </button>
+              <ul class="ham_submenu">
+                <li><a href="./oem.html">OEM 소개</a></li>
+                <li><a href="#">생산 가능 제품</a></li>
+                <li><a href="#">진행 절차</a></li>
+                <li><a href="#">OEM 문의</a></li>
+              </ul>
+            </li>
+            <li>
+              <button type="button" class="ham_menu_title">
+                <span>홍보센터</span><i class="bi bi-chevron-down"></i>
+              </button>
+              <ul class="ham_submenu">
+                <li><a href="#">보도자료</a></li>
+                <li><a href="#">전시회 참여</a></li>
+                <li><a href="#">행복가득 영풍</a></li>
+                <li><a href="#">글로벌 활동</a></li>
+                <li><a href="#">CSR</a></li>
+              </ul>
+            </li>
+            <li>
+              <button type="button" class="ham_menu_title">
+                <span>고객센터</span><i class="bi bi-chevron-down"></i>
+              </button>
+              <ul class="ham_submenu">
+                <li><a href="#">공지사항</a></li>
+                <li><a href="#">자주 묻는 질문</a></li>
+                <li><a href="#">온라인 문의</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <!-- /헤더 -->
+
+    <!-- 히어로 섹션 -->
+    <section class="hero">
+      <div class="hero_i">
+        <div class="title">
+          <div class="text">
+            <h2>브랜드·제품</h2>
+          </div>
+
+          <p>
+            오랜 시간 축적된 노하우로 <br />
+            K-FOOD의 맛과 가치를 세계 식탁 위에 전합니다.
+          </p>
+          <div class="btn">
+            <a href="#"> e - 카탈로그 <i class="bi bi-chevron-right"></i> </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- 히어로 섹션 -->
+
+    <!-- 브랜드인포 섹션 -->
+    <section class="brand_info">
+      <div class="brand_info_i">
+        <h3>브랜드 소개</h3>
+        <!-- 브랜드박스 -->
+        <div class="brand_box">
+          <!-- 브랜드 종류 카드 -->
+          <div class="card">
+            <div class="typeimg">
+              <img src="../image/brand1.png" alt="b_type1" />
+            </div>
+            <p>
+              요뽀끼는 떡볶이와 포크를 형상화한 친근한 브랜드로,
+              맛있어’요’,간편해’요’ 의 활기찬 이미지를 담고 있습니다. 매콤달콤,
+              치즈, 짜장, 닭갈비 등 다양한 맛의 떡볶이 제품을 선보입니다.
+            </p>
+            <div class="imgbox">
+              <img src="../image/brand1item.jpg" alt="b_item1" />
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="typeimg">
+              <img src="../image/brand2.png" alt="b_type2" />
+            </div>
+            <p>
+              맛다믄(Matamun), ‘정성스레 맛을 담은’이라는 의미를 담은 한식
+              브랜드로, 신선한 재료와 어머니의 손맛 같은 정성을 전합니다. 음식을
+              담는 그릇을 모티프로 맛과 정성을 표현했습니다.
+            </p>
+            <div class="imgbox">
+              <img src="../image/brand2item.jpg" alt="b_item2" />
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="typeimg">
+              <img src="../image/brand3.png" alt="b_type3" />
+            </div>
+            <p>
+              5분전은 손이 많이 가는 전 요리를 5분 안에 간편하게 즐길 수 있도록
+              만든 브랜드입니다. 실제 조리시간을 브랜드명에 담고, 한국적인
+              캘리그래피로 친근하게 표현했습니다.
+            </p>
+            <div class="imgbox">
+              <img src="../image/brand3item.jpg" alt="b_item3" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- 브랜드인포 섹션 -->
+
+    <!-- 제품카테고리 섹션 -->
+    <section class="category">
+      <div class="category_i">
+        <h3>제품 카테고리</h3>
+        <!-- 카테고리 탭 -->
+        <div class="category_tab">
+          <div class="left"></div>
+
+          <select class="right">
+            <option value="all">전체</option>
+            <option value="tteokbokki">떡볶이</option>
+            <option value="rabokki">라볶이</option>
+            <option value="halal">할랄 떡볶이</option>
+            <option value="frozen">냉동 떡볶이</option>
           </select>
         </div>
 
-        <!-- 햄버거바 -->
-        <button type="button" class="header_ham" aria-label="전체 메뉴 열기" aria-expanded="false">
-          <span class="ham_i"><span class="line"></span><span class="line"></span><span class="line"></span></span>
-        </button>
-      </div>
-    </div>
-    <div class="submenu_bg"></div>
-  </header>
-
-  <!-- 햄버거바 메뉴 -->
-  <div class="ham_menu_bg">
-    <div class="ham_menu">
-      <div class="ham_menu_top">
-        <div class="ham_lang"><img src="../image/lang.png" alt=""><span>lang</span><i class="bi bi-chevron-down"></i>
-        </div>
-        <div class="ham_top_icon"><button type="button" class="ham_search" aria-label="검색"><img
-              src="../image/i_search.png" alt=""></button><button type="button" class="ham_close"
-            aria-label="전체 메뉴 닫기"><i class="bi bi-x-lg"></i></button></div>
-      </div>
-      <nav class="ham_nav" aria-label="태블릿 전체 메뉴">
-        <ul class="ham_mainmenu">
-          <li><button type="button" class="ham_menu_title"><span>회사소개</span><i class="bi bi-chevron-down"></i></button>
-            <ul class="ham_submenu">
-              <li><a href="#">CEO 인사말</a></li>
-              <li><a href="#">기업개요</a></li>
-              <li><a href="#">연혁</a></li>
-              <li><a href="#">조직도</a></li>
-              <li><a href="#">제휴사</a></li>
-              <li><a href="#">오시는 길</a></li>
-            </ul>
-          </li>
-          <li><button type="button" class="ham_menu_title"><span>브랜드·제품</span><i
-                class="bi bi-chevron-down"></i></button>
-            <ul class="ham_submenu">
-              <li><a href="./brand.html">브랜드 소개</a></li>
-              <li><a href="#">떡볶이</a></li>
-              <li><a href="#">스낵류</a></li>
-              <li><a href="#">김치류</a></li>
-              <li><a href="#">떡류</a></li>
-              <li><a href="#">전류</a></li>
-              <li><a href="#">e-카탈로그</a></li>
-            </ul>
-          </li>
-          <li><button type="button" class="ham_menu_title"><span>품질·인증</span><i class="bi bi-chevron-down"></i></button>
-            <ul class="ham_submenu">
-              <li><a href="#">인증 현황</a></li>
-              <li><a href="#">ESG 경영</a></li>
-            </ul>
-          </li>
-          <li><button type="button" class="ham_menu_title"><span>글로벌 비즈니스</span><i
-                class="bi bi-chevron-down"></i></button>
-            <ul class="ham_submenu">
-              <li><a href="#">수출 현황</a></li>
-              <li><a href="#">수출 국가</a></li>
-              <li><a href="#">해외 파트너</a></li>
-            </ul>
-          </li>
-          <li><button type="button" class="ham_menu_title"><span>OEM</span><i class="bi bi-chevron-down"></i></button>
-            <ul class="ham_submenu">
-              <li><a href="./oem.html">OEM 소개</a></li>
-              <li><a href="#">생산 가능 제품</a></li>
-              <li><a href="#">진행 절차</a></li>
-              <li><a href="#">OEM 문의</a></li>
-            </ul>
-          </li>
-          <li><button type="button" class="ham_menu_title"><span>홍보센터</span><i class="bi bi-chevron-down"></i></button>
-            <ul class="ham_submenu">
-              <li><a href="#">보도자료</a></li>
-              <li><a href="#">전시회 참여</a></li>
-              <li><a href="#">행복가득 영풍</a></li>
-              <li><a href="#">글로벌 활동</a></li>
-              <li><a href="#">CSR</a></li>
-            </ul>
-          </li>
-          <li><button type="button" class="ham_menu_title"><span>고객센터</span><i class="bi bi-chevron-down"></i></button>
-            <ul class="ham_submenu">
-              <li><a href="#">공지사항</a></li>
-              <li><a href="#">자주 묻는 질문</a></li>
-              <li><a href="#">온라인 문의</a></li>
-            </ul>
-          </li>
-        </ul>
-      </nav>
-    </div>
-  </div>
-  <!-- /헤더 -->
-
-  <!-- 히어로 섹션 -->
-  <section class="hero">
-    <div class="hero_i">
-      <div class="title">
-        <div class="text">
-          <h2>브랜드·제품</h2>
-        </div>
-
-        <p>
-          오랜 시간 축적된 노하우로 <br>
-          K-FOOD의 맛과 가치를 세계 식탁 위에 전합니다.
-        </p>
-        <div class="btn">
-          <a href="#"> e - 카탈로그 <i class="bi bi-chevron-right"></i> </a>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- 히어로 섹션 -->
-
-  <!-- 브랜드인포 섹션 -->
-  <section class="brand_info">
-    <div class="brand_info_i">
-      <h3>브랜드 소개</h3>
-      <!-- 브랜드박스 -->
-      <div class="brand_box">
-        <!-- 브랜드 종류 카드 -->
-        <div class="card">
-          <div class="typeimg">
-            <img src="../image/brand1.png" alt="b_type1">
-          </div>
-          <p>
-            요뽀끼는 떡볶이와 포크를 형상화한 친근한 브랜드로,
-            맛있어’요’,간편해’요’ 의 활기찬 이미지를 담고 있습니다. 매콤달콤,
-            치즈, 짜장, 닭갈비 등 다양한 맛의 떡볶이 제품을 선보입니다.
-          </p>
-          <div class="imgbox">
-            <img src="../image/brand1item.jpg" alt="b_item1">
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="typeimg">
-            <img src="../image/brand2.png" alt="b_type2">
-          </div>
-          <p>
-            맛다믄(Matamun), ‘정성스레 맛을 담은’이라는 의미를 담은 한식
-            브랜드로, 신선한 재료와 어머니의 손맛 같은 정성을 전합니다. 음식을
-            담는 그릇을 모티프로 맛과 정성을 표현했습니다.
-          </p>
-          <div class="imgbox">
-            <img src="../image/brand2item.jpg" alt="b_item2">
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="typeimg">
-            <img src="../image/brand3.png" alt="b_type3">
-          </div>
-          <p>
-            5분전은 손이 많이 가는 전 요리를 5분 안에 간편하게 즐길 수 있도록
-            만든 브랜드입니다. 실제 조리시간을 브랜드명에 담고, 한국적인
-            캘리그래피로 친근하게 표현했습니다.
-          </p>
-          <div class="imgbox">
-            <img src="../image/brand3item.jpg" alt="b_item3">
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- 브랜드인포 섹션 -->
-
-  <!-- 제품카테고리 섹션 -->
-  <section class="category">
-    <div class="category_i">
-      <h3>제품 카테고리</h3>
-      <!-- 카테고리 탭 -->
-      <div class="category_tab">
-        <div class="left">
-          <p class="active" data-category="tteokbokki">떡볶이</p>
-          <p data-category="snack">스낵류</p>
-          <p data-category="kimchi">김치류</p>
-          <p data-category="ricecake">떡류</p>
-          <p data-category="jeon">전류</p>
-        </div>
-
-        <select class="right">
-          <option value="all">전체</option>
-          <option value="tteokbokki">떡볶이</option>
-          <option value="rabokki">라볶이</option>
-          <option value="halal">할랄 떡볶이</option>
-          <option value="frozen">냉동 떡볶이</option>
-        </select>
-      </div>
-
-      <!-- 카테고리 아이템페이지 -->
-      <div class="item_pages">
-        <!-- 카테고리 아이템박스 1페이지 -->
-        <div class="item_box active" data-page="1">
-          <!-- 카테고리 아이템카드 -->
-          <a href="#" class="card">
-            <div class="imgbox">
-              <img src="../image/yo1.png" alt="yo1">
-            </div>
-            <div class="text">
-              <p>요뽀끼 불고기맛 떡볶이 1인 컵</p>
-              <span>대표적인 한식 불고기와 떡볶이의 만남</span>
-            </div>
-          </a>
-
-          <a href="#" class="card">
-            <div class="imgbox">
-              <img src="../image/yo2.png" alt="yo2">
-            </div>
-            <div class="text">
-              <p>요뽀끼 로제 떡볶이 1인 컵</p>
-              <span>매콤한 떡볶이와 부드러운 크림의 만남</span>
-            </div>
-          </a>
-
-          <a href="#" class="card">
-            <div class="imgbox">
-              <img src="../image/yo3.png" alt="yo3">
-            </div>
-            <div class="text">
-              <p>요뽀끼 팥 떡볶이 1인 컵</p>
-              <span>달콤한 팥과 쫀득한 떡의 만남</span>
-            </div>
-          </a>
-
-          <a href="#" class="card">
-            <div class="imgbox">
-              <img src="../image/yo4.png" alt="yo4">
-            </div>
-            <div class="text">
-              <p>요뽀끼 매콤달콤 1인 컵</p>
-              <span>매운맛은 줄이고 달콤한 떡볶이</span>
-            </div>
-          </a>
-
-          <a href="#" class="card">
-            <div class="imgbox">
-              <img src="../image/yo5.png" alt="yo5">
-            </div>
-            <div class="text">
-              <p>요뽀끼 치즈 1인 컵</p>
-              <span>치즈 풍미를 살린 떡볶이</span>
-            </div>
-          </a>
-
-          <a href="#" class="card">
-            <div class="imgbox">
-              <img src="../image/yo6.png" alt="yo6">
-            </div>
-            <div class="text">
-              <p>요뽀끼 화끈하게 매운辛 1인 컵</p>
-              <span>중독성 있는 화끈하고 매운 떡볶이</span>
-            </div>
-          </a>
-
-          <a href="#" class="card">
-            <div class="imgbox">
-              <img src="../image/yo7.png" alt="yo7">
-            </div>
-            <div class="text">
-              <p>요뽀끼 짜장 1인 컵</p>
-              <span>매콤 달짝지근한 짜장 소스로 맛이 두 배</span>
-            </div>
-          </a>
-
-          <a href="#" class="card">
-            <div class="imgbox">
-              <img src="../image/yo8.png" alt="yo8">
-            </div>
-            <div class="text">
-              <p>요뽀끼 골든어니언버터 1인 컵</p>
-              <span>달콤하고 고소한 어니언버터 맛</span>
-            </div>
-          </a>
-
-          <a href="#" class="card">
-            <div class="imgbox">
-              <img src="../image/yo9.png" alt="yo9">
-            </div>
-            <div class="text">
-              <p>요뽀끼 명란마요 1인 컵</p>
-              <span>명란젓과 마요네즈가 어우러진 떡볶이</span>
-            </div>
-          </a>
-
-          <a href="#" class="card">
-            <div class="imgbox">
-              <img src="../image/yo10.png" alt="yo10">
-            </div>
-            <div class="text">
-              <p>요뽀끼 닭갈비맛 1인 컵</p>
-              <span>닭갈비와 떡의 환상의 콤비</span>
-            </div>
-          </a>
-
-          <a href="#" class="card">
-            <div class="imgbox">
-              <img src="../image/yo11.png" alt="yo11">
-            </div>
-            <div class="text">
-              <p>요뽀끼 갈릭 데리야끼 1인 컵</p>
-              <span>단짠단짠의 정석 갈릭 데리야끼 떡볶이</span>
-            </div>
-          </a>
-
-          <a href="#" class="card">
-            <div class="imgbox">
-              <img src="../image/yo12.png" alt="yo2">
-            </div>
-            <div class="text">
-              <p>요뽀끼 까르보나라 떡볶이 1인 컵</p>
-              <span>부드러운 크림소스와 떡볶이의 조화</span>
-            </div>
-          </a>
-        </div>
-
-        <!-- 카테고리 2페이지 -->
-        <div class="item_box" data-page="2" aria-hidden="true">
-          <a href="#" class="card">
-            <div class="imgbox">
-              <img src="../image/yo1.png" alt="yo1">
-            </div>
-            <div class="text">
-              <p>요뽀끼 바질 라볶이(국내 전용)</p>
-              <span>맛있는 바질과 맛있는 라볶이의 조화</span>
-            </div>
-          </a>
-
-          <a href="#" class="card">
-            <div class="imgbox">
-              <img src="../image/yo2.png" alt="yo2">
-            </div>
-            <div class="text">
-              <p>요뽀끼 짜장 라볶이</p>
-              <span>맛있는 짜장과 맛있는 떡볶이의 조화</span>
-            </div>
-          </a>
-
-          <a href="#" class="card">
-            <div class="imgbox">
-              <img src="../image/yo3.png" alt="yo3">
-            </div>
-            <div class="text">
-              <p>냉동 요뽀끼 오리지널 떡볶이 파우치</p>
-              <span>쫀득한 밀떡과 어묵의 매콤한 국물</span>
-            </div>
-          </a>
-
-          <a href="#" class="card">
-            <div class="imgbox">
-              <img src="../image/yo4.png" alt="yo4">
-            </div>
-            <div class="text">
-              <p>냉동 요뽀끼 납작만두 떡볶이 파우치</p>
-              <span>쫀득한 밀떡과 납작만두의 매콤한 국물</span>
-            </div>
-          </a>
-
-          <a href="#" class="card">
-            <div class="imgbox">
-              <img src="../image/yo5.png" alt="yo5">
-            </div>
-            <div class="text">
-              <p>냉동 요뽀끼 막창 떡볶이 파우치</p>
-              <span>쫀득한 밀떡과 막창의 매콤한 국물</span>
-            </div>
-          </a>
-
-          <a href="#" class="card">
-            <div class="imgbox">
-              <img src="../image/yo6.png" alt="yo6">
-            </div>
-            <div class="text">
-              <p>요뽀끼 EU치즈 떡볶이 1인 컵</p>
-              <span>매콤한 떡볶이와 부드러운 치즈의 만남</span>
-            </div>
-          </a>
-
-          <a href="#" class="card">
-            <div class="imgbox">
-              <img src="../image/yo7.png" alt="yo7">
-            </div>
-            <div class="text">
-              <p>요뽀끼 로제 2인 파우치</p>
-              <span>매콤달콤한 로제소스로 맛의 풍미가 두 배</span>
-            </div>
-          </a>
-
-          <a href="#" class="card">
-            <div class="imgbox">
-              <img src="../image/yo8.png" alt="yo8">
-            </div>
-            <div class="text">
-              <p>요뽀끼 로제 1인 파우치</p>
-              <span>매콤달콤한 로제소스로 맛의 풍미가 두 배</span>
-            </div>
-          </a>
-
-          <a href="#" class="card">
-            <div class="imgbox">
-              <img src="../image/yo9.png" alt="yo9">
-            </div>
-            <div class="text">
-              <p>요뽀끼 할랄 로제 1인 컵</p>
-              <span>MUI 할랄 인증을 받은 로제 떡볶이</span>
-            </div>
-          </a>
-
-          <a href="#" class="card">
-            <div class="imgbox">
-              <img src="../image/yo10.png" alt="yo10">
-            </div>
-            <div class="text">
-              <p>요뽀끼 할랄 김치 1인 컵</p>
-              <span>MUI 할랄 인증을 받은 김치 떡볶이</span>
-            </div>
-          </a>
-
-          <a href="#" class="card">
-            <div class="imgbox">
-              <img src="../image/yo11.png" alt="yo11">
-            </div>
-            <div class="text">
-              <p>요뽀끼 김치 라볶이</p>
-              <span>볶은김치의 새콤달콤한 맛과 매콤한 맛</span>
-            </div>
-          </a>
-
-          <a href="#" class="card">
-            <div class="imgbox">
-              <img src="../image/yo12.png" alt="yo2">
-            </div>
-            <div class="text">
-              <p>요뽀끼 김치 1인 컵</p>
-              <span>한국 전통 음식 김치와 떡볶이의 만남</span>
-            </div>
-          </a>
-        </div>
-
-        <!-- 카테고리 3페이지: -->
-        <div class="item_box" data-page="3" aria-hidden="true">
-          <a href="#" class="card">
-            <div class="imgbox">
-              <img src="../image/yo1.png" alt="yo1">
-            </div>
-            <div class="text">
-              <p>요뽀끼 초코 1인 컵</p>
-              <span>초코 퐁듀처럼 쫄깃하고 달콤한 초코맛</span>
-            </div>
-          </a>
-
-          <a href="#" class="card">
-            <div class="imgbox">
-              <img src="../image/yo2.png" alt="yo2">
-            </div>
-            <div class="text">
-              <p>요뽀끼 화끈 라볶이</p>
-              <span>강하게 맵지만 강하게 맛있는 맛</span>
-            </div>
-          </a>
-
-          <a href="#" class="card">
-            <div class="imgbox">
-              <img src="../image/yo3.png" alt="yo3">
-            </div>
-            <div class="text">
-              <p>요뽀끼 치즈 라볶이</p>
-              <span>매콤한 떡볶이와 체다치즈맛의 만남</span>
-            </div>
-          </a>
-
-          <a href="#" class="card">
-            <div class="imgbox">
-              <img src="../image/yo4.png" alt="yo4">
-            </div>
-            <div class="text">
-              <p>요뽀끼 매콤달콤 라볶이</p>
-              <span>남녀노소 모두가 즐길 수 있는 맛</span>
-            </div>
-          </a>
-
-          <a href="#" class="card">
-            <div class="imgbox">
-              <img src="../image/yo12.png" alt="yo2">
-            </div>
-            <div class="text">
-              <p>요뽀끼 카레 라볶이</p>
-              <span>맛있는 카레와 떡볶이의 조화</span>
-            </div>
-          </a>
-
-          <a href="#" class="card">
-            <div class="imgbox">
-              <img src="../image/yo5.png" alt="yo5">
-            </div>
-            <div class="text">
-              <p>요뽀끼 매콤달콤 1인 파우치</p>
-              <span>매운맛은 줄이인 매콤달콤 떡볶이</span>
-            </div>
-          </a>
-
-          <a href="#" class="card">
-            <div class="imgbox">
-              <img src="../image/yo6.png" alt="yo6">
-            </div>
-            <div class="text">
-              <p>요뽀끼 치즈 1인 파우치</p>
-              <span>부드러운 치즈와 쫄깃한 떡의 만남</span>
-            </div>
-          </a>
-
-          <a href="#" class="card">
-            <div class="imgbox">
-              <img src="../image/yo7.png" alt="yo7">
-            </div>
-            <div class="text">
-              <p>요뽀끼 화끈하게 매운辛 1인 파우치</p>
-              <span>중독성 있는 화끈하고 매운 떡볶이</span>
-            </div>
-          </a>
-
-          <a href="#" class="card">
-            <div class="imgbox">
-              <img src="../image/yo8.png" alt="yo8">
-            </div>
-            <div class="text">
-              <p>요뽀끼 짜장 1인 파우치</p>
-              <span>매콤한 짜장 소스로 맛의 풍미가 두 배</span>
-            </div>
-          </a>
-
-          <a href="#" class="card">
-            <div class="imgbox">
-              <img src="../image/yo9.png" alt="yo9">
-            </div>
-            <div class="text">
-              <p>요뽀끼 어니언버터 1인 파우치</p>
-              <span>달콤하고 고소한 어니언버터맛</span>
-            </div>
-          </a>
-
-          <a href="#" class="card">
-            <div class="imgbox">
-              <img src="../image/yo10.png" alt="yo10">
-            </div>
-            <div class="text">
-              <p>요뽀끼 토마토 라볶이 2인 파우치</p>
-              <span>토마토 소스와 라볶이의 만남</span>
-            </div>
-          </a>
-
-          <a href="#" class="card">
-            <div class="imgbox">
-              <img src="../image/yo11.png" alt="yo11">
-            </div>
-            <div class="text">
-              <p>요뽀끼 치즈 라볶이 2인 파우치</p>
-              <span>매콤한 떡볶이에 체다치즈 맛</span>
-            </div>
-          </a>
-        </div>
-        <!-- 카테고리 4페이지: -->
-        <div class="item_box" data-page="4" aria-hidden="true">
-          <a href="#" class="card">
-            <div class="imgbox">
-              <img src="../image/yo1.png" alt="yo1">
-            </div>
-            <div class="text">
-              <p>요뽀끼 매콤달콤 라볶이 2인 파우치</p>
-              <span>남녀노소 모두가 즐길 수 있는 라볶이</span>
-            </div>
-          </a>
-
-          <a href="#" class="card">
-            <div class="imgbox">
-              <img src="../image/yo2.png" alt="yo2">
-            </div>
-            <div class="text">
-              <p>요뽀끼 치즈 2인 파우치</p>
-              <span>부드러운 치즈와 떡볶이의 만남</span>
-            </div>
-          </a>
-
-          <a href="#" class="card">
-            <div class="imgbox">
-              <img src="../image/yo3.png" alt="yo3">
-            </div>
-            <div class="text">
-              <p>요뽀끼 화끈하게 매운辛 2인 파우치</p>
-              <span>중독성 있는 화끈하고 매운 떡볶이</span>
-            </div>
-          </a>
-
-          <a href="#" class="card">
-            <div class="imgbox">
-              <img src="../image/yo5.png" alt="yo5">
-            </div>
-            <div class="text">
-              <p>요뽀끼 매콤달콤 2인 파우치</p>
-              <span>매운맛은 down, 매콤달콤 떡볶이</span>
-            </div>
-          </a>
-
-          <a href="#" class="card">
-            <div class="imgbox">
-              <img src="../image/yo6.png" alt="yo6">
-            </div>
-            <div class="text">
-              <p>요뽀끼 짜장 2인 파우치</p>
-              <span>매콤한 짜장 소스로 맛의 풍미가 두 배</span>
-            </div>
-          </a>
-
-          <a href="#" class="card">
-            <div class="imgbox">
-              <img src="../image/yo7.png" alt="yo7">
-            </div>
-            <div class="text">
-              <p>요뽀끼 골든어니언버터 2인 파우치</p>
-              <span>달콤하고 고소한 어니언버터 소스맛</span>
-            </div>
-          </a>
-
-          <a href="#" class="card">
-            <div class="imgbox">
-              <img src="../image/yo8.png" alt="yo8">
-            </div>
-            <div class="text">
-              <p>요뽀끼 할랄 짜장 2인 파우치</p>
-              <span>MUI 할랄 인증을 받은 짜장 맛 떡볶이</span>
-            </div>
-          </a>
-
-          <a href="#" class="card">
-            <div class="imgbox">
-              <img src="../image/yo9.png" alt="yo9">
-            </div>
-            <div class="text">
-              <p>요뽀끼 할랄 매운맛 2인 파우치</p>
-              <span>MUI 할랄 인증을 받은 매운맛 떡볶이</span>
-            </div>
-          </a>
-
-          <a href="#" class="card">
-            <div class="imgbox">
-              <img src="../image/yo10.png" alt="yo10">
-            </div>
-            <div class="text">
-              <p>요뽀끼 할랄 오리지널 2인 파우치</p>
-              <span>MUI할랄 인증을 받은 오리지널맛 떡볶이</span>
-            </div>
-          </a>
-
-          <a href="#" class="card">
-            <div class="imgbox">
-              <img src="../image/yo11.png" alt="yo11">
-            </div>
-            <div class="text">
-              <p>요뽀끼 할랄 오리지널 1인 컵</p>
-              <span>MUI할랄 인증을 받은 오리지널 떡볶이</span>
-            </div>
-          </a>
-
-          <a href="#" class="card">
-            <div class="imgbox">
-              <img src="../image/yo12.png" alt="yo2">
-            </div>
-            <div class="text">
-              <p>요뽀끼 할랄 짜장 1인 컵</p>
-              <span>MUI 할랄 인증을 받은 짜장 맛 떡볶이</span>
-            </div>
-          </a>
-
-          <a href="#" class="card">
-            <div class="imgbox">
-              <img src="../image/yo4.png" alt="yo4">
-            </div>
-            <div class="text">
-              <p>요뽀끼 할랄 매운맛 1인 컵</p>
-              <span>MUI 할랄 인증을 받은 매운맛 떡볶이</span>
-            </div>
-          </a>
-        </div>
-      </div>
-
-      <!-- 카테고리 페이지 탭 -->
-      <div class="page_tab">
-        <button type="button" class="page_prev" aria-label="이전 페이지">
-          <i class="bi bi-chevron-left"></i>
-        </button>
-        <div class="page_num">
-          <p class="active" data-page="1" role="button" tabindex="0" aria-current="page">
-            1
-          </p>
-          <p data-page="2" role="button" tabindex="0">2</p>
-          <p data-page="3" role="button" tabindex="0">3</p>
-          <p data-page="4" role="button" tabindex="0">4</p>
-        </div>
-        <button type="button" class="page_next" aria-label="다음 페이지">
-          <i class="bi bi-chevron-right"></i>
-        </button>
-      </div>
-    </div>
-  </section>
-  <!-- 제품카테고리 섹션 -->
-
-  <!-- oem 섹션 -->
-  <section class="oem">
-    <div class="oem_i">
-      <h3>OEM</h3>
-      <!-- oem 탭 -->
-      <div class="oem_tab">
-        <div class="left">
-          <p class="active" data-oem="all">전체</p>
-          <p data-oem="samyang">삼양</p>
-          <p data-oem="paldo">팔도</p>
-          <p data-oem="etc">기타</p>
-        </div>
-
-        <a href="./oem.html" class="right">
-          OEM 바로가기 <i class="bi bi-chevron-right"></i>
-        </a>
-      </div>
-
-      <!-- oem 아이템박스 -->
-      <div class="item_pages">
-        <div class="item_box active" data-page="1">
-          <!-- oem 아이템카드 -->
-          <a href="#" class="card" data-oem-brand="paldo">
-            <div class="imgbox">
-              <img src="../image/oem_product1.png" alt="oem1">
-            </div>
-            <div class="text">
-              <p>틈새떡볶이</p>
-              <span>매운맛의 자부심! 한국인의 소울푸드</span>
-            </div>
-          </a>
-
-          <a href="#" class="card" data-oem-brand="paldo">
-            <div class="imgbox">
-              <img src="../image/oem_product2.png" alt="oem2">
-            </div>
-            <div class="text">
-              <p>팔도 비빔떡볶이</p>
-              <span>팔도비빔장과 국민간식 떡볶이의 만남</span>
-            </div>
-          </a>
-
-          <a href="#" class="card" data-oem-brand="samyang">
-            <div class="imgbox">
-              <img src="../image/oem_product3.png" alt="oem3">
-            </div>
-            <div class="text">
-              <p>불닭떡볶이</p>
-              <span>쫄깃한 떡으로 화끈한 매운맛!</span>
-            </div>
-          </a>
-
-          <a href="#" class="card" data-oem-brand="samyang">
-            <div class="imgbox">
-              <img src="../image/oem_product4.png" alt="oem4">
-            </div>
-            <div class="text">
-              <p>까르보 불닭떡볶이</p>
-              <span>쫄깃한 떡으로 부드럽고 매콤한 맛!</span>
-            </div>
-          </a>
-        </div>
-
-        <!-- OEM 2페이지: 이미지와 문구는 추후 개별 수정 -->
-        <div class="item_box" data-page="2" aria-hidden="true">
-          <!-- oem 아이템카드 -->
-          <a href="#" class="card" data-oem-brand="etc">
-            <div class="imgbox">
-              <img src="../image/oem_product5.png" alt="oem5">
-            </div>
-            <div class="text">
-              <p>틈새떡볶이</p>
-              <span>매운맛의 자부심! 한국인의 소울푸드</span>
-            </div>
-          </a>
-
-          <a href="#" class="card" data-oem-brand="etc">
-            <div class="imgbox">
-              <img src="../image/oem_product6.png" alt="oem6">
-            </div>
-            <div class="text">
-              <p>팔도 비빔떡볶이</p>
-              <span>팔도비빔장과 국민간식 떡볶이의 만남</span>
-            </div>
-          </a>
-
-          <a href="#" class="card" data-oem-brand="etc">
-            <div class="imgbox">
-              <img src="../image/oem_product7.png" alt="oem7">
-            </div>
-            <div class="text">
-              <p>불닭떡볶이</p>
-              <span>쫄깃한 떡으로 화끈한 매운맛!</span>
-            </div>
-          </a>
-
-          <a href="#" class="card" data-oem-brand="etc">
-            <div class="imgbox">
-              <img src="../image/oem_product8.png" alt="oem8">
-            </div>
-            <div class="text">
-              <p>까르보 불닭떡볶이</p>
-              <span>쫄깃한 떡으로 부드럽고 매콤한 맛!</span>
-            </div>
-          </a>
-        </div>
-
-        <!-- OEM 3페이지: 이미지와 문구는 추후 개별 수정 -->
-        <div class="item_box" data-page="3" aria-hidden="true">
-          <!-- oem 아이템카드 -->
-          <a href="#" class="card" data-oem-brand="etc">
-            <div class="imgbox">
-              <img src="../image/oem_product9.png" alt="oem9">
-            </div>
-            <div class="text">
-              <p>틈새떡볶이</p>
-              <span>매운맛의 자부심! 한국인의 소울푸드</span>
-            </div>
-          </a>
-        </div>
-      </div>
-
-      <!-- oem 페이지탭 -->
-      <div class="page_tab">
-        <button type="button" class="page_prev" aria-label="이전 페이지">
-          <i class="bi bi-chevron-left"></i>
-        </button>
-        <div class="page_num">
-          <p class="active" data-page="1" role="button" tabindex="0" aria-current="page">
-            1
-          </p>
-          <p data-page="2" role="button" tabindex="0">2</p>
-          <p data-page="3" role="button" tabindex="0">3</p>
-        </div>
-        <button type="button" class="page_next" aria-label="다음 페이지">
-          <i class="bi bi-chevron-right"></i>
-        </button>
-      </div>
-    </div>
-  </section>
-  <!-- oem 섹션 -->
-
-  <!-- 푸터 -->
-  <footer>
-    <div class="footer_i">
-      <!-- 푸터 로고 -->
-      <div class="flogo">
-        <a href="#">
-          <img src="../image/flogo.png" alt="flogo">
-        </a>
-      </div>
-
-      <div class="ftext">
-        <ul class="fmenu">
-          <li><a href="#">농업회사법인㈜영풍</a></li>
-          <li><a href="#">대표 : 조재곤</a></li>
-          <li><a href="#">사업자등록번호 : 514-81-91033</a></li>
-        </ul>
-
-        <div class="finfo">
-          <div class="fadd">
-            <p>본사 : 대구광역시 달서구 성서공단북로 161</p>
-            <p>2캠퍼스 : 대구광역시 달서구 성서4차첨단로 50-7</p>
-            <p>
-              서울 지사 : 경기도 군포시 고산로148번길 17 (당정동,
-              군포IT밸리)A동 3103호
+        <!-- 카테고리 아이템페이지 -->
+        <div class="item_pages"></div>
+
+        <!-- 카테고리 페이지 탭 -->
+        <div class="page_tab">
+          <button type="button" class="page_prev" aria-label="이전 페이지">
+            <i class="bi bi-chevron-left"></i>
+          </button>
+          <div class="page_num">
+            <p
+              class="active"
+              data-page="1"
+              role="button"
+              tabindex="0"
+              aria-current="page"
+            >
+              1
             </p>
+            <p data-page="2" role="button" tabindex="0">2</p>
+            <p data-page="3" role="button" tabindex="0">3</p>
+            <p data-page="4" role="button" tabindex="0">4</p>
+          </div>
+          <button type="button" class="page_next" aria-label="다음 페이지">
+            <i class="bi bi-chevron-right"></i>
+          </button>
+        </div>
+      </div>
+    </section>
+    <!-- 제품카테고리 섹션 -->
+
+    <!-- oem 섹션 -->
+    <section class="oem">
+      <div class="oem_i">
+        <h3>OEM</h3>
+        <!-- oem 탭 -->
+        <div class="oem_tab">
+          <div class="left">
+            <p class="active" data-oem="all">전체</p>
+            <p data-oem="samyang">삼양</p>
+            <p data-oem="paldo">팔도</p>
+            <p data-oem="etc">기타</p>
           </div>
 
-          <div class="ftel">
-            <p>TEL : 053-593-4788 (본사)  /  031-360-4787 (서울 지사)</p>
-            <p>FAX : 053-584-4788 (본사)  /  031-360-4789 (서울 지사)</p>
-            <p>
-              E-MAIL : trade@ypfoods.co.kr (본사)  /  sales@ypfoods.co.kr
-              (서울 지사)
-            </p>
+          <a href="./oem.html" class="right">
+            OEM 바로가기 <i class="bi bi-chevron-right"></i>
+          </a>
+        </div>
+
+        <!-- oem 아이템박스 -->
+        <div class="item_pages">
+          <div class="item_box active" data-page="1">
+            <!-- oem 아이템카드 -->
+            <a href="#" class="card" data-oem-brand="paldo">
+              <div class="imgbox">
+                <img src="../image/oem_product1.png" alt="oem1" />
+              </div>
+              <div class="text">
+                <p>틈새떡볶이</p>
+                <span>매운맛의 자부심! 한국인의 소울푸드</span>
+              </div>
+            </a>
+
+            <a href="#" class="card" data-oem-brand="paldo">
+              <div class="imgbox">
+                <img src="../image/oem_product2.png" alt="oem2" />
+              </div>
+              <div class="text">
+                <p>팔도 비빔떡볶이</p>
+                <span>팔도비빔장과 국민간식 떡볶이의 만남</span>
+              </div>
+            </a>
+
+            <a href="#" class="card" data-oem-brand="samyang">
+              <div class="imgbox">
+                <img src="../image/oem_product3.png" alt="oem3" />
+              </div>
+              <div class="text">
+                <p>불닭떡볶이</p>
+                <span>쫄깃한 떡으로 화끈한 매운맛!</span>
+              </div>
+            </a>
+
+            <a href="#" class="card" data-oem-brand="samyang">
+              <div class="imgbox">
+                <img src="../image/oem_product4.png" alt="oem4" />
+              </div>
+              <div class="text">
+                <p>까르보 불닭떡볶이</p>
+                <span>쫄깃한 떡으로 부드럽고 매콤한 맛!</span>
+              </div>
+            </a>
+          </div>
+
+          <!-- OEM 2페이지: 이미지와 문구는 추후 개별 수정 -->
+          <div class="item_box" data-page="2" aria-hidden="true">
+            <!-- oem 아이템카드 -->
+            <a href="#" class="card" data-oem-brand="etc">
+              <div class="imgbox">
+                <img src="../image/oem_product5.png" alt="oem5" />
+              </div>
+              <div class="text">
+                <p>틈새떡볶이</p>
+                <span>매운맛의 자부심! 한국인의 소울푸드</span>
+              </div>
+            </a>
+
+            <a href="#" class="card" data-oem-brand="etc">
+              <div class="imgbox">
+                <img src="../image/oem_product6.png" alt="oem6" />
+              </div>
+              <div class="text">
+                <p>팔도 비빔떡볶이</p>
+                <span>팔도비빔장과 국민간식 떡볶이의 만남</span>
+              </div>
+            </a>
+
+            <a href="#" class="card" data-oem-brand="etc">
+              <div class="imgbox">
+                <img src="../image/oem_product7.png" alt="oem7" />
+              </div>
+              <div class="text">
+                <p>불닭떡볶이</p>
+                <span>쫄깃한 떡으로 화끈한 매운맛!</span>
+              </div>
+            </a>
+
+            <a href="#" class="card" data-oem-brand="etc">
+              <div class="imgbox">
+                <img src="../image/oem_product8.png" alt="oem8" />
+              </div>
+              <div class="text">
+                <p>까르보 불닭떡볶이</p>
+                <span>쫄깃한 떡으로 부드럽고 매콤한 맛!</span>
+              </div>
+            </a>
+          </div>
+
+          <!-- OEM 3페이지: 이미지와 문구는 추후 개별 수정 -->
+          <div class="item_box" data-page="3" aria-hidden="true">
+            <!-- oem 아이템카드 -->
+            <a href="#" class="card" data-oem-brand="etc">
+              <div class="imgbox">
+                <img src="../image/oem_product9.png" alt="oem9" />
+              </div>
+              <div class="text">
+                <p>틈새떡볶이</p>
+                <span>매운맛의 자부심! 한국인의 소울푸드</span>
+              </div>
+            </a>
           </div>
         </div>
 
-        <div class="fcopy">COPYRIGHT ⓒ YPFOOD ALL RIGHTS RESERVED.</div>
+        <!-- oem 페이지탭 -->
+        <div class="page_tab">
+          <button type="button" class="page_prev" aria-label="이전 페이지">
+            <i class="bi bi-chevron-left"></i>
+          </button>
+          <div class="page_num">
+            <p
+              class="active"
+              data-page="1"
+              role="button"
+              tabindex="0"
+              aria-current="page"
+            >
+              1
+            </p>
+            <p data-page="2" role="button" tabindex="0">2</p>
+            <p data-page="3" role="button" tabindex="0">3</p>
+          </div>
+          <button type="button" class="page_next" aria-label="다음 페이지">
+            <i class="bi bi-chevron-right"></i>
+          </button>
+        </div>
       </div>
-    </div>
-  </footer>
-  <!-- 푸터 -->
-  <!-- top버튼 -->
-  <a href="#" class="topbtn">
-    <i class="bi bi-arrow-up-circle"></i>
-    <p>TOP</p>
-  </a>
-  <!-- top버튼 -->
-</body>
+    </section>
+    <!-- oem 섹션 -->
 
+    <!-- 푸터 -->
+    <footer>
+      <div class="footer_i">
+        <!-- 푸터 로고 -->
+        <div class="flogo">
+          <a href="#">
+            <img src="../image/flogo.png" alt="flogo" />
+          </a>
+        </div>
+
+        <div class="ftext">
+          <ul class="fmenu">
+            <li><a href="#">농업회사법인㈜영풍</a></li>
+            <li><a href="#">대표 : 조재곤</a></li>
+            <li><a href="#">사업자등록번호 : 514-81-91033</a></li>
+          </ul>
+
+          <div class="finfo">
+            <div class="fadd">
+              <p>본사 : 대구광역시 달서구 성서공단북로 161</p>
+              <p>2캠퍼스 : 대구광역시 달서구 성서4차첨단로 50-7</p>
+              <p>
+                서울 지사 : 경기도 군포시 고산로148번길 17 (당정동,
+                군포IT밸리)A동 3103호
+              </p>
+            </div>
+
+            <div class="ftel">
+              <p>TEL : 053-593-4788 (본사)  /  031-360-4787 (서울 지사)</p>
+              <p>FAX : 053-584-4788 (본사)  /  031-360-4789 (서울 지사)</p>
+              <p>
+                E-MAIL : trade@ypfoods.co.kr (본사)  /  sales@ypfoods.co.kr
+                (서울 지사)
+              </p>
+            </div>
+          </div>
+
+          <div class="fcopy">COPYRIGHT ⓒ YPFOOD ALL RIGHTS RESERVED.</div>
+        </div>
+      </div>
+    </footer>
+    <!-- 푸터 -->
+    <!-- top버튼 -->
+    <a href="#" class="topbtn">
+      <i class="bi bi-arrow-up-circle"></i>
+      <p>TOP</p>
+    </a>
+    <!-- top버튼 -->
+  </body>
 </html>
