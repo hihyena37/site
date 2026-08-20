@@ -140,7 +140,7 @@ $(function () {
         if (count > 100) {
           clearInterval(countUp);
         }
-      }, 20);
+      }, 30); // 30ms씩 100번 실행 = 약 3초
 
       let exportCount = 1;
       exportCountUp = setInterval(function () {
@@ -150,7 +150,7 @@ $(function () {
         if (exportCount > 27) {
           clearInterval(exportCountUp);
         }
-      }, 74);
+      }, 111); // 111ms씩 27번 실행 = 약 3초
     } else if (!globalVisible) {
       countStarted = false;
       clearInterval(countUp);
