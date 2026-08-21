@@ -743,11 +743,11 @@ body.menu_open {
 
 .category_i .category_tab .left p {
   cursor: pointer;
-  padding: 12px clamp(16px, 4.86vw, 70px);
+  padding: 8px clamp(16px, 2.86vw, 32px);
 
-  font-size: 20px;
+  font-size: 16px;
   border: 1px solid #c4c9d0;
-  border-radius: 8px;
+  border-radius: 50px;
   color: #c4c9d0;
 }
 
@@ -760,11 +760,11 @@ body.menu_open {
 /* 카테고리 오른쪽 */
 .category_i .category_tab .right {
   cursor: pointer;
-  padding: 12px 28px;
+  padding: 8px 16px;
 
   text-align: center;
 
-  font-size: 18px;
+  font-size: 16px;
   border: none;
   border-bottom: 1px solid #525252;
   outline: none;
@@ -955,11 +955,11 @@ body.menu_open {
 
 .oem_tab .left p {
   cursor: pointer;
-  padding: 12px clamp(16px, 4.86vw, 70px);
+  padding: 8px clamp(16px, 2.86vw, 32px);
 
-  font-size: 20px;
+  font-size: 16px;
   border: 1px solid #c4c9d0;
-  border-radius: 8px;
+  border-radius: 50px;
   color: #c4c9d0;
 }
 
@@ -971,7 +971,7 @@ body.menu_open {
 
 /* OEM 탭 오른쪽 */
 .oem_tab .right {
-  font-size: 20px;
+  font-size: 16px;
   padding: 12px 40px;
   background-color: #c1262e;
   color: white;
@@ -1334,20 +1334,6 @@ footer {
     gap: 24px;
   }
 
-  .category_i .category_tab .left,
-  .oem_tab .left {
-    width: 100%;
-    flex: none;
-  }
-
-  .category_i .category_tab .left p,
-  .oem_tab .left p {
-    flex: 1 1 auto;
-    min-width: 96px;
-    padding: 10px 20px;
-    font-size: 18px;
-  }
-
   .category_i .category_tab .right,
   .oem_tab .right {
     flex: 0 0 auto;
@@ -1418,6 +1404,12 @@ footer {
 }
 
 @media screen and (min-width: 576px) and (max-width: 1024px) {
+  .category_i .category_tab .left p,
+  .oem_tab .left p {
+    padding: 8px 16px;
+    font-size: 16px;
+  }
+
   .brand_box .card {
     gap: clamp(16px, 3vw, 32px);
   }
@@ -1621,24 +1613,9 @@ footer {
   .oem_tab .left p {
     flex: 1 1 0;
     min-width: 0;
-    padding: 9px 8px;
-    font-size: 16px;
+    padding: 8px;
     white-space: nowrap;
     text-align: center;
-  }
-
-  .category_i .category_tab .right,
-  .oem_tab .right {
-    padding: 10px 16px;
-    font-size: 16px;
-  }
-
-  .category_i .category_tab .right {
-    /* 긴 옵션 글자와 select 화살표가 함께 들어가도 잘리지 않게 한다 */
-    width: 150px;
-    max-width: 100%;
-    box-sizing: border-box;
-    align-self: flex-end;
   }
 
   /* 상품 카드 */
