@@ -160,5 +160,26 @@ $(function () {
     }
   });
 
+  // 모달닫기
+  $(".modal_close").click(function () {
+    $(".modal").fadeOut(300);
+  });
+
+  // 오늘 날짜
+  let today = new Date().toDateString();
+
+  // 오늘 이미 체크했다면 모달 숨기기
+  // if (localStorage.getItem("modal_date") === today) {
+  //   $(".modal").hide();
+  // }
+
+  // // 오늘 하루 보지 않기
+  // $(".today_check").change(function () {
+  //   if ($(this).is(":checked")) {
+  //     localStorage.setItem("modal_date", today);
+  //     $(".modal").fadeOut(300);
+  //   }
+  // });
+
   // 종료
 });

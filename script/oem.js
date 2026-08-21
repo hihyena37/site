@@ -1,8 +1,19 @@
 $(function () {
   // 햄버거 메뉴 열기·닫기
-  $(".header_ham").click(function () { $(".ham_menu_bg").addClass("on"); $("body").addClass("menu_open"); });
-  $(".ham_close").click(function () { $(".ham_menu_bg").removeClass("on"); $("body").removeClass("menu_open"); });
-  $(".ham_menu_bg").click(function (e) { if (e.target === this) { $(this).removeClass("on"); $("body").removeClass("menu_open"); } });
+  $(".header_ham").click(function () {
+    $(".ham_menu_bg").addClass("on");
+    $("body").addClass("menu_open");
+  });
+  $(".ham_close").click(function () {
+    $(".ham_menu_bg").removeClass("on");
+    $("body").removeClass("menu_open");
+  });
+  $(".ham_menu_bg").click(function (e) {
+    if (e.target === this) {
+      $(this).removeClass("on");
+      $("body").removeClass("menu_open");
+    }
+  });
   $(".ham_menu_title").click(function () {
     $(this).toggleClass("on").next(".ham_submenu").stop().slideToggle(300);
     $(this).parent().siblings().find(".ham_menu_title").removeClass("on");
@@ -24,7 +35,7 @@ $(function () {
   let lastScrollTop = 0;
   let header = $("header");
   let headerHeight = header.outerHeight();
-  $(window).on('scroll', function () {
+  $(window).on("scroll", function () {
     let scrollTop = $(window).scrollTop();
 
     if (scrollTop <= headerHeight) {
@@ -40,7 +51,6 @@ $(function () {
     lastScrollTop = scrollTop;
   });
 
-
   // 서브메뉴 슬라이드
   let submenu = $(".submenu_bg, .header_i .submenu");
 
@@ -51,7 +61,6 @@ $(function () {
   $("header").on("mouseleave", function () {
     submenu.stop().slideUp(400);
   });
-
 
   // top버튼
   $(window).on("scroll", function () {
@@ -84,7 +93,9 @@ $(function () {
     } else if ($(window).width() > 1024 && orderSwiper) {
       orderSwiper.slideTo(0, 0);
       orderSwiper.destroy(true, true);
-      $(".oreder_box .swiper-wrapper, .oreder_box .swiper-slide").removeAttr("style");
+      $(".oreder_box .swiper-wrapper, .oreder_box .swiper-slide").removeAttr(
+        "style",
+      );
       orderSwiper = undefined;
     }
   }
@@ -92,6 +103,20 @@ $(function () {
   setOrderSwiper();
   $(window).on("resize", setOrderSwiper);
 
+  // OEM 제품 브랜드 탭
+  $(".product_tab p").click(function () {
+    let brand = $(this).data("brand");
+
+    $(this).addClass("active").siblings().removeClass("active");
+
+    $(".item_box .card").each(function () {
+      if (brand === "all" || $(this).data("brand") === brand) {
+        $(this).show();
+      } else {
+        $(this).hide();
+      }
+    });
+  });
 
   // 종료
 });

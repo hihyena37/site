@@ -623,7 +623,7 @@ body.menu_open { overflow:hidden; }
 }
 
 .product_tab p {
-  cursor: pointer;
+  cursor: url("../image/tteokbokki-bite-cursor-72.png") 12 10, pointer !important;
   padding: 12px 70px;
 
   font-size: 20px;
@@ -660,10 +660,6 @@ body.menu_open { overflow:hidden; }
   flex-direction: column;
   align-items: center;
   gap: 20px;
-}
-
-.item_box .card.filter-hidden {
-  display: none;
 }
 
 .item_box .card .imgbox {
@@ -761,7 +757,7 @@ body.menu_open { overflow:hidden; }
 
 .oreder_box .arrow i {
   font-size: clamp(20px, 1.7vw, 32px);
-  color: #562502;
+  color: #ababab;
   -webkit-text-stroke: 1px currentColor;
 }
 
