@@ -1209,15 +1209,10 @@ body.menu_open {
   width: 100%;
   height: 100%;
 
-  padding: 24px 28px;
-  border-radius: 8px;
-
   display: flex;
   align-items: center;
-  justify-content: space-between;
 
   background-color: white;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
 }
 
 .global_btm .export .card img {
@@ -1227,48 +1222,27 @@ body.menu_open {
 }
 
 .global_btm .export .card .text {
-  width: 100%;
-
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 12px;
-}
-
-.global_btm .export .card .text .top {
-  width: 100px;
-  font-size: 20px;
-  font-weight: 600;
-  text-align: center;
-}
-
-.global_btm .export .card:nth-child(1) .text .top {
-  width: 88px;
 }
 
 .global_btm .export .card .text .btm {
   display: flex;
-  align-items: end;
 }
 
 .global_btm .export .card .text .btm p {
-  font-size: clamp(24px, 4vw, 44px);
   font-weight: 800;
   color: #c1262e;
 }
 
 .global_btm .export .card .text .btm span {
-  font-size: clamp(12px, 2vw, 20px);
   font-weight: 500;
 }
 
 .global_btm .export .card a {
   display: block;
-  font-size: clamp(14px, 1.4vw, 20px);
   background-color: #c1262e;
   color: white;
-  padding: 8px 12px;
-  border-radius: 8px;
   box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.32);
 
   transition: 0.4s;

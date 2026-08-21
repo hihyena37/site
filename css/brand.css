@@ -664,9 +664,11 @@ body.menu_open {
 
 /* 브랜드박스 안 카드 */
 .brand_box .card {
-  background-color: #efefef;
-  padding: 28px;
+  padding: 28px 28px 0;
+  background-color: #fff;
+  border: 1px solid #c4c9d0;
   border-radius: 16px;
+  overflow: hidden;
 
   display: flex;
   flex-direction: column;
@@ -692,8 +694,11 @@ body.menu_open {
 }
 
 .brand_box .card .imgbox {
-  width: 100%;
+  width: calc(100% + 56px);
   height: 100%;
+  margin: 0 -28px;
+  overflow: hidden;
+  border-radius: 0;
 }
 
 .brand_box .card .imgbox img {
@@ -741,9 +746,9 @@ body.menu_open {
   padding: 12px clamp(16px, 4.86vw, 70px);
 
   font-size: 20px;
-  border: 1px solid #ababab;
+  border: 1px solid #c4c9d0;
   border-radius: 8px;
-  color: #ababab;
+  color: #c4c9d0;
 }
 
 .category_i .category_tab .left p.active {
@@ -801,16 +806,10 @@ body.menu_open {
   animation: categoryPageChange 0.35s ease;
 }
 
-.category_i .item_box .card.filter-hidden,
-.category_i .page_tab .page_num p.filter-hidden,
-.oem_i .item_box .card.filter-hidden,
-.oem_i .page_tab .page_num p.filter-hidden {
-  display: none;
-}
-
 /* 카테고리 아이템 카드 */
 .category_i .item_box .card {
-  background-color: #efefef;
+  background-color: #fff;
+  border: 1px solid #c4c9d0;
   padding: 28px 20px;
   border-radius: 16px;
   min-width: 0;
@@ -897,9 +896,9 @@ body.menu_open {
   padding: 8px 28px;
 
   font-size: 16px;
-  border: 1px solid #ababab;
+  border: 1px solid #c4c9d0;
   border-radius: 8px;
-  color: #ababab;
+  color: #c4c9d0;
 }
 
 .category_i .page_tab .page_num p.active {
@@ -959,9 +958,9 @@ body.menu_open {
   padding: 12px clamp(16px, 4.86vw, 70px);
 
   font-size: 20px;
-  border: 1px solid #ababab;
+  border: 1px solid #c4c9d0;
   border-radius: 8px;
-  color: #ababab;
+  color: #c4c9d0;
 }
 
 .oem_tab .left p.active {
@@ -1018,7 +1017,8 @@ body.menu_open {
 
 /* OEM 아이템 카드 */
 .oem_i .item_box .card {
-  background-color: #efefef;
+  background-color: #fff;
+  border: 1px solid #c4c9d0;
   padding: 20px 20px;
   border-radius: 16px;
 
@@ -1114,9 +1114,9 @@ body.menu_open {
   padding: 8px 28px;
 
   font-size: 16px;
-  border: 1px solid #ababab;
+  border: 1px solid #c4c9d0;
   border-radius: 8px;
-  color: #ababab;
+  color: #c4c9d0;
 }
 
 .oem_i .page_tab .page_num p.active {
@@ -1438,8 +1438,10 @@ footer {
     width: clamp(200px, 26vw, 280px);
     min-width: 160px;
     height: auto;
+    margin: 0;
     flex: 0 1 clamp(200px, 26vw, 280px);
     overflow: hidden;
+    border-radius: 12px;
     aspect-ratio: 4 / 3;
   }
 
@@ -1580,8 +1582,14 @@ footer {
 
   .brand_box .card {
     flex-direction: column;
-    padding: 20px;
+    padding: 20px 20px 0;
     gap: 20px;
+  }
+
+  .brand_box .card .imgbox {
+    width: calc(100% + 40px);
+    margin: 0 -20px;
+    border-radius: 0;
   }
 
   .brand_box .card>p {
@@ -1627,7 +1635,7 @@ footer {
 
   .category_i .category_tab .right {
     /* 긴 옵션 글자와 select 화살표가 함께 들어가도 잘리지 않게 한다 */
-    width: 180px;
+    width: 150px;
     max-width: 100%;
     box-sizing: border-box;
     align-self: flex-end;
@@ -1750,7 +1758,12 @@ footer {
   }
 
   .brand_box .card {
-    padding: 16px;
+    padding: 16px 16px 0;
+  }
+
+  .brand_box .card .imgbox {
+    width: calc(100% + 32px);
+    margin: 0 -16px;
   }
 
   .category_i .item_box,

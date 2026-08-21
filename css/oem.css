@@ -627,9 +627,9 @@ body.menu_open { overflow:hidden; }
   padding: 12px 70px;
 
   font-size: 20px;
-  border: 1px solid #ababab;
+  border: 1px solid #c4c9d0;
   border-radius: 8px;
-  color: #ababab;
+  color: #c4c9d0;
 }
 
 .product_tab p.active {
@@ -652,7 +652,8 @@ body.menu_open { overflow:hidden; }
 }
 
 .item_box .card {
-  background-color: #efefef;
+  background-color: #fff;
+  border: 1px solid #c4c9d0;
   padding: 28px 20px;
   border-radius: 16px;
 
