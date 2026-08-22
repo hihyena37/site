@@ -1838,9 +1838,6 @@ footer {
 
 /* 모달 하단 */
 .modal_btm {
-  position: sticky;
-  bottom: 0;
-
   display: flex;
   justify-content: space-between;
   align-items: center;

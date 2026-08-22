@@ -73,6 +73,7 @@ $(function () {
 
   // 제품카테고리 메뉴
   let cateMenu = [
+    { name: "전체", category: "all" },
     { name: "떡볶이", category: "tteokbokki" },
     { name: "스낵류", category: "snack" },
     { name: "김치류", category: "kimchi" },
@@ -93,8 +94,8 @@ $(function () {
   });
   $(".category_tab .left").html(cateTab.join(""));
 
-  // 처음 선택된 카테고리 = 떡볶이
-  let selectCate = "tteokbokki";
+  // 처음 선택된 카테고리 = 전체
+  let selectCate = "all";
 
   $(".category_tab .left p").click(function () {
     selectCate = $(this).data("category");
@@ -102,43 +103,15 @@ $(function () {
     $(this).addClass("active");
     $(this).siblings().removeClass("active");
 
-    // 떡볶이는 5개 옵션, 나머지 카테고리는 전체만 보여준다
-    if (selectCate === "tteokbokki") {
-      showOptions(tteokbokkiOptions);
-    } else {
-      showOptions(allOptions);
-    }
-
-    // 클릭한 카테고리와 같은 상품만 가져온다
+    // 전체는 모든 상품, 나머지는 해당 카테고리 상품만 가져온다
     let categoryProducts = products.filter(function (product) {
-      return product.category === selectCate;
+      return selectCate === "all" || product.category === selectCate;
     });
 
     // 선택한 카테고리 상품을 저장하고 첫 페이지를 보여준다
     currentProducts = categoryProducts;
     showProductPage(1);
   });
-
-  // 떡볶이 옵션 배열
-  let tteokbokkiOptions = [
-    { name: "전체", value: "all" },
-    { name: "떡볶이", value: "tteokbokki" },
-    { name: "라볶이", value: "rabokki" },
-    { name: "냉동 떡볶이", value: "frozen" },
-    { name: "할랄 떡볶이", value: "halal" },
-  ];
-
-  // 떡볶이 외 카테고리 옵션 배열
-  let allOptions = [{ name: "전체", value: "all" }];
-
-  // 옵션을 select 안에 보여주는 함수
-  function showOptions(optionList) {
-    let optionTag = optionList.map(function (option) {
-      return `<option value="${option.value}">${option.name}</option>`;
-    });
-
-    $(".category_tab .right").html(optionTag.join(""));
-  }
 
   // 상품 배열
   let products = [
@@ -648,8 +621,9 @@ $(function () {
 
   // 한 페이지에 보여줄 상품 개수와 현재 선택된 상품
   let productsPerPage = 12;
+  let pagesPerGroup = 5;
   let currentProducts = products.filter(function (product) {
-    return product.category === selectCate;
+    return selectCate === "all" || product.category === selectCate;
   });
   let currentPage = 1;
 
@@ -688,12 +662,15 @@ $(function () {
     return totalPages;
   }
 
-  // 현재 상품 개수에 맞춰 페이지 번호를 만든다
+  // 페이지 번호를 5개씩 묶어서 보여준다
   function showPageNumbers() {
     let totalPages = countPages(currentProducts);
     let pageNumbers = [];
+    let groupStart =
+      Math.floor((currentPage - 1) / pagesPerGroup) * pagesPerGroup + 1;
+    let groupEnd = Math.min(groupStart + pagesPerGroup - 1, totalPages);
 
-    for (let page = 1; page <= totalPages; page++) {
+    for (let page = groupStart; page <= groupEnd; page++) {
       pageNumbers.push(`
         <p class="${page === currentPage ? "active" : ""}"
            data-page="${page}" role="button" tabindex="0">
@@ -703,11 +680,8 @@ $(function () {
     }
 
     $(".category_i .page_num").html(pageNumbers.join(""));
-    $(".category_i .page_prev").prop("disabled", currentPage === 1);
-    $(".category_i .page_next").prop(
-      "disabled",
-      currentPage === totalPages
-    );
+    $(".category_i .page_prev").prop("disabled", groupStart === 1);
+    $(".category_i .page_next").prop("disabled", groupEnd === totalPages);
   }
 
   // 선택한 페이지에 해당하는 상품 12개를 보여준다
@@ -727,169 +701,47 @@ $(function () {
     showProductPage($(this).data("page"));
   });
 
-  // 이전 페이지
+  // 이전 페이지 번호 묶음
   $(".category_i .page_prev").click(function () {
-    if (currentPage > 1) {
-      showProductPage(currentPage - 1);
+    let groupStart =
+      Math.floor((currentPage - 1) / pagesPerGroup) * pagesPerGroup + 1;
+
+    if (groupStart > 1) {
+      showProductPage(groupStart - 1);
     }
   });
 
-  // 다음 페이지
+  // 다음 페이지 번호 묶음
   $(".category_i .page_next").click(function () {
     let totalPages = countPages(currentProducts);
+    let groupStart =
+      Math.floor((currentPage - 1) / pagesPerGroup) * pagesPerGroup + 1;
+    let groupEnd = Math.min(groupStart + pagesPerGroup - 1, totalPages);
 
-    if (currentPage < totalPages) {
-      showProductPage(currentPage + 1);
+    if (groupEnd < totalPages) {
+      showProductPage(groupEnd + 1);
     }
   });
 
-  // 옵션을 바꾸면 선택한 옵션에 맞는 상품을 보여준다
-  $(".category_tab .right").change(function () {
-    let selectOption = $(this).val();
-
-    let optionProducts = products.filter(function (product) {
-      // 전체는 옵션을 구분하지 않고 현재 카테고리 상품을 모두 가져온다
-      if (selectOption === "all") {
-        return product.category === selectCate;
-      }
-
-      // 전체가 아니면 카테고리와 옵션이 모두 같은 상품만 가져온다
-      return (
-        product.category === selectCate && product.option === selectOption
-      );
-    });
-
-    // 선택한 옵션 상품을 저장하고 첫 페이지를 보여준다
-    currentProducts = optionProducts;
-    showProductPage(1);
-  });
-
-  // 처음 선택된 떡볶이 상품의 첫 페이지를 보여준다
+  // 처음에는 전체 상품의 첫 페이지를 보여준다
   showProductPage(1);
 
-  // 처음 선택된 떡볶이 옵션을 화면에 보여준다
-  showOptions(tteokbokkiOptions);
-
-  // OEM HTML에 작성된 상품 카드를 복사해 둔다
-  let oemCards = $(".oem_i .item_box .card").clone();
+  // OEM 상품 카드
+  let oemCards = $(".oem_i .item_box .card");
   let selectOem = "all";
-  let oemCurrentPage = 1;
-  let oemPerPage = getOemPerPage();
 
-  // 화면 너비에 따라 한 페이지에 보여줄 OEM 상품 수를 정한다
-  function getOemPerPage() {
-    if ($(window).width() <= 575) {
-      return 4;
-    } else if ($(window).width() <= 1024) {
-      return 3;
-    } else {
-      return 4;
-    }
-  }
-
-  // 현재 선택한 OEM 브랜드의 상품만 가져온다
-  function getOemCards() {
-    return oemCards.filter(function () {
-      if (selectOem === "all") {
-        return true;
-      }
-
-      return $(this).data("oem-brand") === selectOem;
-    });
-  }
-
-  // OEM 상품 수를 한 페이지의 상품 수만큼 세어 페이지 수를 구한다
-  function countOemPages(cardList) {
-    let totalPages = 0;
-
-    for (let i = 0; i < cardList.length; i += oemPerPage) {
-      totalPages++;
-    }
-
-    return totalPages;
-  }
-
-  // 선택한 페이지의 OEM 상품을 보여준다
-  function showOemPage(page) {
-    let filteredCards = getOemCards();
-    let totalPages = countOemPages(filteredCards);
-
-    oemCurrentPage = page;
-
-    let start = (oemCurrentPage - 1) * oemPerPage;
-    let end = start + oemPerPage;
-    let pageCards = filteredCards.slice(start, end).clone();
-    let itemBox = $('<div class="item_box active"></div>');
-
-    itemBox.append(pageCards);
-    $(".oem_i .item_pages").html(itemBox);
-    showOemPageNumbers(totalPages);
-  }
-
-  // OEM 페이지 번호를 만든다
-  function showOemPageNumbers(totalPages) {
-    let pageNumbers = [];
-
-    for (let page = 1; page <= totalPages; page++) {
-      pageNumbers.push(`
-        <p class="${page === oemCurrentPage ? "active" : ""}"
-           data-page="${page}" role="button" tabindex="0">
-          ${page}
-        </p>
-      `);
-    }
-
-    $(".oem_i .page_num").html(pageNumbers.join(""));
-    $(".oem_i .page_prev").prop("disabled", oemCurrentPage === 1);
-    $(".oem_i .page_next").prop(
-      "disabled",
-      oemCurrentPage === totalPages
-    );
-  }
-
-  // OEM 브랜드 탭을 클릭하면 해당 브랜드의 첫 페이지를 보여준다
+  // OEM 브랜드 탭을 클릭하면 해당 브랜드의 상품만 보여준다
   $(".oem_tab .left p").click(function () {
     selectOem = $(this).data("oem");
 
     $(this).addClass("active");
     $(this).siblings().removeClass("active");
 
-    showOemPage(1);
+    oemCards.each(function () {
+      let cardBrand = $(this).data("oem-brand");
+      $(this).toggle(selectOem === "all" || cardBrand === selectOem);
+    });
   });
-
-  // OEM 페이지 번호를 클릭한다
-  $(".oem_i .page_num").on("click", "p", function () {
-    showOemPage($(this).data("page"));
-  });
-
-  // OEM 이전 페이지
-  $(".oem_i .page_prev").click(function () {
-    if (oemCurrentPage > 1) {
-      showOemPage(oemCurrentPage - 1);
-    }
-  });
-
-  // OEM 다음 페이지
-  $(".oem_i .page_next").click(function () {
-    let totalPages = countOemPages(getOemCards());
-
-    if (oemCurrentPage < totalPages) {
-      showOemPage(oemCurrentPage + 1);
-    }
-  });
-
-  // 브라우저 너비가 바뀌어 페이지당 상품 수가 달라지면 다시 보여준다
-  $(window).resize(function () {
-    let newOemPerPage = getOemPerPage();
-
-    if (oemPerPage !== newOemPerPage) {
-      oemPerPage = newOemPerPage;
-      showOemPage(1);
-    }
-  });
-
-  // 처음에는 OEM 전체 상품의 첫 페이지를 보여준다
-  showOemPage(1);
 
   // 종료
 });

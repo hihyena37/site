@@ -513,7 +513,7 @@ body.menu_open { overflow:hidden; }
   height: auto;
 
   padding: 0 16px;
-  margin-bottom: 160px;
+  margin-bottom: 200px;
 }
 
 .oem_info_i {
@@ -598,7 +598,7 @@ body.menu_open { overflow:hidden; }
   height: auto;
 
   padding: 0 16px;
-  margin-bottom: 160px;
+  margin-bottom: 200px;
 }
 
 .product_i {
@@ -623,12 +623,12 @@ body.menu_open { overflow:hidden; }
 }
 
 .product_tab p {
-  cursor: url("../image/tteokbokki-bite-cursor-72.png") 12 10, pointer !important;
-  padding: 12px 70px;
+  cursor: pointer;
+  padding: 8px clamp(16px, 2.86vw, 32px);
 
-  font-size: 20px;
+  font-size: 16px;
   border: 1px solid #c4c9d0;
-  border-radius: 8px;
+  border-radius: 50px;
   color: #c4c9d0;
 }
 
@@ -691,8 +691,8 @@ body.menu_open { overflow:hidden; }
   width: 100%;
   height: auto;
 
-  padding: 80px 16px;
-  margin-bottom: 160px;
+  padding: 20px 16px;
+  margin-bottom: 200px;
 }
 
 .oreder_i {
@@ -783,7 +783,7 @@ body.menu_open { overflow:hidden; }
   height: auto;
 
   padding: 0 16px;
-  margin-bottom: 200px;
+  margin-bottom: 240px;
 }
 
 .mv_i {
@@ -1020,7 +1020,7 @@ footer {
   /* 히어로 */
   .hero {
     margin-top: 64px;
-    margin-bottom: 120px;
+    margin-bottom: 160px;
   }
 
   .hero_i .btn {
@@ -1032,11 +1032,11 @@ footer {
   .oem_info,
   .product,
   .oreder {
-    margin-bottom: 120px;
+    margin-bottom: 160px;
   }
 
   .mv {
-    margin-bottom: 160px;
+    margin-bottom: 200px;
   }
 
   .oem_info_i,
@@ -1081,14 +1081,12 @@ footer {
 
   /* OEM 제품 */
   .product_tab {
-    width: 100%;
+    justify-content: center;
   }
 
   .product_tab p {
-    flex: 1 1 0;
-    min-width: 0;
-    padding: 10px 20px;
-    font-size: 18px;
+    padding: 8px 16px;
+    font-size: 16px;
   }
 
   .item_box {
@@ -1108,7 +1106,7 @@ footer {
 
   /* OEM 진행 절차 */
   .oreder {
-    padding: 40px 0;
+    padding: 20px 0;
   }
 
   .oreder_box {
@@ -1253,9 +1251,12 @@ footer {
 
   .oem_info,
   .product,
-  .oreder,
+  .oreder {
+    margin-bottom: 140px;
+  }
+
   .mv {
-    margin-bottom: 100px;
+    margin-bottom: 180px;
   }
 
   .oem_info_i,
@@ -1303,7 +1304,7 @@ footer {
     min-height: 420px;
     max-height: 520px;
     margin-top: 0;
-    margin-bottom: 100px;
+    margin-bottom: 140px;
     background-position: 50% center;
   }
 
@@ -1370,8 +1371,7 @@ footer {
   .product_tab p {
     flex: 1 1 0;
     min-width: 0;
-    padding: 9px 8px;
-    font-size: 16px;
+    padding: 8px;
     white-space: nowrap;
   }
 
@@ -1404,8 +1404,6 @@ footer {
 
   /* OEM 진행 절차 */
   .oreder {
-    padding-top: 56px;
-    padding-bottom: 40px;
     overflow: hidden;
   }
 
@@ -1516,15 +1514,6 @@ footer {
 
   .oem_box .card .imgbox {
     width: 96px;
-  }
-
-  .product_tab {
-    gap: 6px;
-  }
-
-  .product_tab p {
-    padding: 8px 4px;
-    font-size: 14px;
   }
 
   .item_box {

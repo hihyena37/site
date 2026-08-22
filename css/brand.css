@@ -65,7 +65,6 @@ label *,
 .category_i .category_tab .left p,
 .category_i .page_tab .page_num p,
 .oem_tab .left p,
-.oem_i .page_tab .page_num p,
 .header_icon .search,
 .header_icon .search *,
 .header_icon .admin,
@@ -639,7 +638,7 @@ body.menu_open {
   height: auto;
 
   padding: 0 16px;
-  margin-bottom: 160px;
+  margin-bottom: 200px;
 }
 
 .brand_info_i {
@@ -713,7 +712,7 @@ body.menu_open {
   height: auto;
 
   padding: 0 16px;
-  margin-bottom: 160px;
+  margin-bottom: 200px;
 }
 
 .category_i {
@@ -755,27 +754,6 @@ body.menu_open {
   border: none;
   background-color: #c1262e;
   color: white;
-}
-
-/* 카테고리 오른쪽 */
-.category_i .category_tab .right {
-  cursor: pointer;
-  padding: 8px 16px;
-
-  text-align: center;
-
-  font-size: 16px;
-  border: none;
-  border-bottom: 1px solid #525252;
-  outline: none;
-  border-radius: 0;
-  background: transparent;
-
-  transition: 0.4s;
-}
-
-.category_i .category_tab .right option {
-  text-align: left;
 }
 
 /* 카테고리 아이템 박스 */
@@ -863,8 +841,11 @@ body.menu_open {
 }
 
 .category_i .page_tab button {
+  width: 44px;
+  height: 44px;
+
   cursor: pointer;
-  padding: 12px 16px;
+  padding: 0;
   font-size: 20px;
 
   display: flex;
@@ -873,7 +854,7 @@ body.menu_open {
 
   background: transparent;
   border: none;
-  border-radius: 8px;
+  border-radius: 50%;
 
   transition: 0.4s;
 }
@@ -892,12 +873,19 @@ body.menu_open {
 }
 
 .category_i .page_tab .page_num p {
+  width: 44px;
+  height: 44px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   cursor: pointer;
-  padding: 8px 28px;
+  padding: 0;
 
   font-size: 16px;
   border: 1px solid #c4c9d0;
-  border-radius: 8px;
+  border-radius: 50%;
   color: #c4c9d0;
 }
 
@@ -925,7 +913,7 @@ body.menu_open {
   height: auto;
 
   padding: 0 16px;
-  margin-bottom: 200px;
+  margin-bottom: 240px;
 }
 
 .oem_i {
@@ -989,30 +977,10 @@ body.menu_open {
   background-color: #a01f25;
 }
 
-/* OEM 아이템 박스 */
-.oem_i .item_pages {
-  scroll-margin-top: 120px;
-  position: relative;
-}
-
 .oem_i .item_box {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 24px;
-
-  position: absolute;
-  inset: 0;
-  visibility: hidden;
-  opacity: 0;
-  pointer-events: none;
-}
-
-.oem_i .item_box.active {
-  position: relative;
-  visibility: visible;
-  opacity: 1;
-  pointer-events: auto;
-  animation: categoryPageChange 0.35s ease;
 }
 
 /* OEM 아이템 카드 */
@@ -1070,59 +1038,6 @@ body.menu_open {
 
 .oem_i .item_box .card:hover .imgbox img {
   scale: 1.1;
-}
-
-/* oem 페이지탭 */
-.oem_i .page_tab {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 24px;
-}
-
-.oem_i .page_tab button {
-  cursor: pointer;
-  padding: 12px 16px;
-  font-size: 20px;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  background: transparent;
-  border: none;
-  border-radius: 8px;
-
-  transition: 0.4s;
-}
-
-.oem_i .page_tab button i {
-  -webkit-text-stroke: 1px currentColor;
-}
-
-.oem_i .page_tab button:hover {
-  background-color: #efefef;
-}
-
-.oem_i .page_tab .page_num {
-  display: flex;
-  gap: 12px;
-}
-
-.oem_i .page_tab .page_num p {
-  cursor: pointer;
-  padding: 8px 28px;
-
-  font-size: 16px;
-  border: 1px solid #c4c9d0;
-  border-radius: 8px;
-  color: #c4c9d0;
-}
-
-.oem_i .page_tab .page_num p.active {
-  border: 1px solid transparent;
-  background-color: #c1262e;
-  color: white;
 }
 
 /* 푸터 */
@@ -1285,7 +1200,7 @@ footer {
   /* 히어로 */
   .hero {
     margin-top: 64px;
-    margin-bottom: 120px;
+    margin-bottom: 160px;
   }
 
   .hero_i .btn {
@@ -1296,11 +1211,11 @@ footer {
   /* 브랜드 소개 */
   .brand_info,
   .category {
-    margin-bottom: 120px;
+    margin-bottom: 160px;
   }
 
   .oem {
-    margin-bottom: 160px;
+    margin-bottom: 200px;
   }
 
   .brand_info_i,
@@ -1327,19 +1242,13 @@ footer {
   }
 
   /* 제품 카테고리 */
-  .category_i .category_tab,
-  .oem_tab {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 24px;
-  }
-
-  .category_i .category_tab .right,
   .oem_tab .right {
     flex: 0 0 auto;
     align-self: flex-end;
-    padding: 10px 24px;
-    font-size: 18px;
+  }
+
+  .oem_tab .right {
+    font-size: 16px;
   }
 
   .category_i .item_box {
@@ -1366,11 +1275,6 @@ footer {
 
   .category_i .item_box .card .imgbox {
     height: clamp(140px, 22vw, 220px);
-  }
-
-  .category_i .page_tab .page_num p,
-  .oem_i .page_tab .page_num p {
-    padding: 8px 20px;
   }
 
   /* 푸터 */
@@ -1469,9 +1373,12 @@ footer {
   }
 
   .brand_info,
-  .category,
+  .category {
+    margin-bottom: 140px;
+  }
+
   .oem {
-    margin-bottom: 124px;
+    margin-bottom: 180px;
   }
 
   .brand_info_i,
@@ -1535,7 +1442,7 @@ footer {
     min-height: 420px;
     max-height: 520px;
     margin-top: 0;
-    margin-bottom: 100px;
+    margin-bottom: 140px;
     background-size: auto 120%;
     background-position: center 70%;
   }
@@ -1593,7 +1500,6 @@ footer {
   }
 
   /* 카테고리 / OEM 탭 */
-  .category_i .category_tab,
   .oem_tab {
     flex-direction: column;
     gap: 16px;
@@ -1621,17 +1527,17 @@ footer {
   /* 상품 카드 */
   .oem_tab .right {
     width: 156px;
+    padding: 10px 12px;
     align-self: flex-end;
+
+    text-align: center;
+    white-space: nowrap;
   }
 
   .category_i .item_box,
   .oem_i .item_box {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 16px;
-  }
-
-  .oem_i .item_box .card:nth-child(4) {
-    display: flex;
   }
 
   .category_i .item_box .card,
@@ -1669,25 +1575,23 @@ footer {
     display: none;
   }
 
-  .category_i .page_tab,
-  .oem_i .page_tab {
+  .category_i .page_tab {
     gap: 8px;
   }
 
-  .category_i .page_tab button,
-  .oem_i .page_tab button {
-    padding: 8px;
+  .category_i .page_tab button {
+    width: 36px;
+    height: 36px;
     font-size: 18px;
   }
 
-  .category_i .page_tab .page_num,
-  .oem_i .page_tab .page_num {
+  .category_i .page_tab .page_num {
     gap: 6px;
   }
 
-  .category_i .page_tab .page_num p,
-  .oem_i .page_tab .page_num p {
-    padding: 7px 13px;
+  .category_i .page_tab .page_num p {
+    width: 36px;
+    height: 36px;
     font-size: 14px;
   }
 
@@ -1748,11 +1652,6 @@ footer {
     grid-template-columns: 1fr;
   }
 
-  /* 모바일 OEM 상품은 한 줄에 2개씩 배치한다 */
-  .oem_i .item_box {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
   .category_i .item_box .card,
   .oem_i .item_box .card {
     padding: 20px;
@@ -1764,8 +1663,4 @@ footer {
     margin: auto;
   }
 
-  .category_i .page_tab .page_num p,
-  .oem_i .page_tab .page_num p {
-    padding: 6px 10px;
-  }
 }
